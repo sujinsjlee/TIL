@@ -10,21 +10,21 @@ Today I Learned
 - [License](#License)
 
 ## Network
-L3
-Basic LTE Concept
+L3  
+Basic LTE Concept  
 
 ## C++
-C++ 
+C++   
 
 ## DataStructure
-Data Structure 
+Data Structure     
 
 ## Algorithm
-Algorithm and Problem Solving
+Algorithm and Problem Solving  
 
 ## Git
-Basic Git command
-How to utilize Github
+Basic Git command  
+How to utilize Github  
 
 
 
