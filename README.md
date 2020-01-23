@@ -1,27 +1,34 @@
-# Minimal Mistakes remote theme starter
+# TIL
+Today I Learned
 
-Fork this repo for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+## Contents
+- [Network](#Network)
+- [C++](#C++)
+- [Data Structure](#DataStructure)
+- [Algorithm](#Algorithm)
+- [Git](#Git)
+- [License](#License)
 
-Contains basic configuration to get you a site with:
+## Network
+L3  
+Basic LTE Concept  
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+## C++
+C++   
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+## DataStructure
+Data Structure     
 
----
+## Algorithm
+Algorithm and Problem Solving  
 
-## Troubleshooting
+## Git
+Basic Git command  
+How to utilize Github  
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+
+
+### License
+###### The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).  
+###### The blog theme is forked from https://mmistakes.github.io/minimal-mistakes/
