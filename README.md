@@ -23,7 +23,7 @@ Data Structure
 Algorithm and Problem Solving
 
 ## Git
-Badic Git command
+Basic Git command
 How to utilize Github
 
 
