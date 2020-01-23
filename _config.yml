@@ -8,6 +8,7 @@ url: https://mg729.github.io/TIL/
 
 # Build settings
 markdown: kramdown
+theme: minimal-mistakes-jekyll
 remote_theme: mmistakes/minimal-mistakes
 
 # Outputting
