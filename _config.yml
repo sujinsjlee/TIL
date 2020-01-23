@@ -8,8 +8,7 @@ url: https://mg729.github.io/TIL/
 
 # Build settings
 markdown: kramdown
-theme: minimal-mistakes-jekyll
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/mm-github-pages-starter
 
 # Outputting
 permalink: /:categories/:title/
