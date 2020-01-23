@@ -31,4 +31,4 @@ How to utilize Github
 
 ### License
 ###### The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).  
-###### The blod theme is forked from https://mmistakes.github.io/minimal-mistakes/
+###### The blog theme is forked from https://mmistakes.github.io/minimal-mistakes/
