@@ -4,11 +4,11 @@ description: Everyday in Every way, Getting Better
 github_username: mg729
 minimal_mistakes_skin: default
 search: true
-url: https://mg729.github.io/TIL/
+#url: https://mg729.github.io/TIL/
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: "mmistakes/minimal-mistakes"
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -21,14 +21,14 @@ include:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
 
 plugins:
   - jekyll-paginate
