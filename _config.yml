@@ -43,7 +43,7 @@ plugins:
 
 author:
   name   : "MG"
-  avatar : "/assets/images/bio-photo.png"
+  avatar : "/assets/images/bio-photo.jpg"
   bio    : "Today I Learned"
   links:
     - label: "Website"
