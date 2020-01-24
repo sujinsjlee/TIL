@@ -94,3 +94,5 @@ defaults:
 category_archive:
   type: liquid
   path: /categories/
+
+github: [metadata]
