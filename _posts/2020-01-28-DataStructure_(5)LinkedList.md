@@ -6,15 +6,6 @@ tags:
   - Data Structure
 link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_LinkedList/
 ---
----
-layout: post
-title: Data Structure - (5) 연결 리스트
-description: (5) Understanding of Linked List
-modified: 2020-01-14
-tags: [Data Structure, Linked List]
-categories: [Data Structure]
----
-
 ##  Linked List (단순연결리스트의 구조)  
  ![sindly_linked_list](/images/Singly-linked-list.png)  
  *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* 
@@ -49,13 +40,13 @@ categories: [Data Structure]
 # C++ Code
 * [Linked List C++ code](https://www.codesdope.com/blog/article/c-linked-lists-in-c-singly-linked-list/)  
 * *Below C++ code is for __Singly Linked List__*
-> [Node 구현 & Linked List class 구현](#Node&LinkedList클래스)   
-> [Linked List 에 데이터 추가하기](#데이터추가)  
-> [Linked List 데이터 출력하기](#데이터출력)  
-> [Node 와 Node를 연결하기](#Node연결)  
-> [Linked List 데이터 사이에 데이터 추가하기](#데이터삽입)  
-> [데이터 삭제하기](#데이터삭제)  
-> [데이터 검색하기](#데이터검색)  
+> [Node 구현 & Linked List class 구현](#Node&LinkedList)   
+> [Linked List 에 데이터 추가하기](#Add_data)  
+> [Linked List 데이터 출력하기](#Print_data)  
+> [Node 와 Node를 연결하기](#Node_concatenate)  
+> [Linked List 데이터 사이에 데이터 추가하기](#Insert_data)  
+> [데이터 삭제하기](#Delete_data)  
+> [데이터 검색하기](#Search_data)  
 
 
 ## Node&LinkedList클래스
@@ -120,7 +111,7 @@ int main()
 </p>
 </details>
 
-## 데이터추가
+## Add_data
 <details><summary>Show C++ code</summary>
 <p>
 
@@ -195,7 +186,7 @@ new node is the new 'tail'
 </p>
 </details>
 
-## 데이터출력  
+## Print_data    
 <details><summary>Show C++ code</summary>
 <p>
 
@@ -266,7 +257,7 @@ int main()
 </details>
 
 
-## Node연결  
+## Node_concatenate  
 <details><summary>Show C++ code</summary>
 <p>
 
@@ -365,7 +356,7 @@ int main()
 </p>
 </details>
 
-## 데이터삽입   
+## Insert_data   
 <details><summary>Show C++ code</summary>
 <p>
 
@@ -494,7 +485,7 @@ int main()
 </p>
 </details>
 
-## 데이터삭제  
+## Delete_data  
 <details><summary>Show C++ code</summary>
 <p>
 
@@ -648,7 +639,7 @@ int main()
 </p>
 </details>
 
-## 데이터검색    
+## Search_data    
 <details><summary>Show C++ code</summary>
 <p>
 
@@ -908,4 +899,4 @@ int main()
     }
 }
 ```
-{: .notice}
+
