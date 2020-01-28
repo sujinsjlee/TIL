@@ -49,6 +49,28 @@ graph LR
     3-->2
 ```
 
+HTML command line hide the text in markdown file.  
+start with  
+ **<!--**  
+and end the text with   
+
+**-->**
+<!-- This is commented out. -->
+
+## collapsible markdown?
+
+<details><summary>CLICK ME</summary>
+<p>
+
+#### yes, even hidden code blocks!
+
+```python
+print("hello world!")
+```
+
+</p>
+</details>
+
 ---
 
 
