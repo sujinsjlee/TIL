@@ -65,7 +65,7 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 				int data;
 				node *next;
 			}
-			```  
+			\```  
 			
 			2. Class를 이용하여 linked_list 만들기  
 			* singly linked list에서 first node는 반드시 알고 있어야합니다.      
@@ -99,7 +99,7 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 				LinkedList l;
 				return 0;
 			}
-			```  
+			\```  
 			
 			* expected **';'** after struct definition     
 			* expected **';'** after class definition  
