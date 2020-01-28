@@ -52,6 +52,7 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 ## Node&LinkedList클래스
 <details>
 	<summary>Show C++ code</summary>
+	
 	1. Struct를 이용하여 Node만들기  
 
 	```c++  
@@ -64,7 +65,6 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 		node *next;
 	}
 	```  
-
 	2. Class를 이용하여 linked_list 만들기  
 	* singly linked list에서 first node는 반드시 알고 있어야합니다.      
 		* first node를 통해서 전체 list에 접근하므로    
@@ -98,7 +98,6 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 		return 0;
 	}
 	```    
-
 	* expected **';'** after struct definition     
 	* expected **';'** after class definition  
 	* class LinkedList **()**  : () is unqualified  
@@ -106,3 +105,4 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 		* node * head, tail; (x)
 		* node *head, *tail; (o)
 </details>
+
