@@ -50,140 +50,127 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 
 
 ## Node&LinkedList클래스
-<details>
-	<summary>Show C++ code</summary>
-		<div markdown="1">
-		1. Struct를 이용하여 Node만들기  
-		```c++  
-		#incldue <iostream>
-		using namespace std;
+1. Struct를 이용하여 Node만들기  
+```c++  
+#incldue <iostream>
+using namespace std;
 
-		struct node
+struct node
+{
+	int data;
+	node *next;
+}
+```  
+2. Class를 이용하여 linked_list 만들기  
+* singly linked list에서 first node는 반드시 알고 있어야합니다.      
+	* first node를 통해서 전체 list에 접근하므로    
+	* first node를 **head**라고 함  
+```c++  
+#include <iostream>
+using namespace std;
+
+struct node
+{
+	int data;
+	node *next;
+}; //expected ';' after struct definition 
+
+class LinkedList
+{
+	private:
+		node *head, *tail;
+	public:
+		LinkedList()
 		{
-			int data;
-			node *next;
+			head = nullptr;
+			tail = nullptr;
 		}
-		```  
-		2. Class를 이용하여 linked_list 만들기  
-		* singly linked list에서 first node는 반드시 알고 있어야합니다.      
-			* first node를 통해서 전체 list에 접근하므로    
-			* first node를 **head**라고 함  
-		```c++  
-		#include <iostream>
-		using namespace std;
+}; //expected ';' after class definition 
 
-		struct node
-		{
-			int data;
-			node *next;
-		}; //expected ';' after struct definition 
-
-		class LinkedList
-		{
-			private:
-				node *head, *tail;
-			public:
-				LinkedList()
-				{
-					head = nullptr;
-					tail = nullptr;
-				}
-		}; //expected ';' after class definition 
-
-		int main()
-		{
-			LinkedList l;
-			return 0;
-		}
-		```  
-		* expected **';'** after struct definition     
-		* expected **';'** after class definition  
-		* class LinkedList **()**  : () is unqualified  
-		* `node* head, tail;` : tail은 node*가 아니라 node타입으로 선언됨  
-			* node * head, tail; (x)
-			* node *head, *tail; (o)
-		</div>	
-</details>
+int main()
+{
+	LinkedList l;
+	return 0;
+}
+```  
+* expected **';'** after struct definition     
+* expected **';'** after class definition  
+* class LinkedList **()**  : () is unqualified  
+* `node* head, tail;` : tail은 node*가 아니라 node타입으로 선언됨  
+	* node * head, tail; (x)
+	* node *head, *tail; (o)
 
 
 ## Add_data
-<details>
-	<summary>Show C++ code</summary>
-		<p>
-		```c++
-		#include <iostream>
-		using namespace std;
+```c++
+#include <iostream>
+using namespace std;
 
-		struct node
+struct node
+{
+	int data;
+	node *next;
+};
+
+class LinkedList
+{
+private:
+	node *head, *tail;
+public:
+	LinkedList()
+	{
+		head = nullptr;
+		tail = nullptr;
+	}
+	void add_node(int n)
+	{
+		node *temp = new node; 
+		temp->data = n;
+		temp->next = nullptr;  
+
+		if(head == nullptr)  //no linked list yet, so current node will be the 'head' and 'tail' both. (as it is the last element right now) 
 		{
-			int data;
-			node *next;
-		};
-
-		class LinkedList
-		{
-		private:
-			node *head, *tail;
-		public:
-			LinkedList()
-			{
-				head = nullptr;
-				tail = nullptr;
-			}
-			void add_node(int n)
-			{
-				node *temp = new node; 
-				temp->data = n;
-				temp->next = nullptr;  
-
-				if(head == nullptr)  //no linked list yet, so current node will be the 'head' and 'tail' both. (as it is the last element right now) 
-				{
-					head = temp;
-					tail = temp;
-				}
-				else  //already have a linked list and we have to add the node at the end of the linked list.
-				{
-					tail->next = temp;
-					tail = tail->next;
-				}
-			}
-		};
-
-		int main()
-		{
-			LinkedList l;
-			l.add_node(10);
-			l.add_node(20);
-			return 0;
+			head = temp;
+			tail = temp;
 		}
-		```  
-		`node *temp = new node;`    
-		* By new operator, allocate the space for the node   
-		* 새로운 node 객체 생성  
+		else  //already have a linked list and we have to add the node at the end of the linked list.
+		{
+			tail->next = temp;
+			tail = tail->next;
+		}
+	}
+};
 
-		`temp->data = n;`  
-		* input the value 'n' to the 'data' of 'temp'   
-		* temp 노드의 data에 n값 입력  
+int main()
+{
+	LinkedList l;
+	l.add_node(10);
+	l.add_node(20);
+	return 0;
+}
+```  
+`node *temp = new node;`    
+* By new operator, allocate the space for the node   
+* 새로운 node 객체 생성  
 
-		`temp->next = nullptr;`  
-		* represent that node is the last node : pointer address will be nullptr    
-		* temp노드가 마지막 노드  
+`temp->data = n;`  
+* input the value 'n' to the 'data' of 'temp'   
+* temp 노드의 data에 n값 입력  
 
-		`tail->next = temp;`  
-		* new node(temp) will go after 'tail'    
-		* 새로운 temp node가 tail 노드 다음에 위치
+`temp->next = nullptr;`  
+* represent that node is the last node : pointer address will be nullptr    
+* temp노드가 마지막 노드  
 
-		`tail = tail->next;` 
-		new node is the new 'tail'  
-		* 새로운 노드는 새로운 tail노드    
-		* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다
-	</p>
-</details>
+`tail->next = temp;`  
+* new node(temp) will go after 'tail'    
+* 새로운 temp node가 tail 노드 다음에 위치
+
+`tail = tail->next;` 
+new node is the new 'tail'  
+* 새로운 노드는 새로운 tail노드    
+* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다
 
 ## Print_data    
-<details>
-<summary>Show C++ code</summary>
-<p>
 ```c++
 #include <iostream>
 using namespace std;
@@ -245,14 +232,8 @@ int main()
 `temp = head;`  
 * temp = **this**->head;  
 * 현재 객체의 head node  
-</p>
-</details>
-
 
 ## Node_concatenate  
-<details>
-<summary>Show C++ code</summary>
-<p>
 ```c++
 #include <iostream>
 using namespace std;
@@ -344,13 +325,9 @@ int main()
     return 0;
 }
 ```  
-</p>
-</details>
+
 
 ## Insert_data   
-<details>
-<summary>Show C++ code</summary>
-<p>
 - 연결 재구성  
 ```c++
 #include <iostream>
@@ -471,13 +448,8 @@ int main()
     return 0;
 }
 ```  
-</p>
-</details>
 
 ## Delete_data  
-<details>
-<summary>Show C++ code</summary>
-<p>
 ```c++
 #include <iostream>
 using namespace std;
@@ -623,13 +595,8 @@ int main()
     return 0;
 }
 ```  
-</p>
-</details>
 
 ## Search_data    
-<details>
-<summary>Show C++ code</summary>
-<p>
 ```c++
 #include <iostream>
 using namespace std;
@@ -796,8 +763,6 @@ int main()
     return 0;
 }
 ```
-</p>
-</details>
 
 ##  **Singly** Linked List - C++ Container library  
 [c++ **forward_list**(*singly linked list*)](https://en.cppreference.com/w/cpp/container/forward_list).  
@@ -883,4 +848,3 @@ int main()
     }
 }
 ```
-
