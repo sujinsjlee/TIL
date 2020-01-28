@@ -52,7 +52,7 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 ## Node&LinkedList클래스
 <details>
 	<summary>Show C++ code</summary>
-		<p>
+		<div markdown = "1">
 			1. Struct를 이용하여 Node만들기  
 			```c++  
 			#incldue <iostream>
@@ -102,7 +102,7 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 			* `node* head, tail;` : tail은 node*가 아니라 node타입으로 선언됨  
 				* node * head, tail; (x)
 				* node *head, *tail; (o)
-		</p>	
+		</div>	
 </details>
 
 
