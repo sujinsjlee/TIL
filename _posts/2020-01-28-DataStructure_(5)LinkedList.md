@@ -52,56 +52,56 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 ## Node&LinkedList클래스
 <details>
 	<summary>Show C++ code</summary>
-		<div markdown = "1">
-			1. Struct를 이용하여 Node만들기  
-			```c++  
-			#incldue <iostream>
-			using namespace std;
+		<div markdown="1">
+		1. Struct를 이용하여 Node만들기  
+		```c++  
+		#incldue <iostream>
+		using namespace std;
 
-			struct node
-			{
-				int data;
-				node *next;
-			}
-			```  
-			2. Class를 이용하여 linked_list 만들기  
-			* singly linked list에서 first node는 반드시 알고 있어야합니다.      
-				* first node를 통해서 전체 list에 접근하므로    
-				* first node를 **head**라고 함  
-			```c++  
-			#include <iostream>
-			using namespace std;
+		struct node
+		{
+			int data;
+			node *next;
+		}
+		```  
+		2. Class를 이용하여 linked_list 만들기  
+		* singly linked list에서 first node는 반드시 알고 있어야합니다.      
+			* first node를 통해서 전체 list에 접근하므로    
+			* first node를 **head**라고 함  
+		```c++  
+		#include <iostream>
+		using namespace std;
 
-			struct node
-			{
-				int data;
-				node *next;
-			}; //expected ';' after struct definition 
+		struct node
+		{
+			int data;
+			node *next;
+		}; //expected ';' after struct definition 
 
-			class LinkedList
-			{
-				private:
-					node *head, *tail;
-				public:
-					LinkedList()
-					{
-						head = nullptr;
-						tail = nullptr;
-					}
-			}; //expected ';' after class definition 
+		class LinkedList
+		{
+			private:
+				node *head, *tail;
+			public:
+				LinkedList()
+				{
+					head = nullptr;
+					tail = nullptr;
+				}
+		}; //expected ';' after class definition 
 
-			int main()
-			{
-				LinkedList l;
-				return 0;
-			}
-			```  
-			* expected **';'** after struct definition     
-			* expected **';'** after class definition  
-			* class LinkedList **()**  : () is unqualified  
-			* `node* head, tail;` : tail은 node*가 아니라 node타입으로 선언됨  
-				* node * head, tail; (x)
-				* node *head, *tail; (o)
+		int main()
+		{
+			LinkedList l;
+			return 0;
+		}
+		```  
+		* expected **';'** after struct definition     
+		* expected **';'** after class definition  
+		* class LinkedList **()**  : () is unqualified  
+		* `node* head, tail;` : tail은 node*가 아니라 node타입으로 선언됨  
+			* node * head, tail; (x)
+			* node *head, *tail; (o)
 		</div>	
 </details>
 
