@@ -66,6 +66,7 @@ struct node
 	* singly linked list에서 first node는 반드시 알고 있어야합니다.  
 		* first node를 통해서 전체 list에 접근하므로  
 		* first node를 **head**라고 함  
+		
 ```c++  
 #include <iostream>
 using namespace std;
@@ -797,8 +798,6 @@ int main()
 }
 ```
 
----
----
 ---
 
 ##  Doubly Linked List 이중 연결 리스트 
