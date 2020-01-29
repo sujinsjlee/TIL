@@ -439,12 +439,12 @@ int main()
     la.add_node(20);
     la.add_node(30);
     la.add_node(40);
-	la.add_node(50);
+    la.add_node(50);
 
     la.display(la.gethead()); //10 20 30 40 50 
     
-	la.front(5);
-	la.after(la.gethead()->next->next, 25);
+    la.front(5);
+    la.after(la.gethead()->next->next, 25);
 		
     la.display(la.gethead()); //5 10 20 25 30 40 50 
 
@@ -488,7 +488,7 @@ public:
         else
         {
             tail->next = temp;
-			tail = tail->next;
+		    tail = tail->next;
         }
     }
     node* gethead()
@@ -510,7 +510,7 @@ public:
             {            	
 	            cout << temp->data << endl;
 	            temp = temp->next;
-		    }
+            }
         }        
     }
     void concatenate(node* a, node* b)
@@ -635,7 +635,7 @@ public:
         else
         {
             tail->next = temp;
-		    tail = tail->next;
+            tail = tail->next;
         }
     }
     node* gethead()
@@ -657,7 +657,7 @@ public:
             {            	
 	            cout << temp->data << endl;
 	            temp = temp->next;
-		    }
+            }
         }        
     }
     void concatenate(node* a, node* b)
