@@ -49,8 +49,8 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 > [데이터 검색하기](#Search_data)  
 
 
-## Node&LinkedList클래스
-1. Struct를 이용하여 Node만들기  
+## Node&LinkedList클래스  
+* Struct를 이용하여 Node만들기
 ```c++  
 #incldue <iostream>
 using namespace std;
@@ -60,11 +60,11 @@ struct node
 	int data;
 	node *next;
 }
-```  
-2. Class를 이용하여 linked_list 만들기  
-* singly linked list에서 first node는 반드시 알고 있어야합니다.      
-	* first node를 통해서 전체 list에 접근하므로    
-	* first node를 **head**라고 함  
+```
+*Class를 이용하여 linked_list 만들기  
+	* singly linked list에서 first node는 반드시 알고 있어야합니다.      
+		* first node를 통해서 전체 list에 접근하므로    
+		* first node를 **head**라고 함  
 ```c++  
 #include <iostream>
 using namespace std;
@@ -93,6 +93,7 @@ int main()
 	return 0;
 }
 ```  
+
 * expected **';'** after struct definition     
 * expected **';'** after class definition  
 * class LinkedList **()**  : () is unqualified  
@@ -101,7 +102,8 @@ int main()
 	* node *head, *tail; (o)
 
 
-## Add_data
+## Add_data  
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -149,6 +151,7 @@ int main()
 	return 0;
 }
 ```  
+
 `node *temp = new node;`    
 * By new operator, allocate the space for the node   
 * 새로운 node 객체 생성  
@@ -166,7 +169,7 @@ int main()
 * 새로운 temp node가 tail 노드 다음에 위치
 
 `tail = tail->next;` 
-new node is the new 'tail'  
+* new node is the new 'tail'  
 * 새로운 노드는 새로운 tail노드    
 * 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다
 
@@ -327,8 +330,7 @@ int main()
 ```  
 
 
-## Insert_data   
-- 연결 재구성  
+## Insert_data
 ```c++
 #include <iostream>
 using namespace std;
@@ -386,7 +388,7 @@ public:
             {            	
 	            cout << temp->data << endl;
 	            temp = temp->next;
-			}
+		    }
         }        
     }
     void concatenate(node* a, node* b)
@@ -507,7 +509,7 @@ public:
             {            	
 	            cout << temp->data << endl;
 	            temp = temp->next;
-			}
+		    }
         }        
     }
     void concatenate(node* a, node* b)
@@ -580,16 +582,16 @@ int main()
     la.add_node(20);
     la.add_node(30);
     la.add_node(40);
-	la.add_node(50);
+    la.add_node(50);
 
     la.display(la.gethead()); //10 20 30 40 50 
     
-	la.front(5);
-	la.after(la.gethead()->next->next, 25);
+    la.front(5);
+    la.after(la.gethead()->next->next, 25);
 		
     la.display(la.gethead()); //5 10 20 25 30 40 50 
 	
-	la.del(la.gethead(), 40);
+    la.del(la.gethead(), 40);
     la.display(la.gethead()); //5 10 20 25 30 50
 	
     return 0;
@@ -632,7 +634,7 @@ public:
         else
         {
             tail->next = temp;
-			tail = tail->next;
+		    tail = tail->next;
         }
     }
     node* gethead()
@@ -654,7 +656,7 @@ public:
             {            	
 	            cout << temp->data << endl;
 	            temp = temp->next;
-			}
+		    }
         }        
     }
     void concatenate(node* a, node* b)
@@ -746,16 +748,16 @@ int main()
     la.add_node(20);
     la.add_node(30);
     la.add_node(40);
-	la.add_node(50);
+    la.add_node(50);
 
     la.display(la.gethead()); //10 20 30 40 50 
     
-	la.front(5);
-	la.after(la.gethead()->next->next, 25);
+    la.front(5);
+    la.after(la.gethead()->next->next, 25);
 		
     la.display(la.gethead()); //5 10 20 25 30 40 50 
 	
-	la.del(la.gethead(), 40);
+    la.del(la.gethead(), 40);
     la.display(la.gethead()); //5 10 20 25 30 50
 	 
     la.search(la.gethead(), 30) ? (cout << "YES" << endl) : (cout << "NO" <<endl) ;  //YES
