@@ -50,7 +50,8 @@ link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_Lin
 
 
 ## Node&LinkedList클래스  
-* Struct를 이용하여 Node만들기
+* Struct를 이용하여 Node만들기  
+
 ```c++  
 #incldue <iostream>
 using namespace std;
