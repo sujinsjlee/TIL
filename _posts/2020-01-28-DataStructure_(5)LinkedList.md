@@ -599,7 +599,7 @@ int main()
     return 0;
 }
 ```  
-* [Why using double pointer for data deletion member function](https://stackoverflow.com/questions/12914917/using-pointers-to-remove-item-from-singly-linked-list)  
+* [Why using pointer-to-pointer for data deletion member function](https://stackoverflow.com/questions/12914917/using-pointers-to-remove-item-from-singly-linked-list)  
 
 ## Search_data    
 ```c++
