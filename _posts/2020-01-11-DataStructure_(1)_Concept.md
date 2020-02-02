@@ -14,7 +14,7 @@ _Efficiently manage large amounts of data_
 _In order to manage data efficiently in code, data must be structured systematically_  
 
 * 대표적인 데이터 구조  
-배열, 스택, 큐, 링크드 리스트, 해쉬 테이블, 힙 etc  
+배열, 스택, 큐, 링크드 리스트, 해쉬 테이블, 트리, 힙 etc  
 
 ## 2. Algorithm - 알고리즘  
 >**어떤 문제를 풀기 위한 절차/방법**  

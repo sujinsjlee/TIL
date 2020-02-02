@@ -7,7 +7,7 @@ tags:
 ---
 
 ## g++
-1. https://nuwen.net/  
+1. [https://nuwen.net/](https://nuwen.net/)  
 2. C++ MinGW Distro  
 3. Download > mingw-...-without-git.exe  
 	* 실행파일 눌러서 저장경로 변경
@@ -22,8 +22,8 @@ a
 `g++ hello.cpp` : 컴파일  
 `g++ hello.cpp -std=c++1z` : 최신 버전의 c++14/17/20버전의 컴파일  
 `a` : 실행  
-* linux 환경 : a.out  
-* window 환경 : a  
+	* linux 환경 : a.out  
+	* window 환경 : a  
 {: .notice}
 
 ## CL compiler  
