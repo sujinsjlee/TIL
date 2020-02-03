@@ -7,14 +7,11 @@ tags:
 ---
 
 ## C++ 변수의 특징
->1. 구조체를 만들 때 **멤버를 초기화** 할 수 있다. (from C++11)  
-
+1. 구조체를 만들 때 **멤버를 초기화** 할 수 있다. (from C++11)  
 C++98, 03에서는 멤버를 초기화하지않고 선언하면 0으로 초기화됨  
->2. uniform intialization  
-
+2. uniform intialization  
 변수를 초기화 할 때 **중괄호 {} 를 사용해서 초기화**  
->3. **auto / decltype**  
-
+3. **auto / decltype**  
 변수의 타입을 <u>컴파일러</u>가 결정하는 문법  
 ```c++
 int x[5] = {1,2,3,4,5};
@@ -30,82 +27,81 @@ decltype(n1) n3;
 	* **()안의 표현식**을 가지고 타입을 결정  
 	* 초기값이 없어도 됨  
 	* ()안의 표현식이 배열이면 **()안의 표현식과 완전 동일한 배열 타입**으로 타입 결정  
-```c++
-int main()
-{
-    int n1 = 10;
-    
-    auto a1 = n1;       // int
-    decltype(n1) d1;    // int  
+  ```c++
+  int main()
+  {
+      int n1 = 10;
+      
+      auto a1 = n1;       // int
+      decltype(n1) d1;    // int  
 
-    int x[3] = { 1,2,3}; // int[3]
+      int x[3] = { 1,2,3}; // int[3]
 
-    auto a2 = x;  // 1. int a2[3] = x; 라고 추론하면 error
-                  // 2. int* a2 = x;   라고 추론하면 ok.
-    
-    decltype(x) d2;  // int d2[3]  로 추론..
-    // decltype(x) d3 = x; //   int d3[3] = x; 컴파일 에러 
-    
-    int y[2] = {1,2};
-    
-    auto a4 = y[0]; // int
-    
-    decltype(y[0]) d4; // int 가 아니고 int&
+      auto a2 = x;  // 1. int a2[3] = x; 라고 추론하면 error
+                    // 2. int* a2 = x;   라고 추론하면 ok.
+      
+      decltype(x) d2;  // int d2[3]  로 추론..
+      // decltype(x) d3 = x; //   int d3[3] = x; 컴파일 에러 
+      
+      int y[2] = {1,2};
+      
+      auto a4 = y[0]; // int
+      
+      decltype(y[0]) d4; // int 가 아니고 int&
 
-}
-```
+  }
+  ```  
 * decltype과 함수 호출식  
 	* decltype(함수이름) : 함수타입  
 	* decltype(&함수이름) : 함수 포인터 타입  
 	* decltype(함수호출식) : 함수 반환 타입 (실제로 함수가 호출되는 것은 아님)  
-```c++
-#include <iostream>
-#include <typeinfo>
+  ```c++
+  #include <iostream>
+  #include <typeinfo>
 
-int foo(int a, double d)
-{
-     return 0;
-}
+  int foo(int a, double d)
+  {
+      return 0;
+  }
 
-int main()
-{
-    foo(1, 3.1);
-    
-    decltype( foo )  d1; // 함수 타입 - int(int, double)
-    decltype( &foo ) d2; // 함수 포인터 타입- int(*)(int, double)
-    decltype( foo(1, 3.1) ) d3; // 함수 반환 타입 - int
-    
-    std::cout << typeid(d1).name() << std::endl;
-    std::cout << typeid(d2).name() << std::endl;
-    std::cout << typeid(d3).name() << std::endl;
-    
-    const int c = 0;
-    std::cout << typeid(c).name() << std::endl; // const, reference는 출력 안됨
-    
-}
-```
->4. using  
+  int main()
+  {
+      foo(1, 3.1);
+      
+      decltype( foo )  d1; // 함수 타입 - int(int, double)
+      decltype( &foo ) d2; // 함수 포인터 타입- int(*)(int, double)
+      decltype( foo(1, 3.1) ) d3; // 함수 반환 타입 - int
+      
+      std::cout << typeid(d1).name() << std::endl;
+      std::cout << typeid(d2).name() << std::endl;
+      std::cout << typeid(d3).name() << std::endl;
+      
+      const int c = 0;
+      std::cout << typeid(c).name() << std::endl; // const, reference는 출력 안됨      
+  }
+  ```  
+4. using  
 * using 
 	* 기존 타입의 별칭을 만들 때 사용  
 	* C++11 부터 도입
 * using vs. typedef  
 	* typedef 는 **타입의 별칭**만 만들 수 있다
-	* using은 타입뿐만 아니라 **템플릿의 별칭**도 만들 수 있다
-```c++
-//typedef int DWORD;
-//typedef void(*F)(int, int);
+	* using은 타입뿐만 아니라 **템플릿의 별칭**도 만들 수 있다  
+  ```c++
+  //typedef int DWORD;
+  //typedef void(*F)(int, int);
 
-using DWORD = int;
-using F = void(*)(int, int);
+  using DWORD = int;
+  using F = void(*)(int, int);
 
 
-int main()
-{
-    DWORD n; // int n
-    F f;     // void(*f)(int, int)
-}
-```
->5. constexpr  
+  int main()
+  {
+      DWORD n; // int n
+      F f;     // void(*f)(int, int)
+  }
+  ```  
+5. constexpr  
 * **컴파일 시간에 결정되는 상수 값**으로만 초기화 (C++11 도입)  
 * const vs. constexpr  
 	* const  
@@ -132,6 +128,7 @@ int main()
 }
 ```
 {: .notice}
+
 
 * C언어와 배열의 크기  
 	* C89
