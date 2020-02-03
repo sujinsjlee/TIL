@@ -6,13 +6,15 @@ tags:
   - C++
 ---
 
-## C++ 변수의 특징
-1. 구조체를 만들 때 **멤버를 초기화** 할 수 있다. (from C++11)  
+# C++ 변수의 특징
+## 1. 구조체를 만들 때 **멤버를 초기화** 할 수 있다. (from C++11)  
 C++98, 03에서는 멤버를 초기화하지않고 선언하면 0으로 초기화됨  
-2. uniform intialization  
+
+## 2. uniform intialization  
 변수를 초기화 할 때 **중괄호 {} 를 사용해서 초기화**  
-3. **auto / decltype**  
+## 3. **auto / decltype**  
 변수의 타입을 <u>컴파일러</u>가 결정하는 문법  
+
 ```c++
 int x[5] = {1,2,3,4,5};
 
@@ -27,6 +29,7 @@ decltype(n1) n3;
 	* **()안의 표현식**을 가지고 타입을 결정  
 	* 초기값이 없어도 됨  
 	* ()안의 표현식이 배열이면 **()안의 표현식과 완전 동일한 배열 타입**으로 타입 결정  
+  
   ```c++
   int main()
   {
@@ -55,6 +58,7 @@ decltype(n1) n3;
 	* decltype(함수이름) : 함수타입  
 	* decltype(&함수이름) : 함수 포인터 타입  
 	* decltype(함수호출식) : 함수 반환 타입 (실제로 함수가 호출되는 것은 아님)  
+  
   ```c++
   #include <iostream>
   #include <typeinfo>
@@ -80,13 +84,14 @@ decltype(n1) n3;
       std::cout << typeid(c).name() << std::endl; // const, reference는 출력 안됨      
   }
   ```  
-4. using  
+## 4. using  
 * using 
 	* 기존 타입의 별칭을 만들 때 사용  
 	* C++11 부터 도입
 * using vs. typedef  
 	* typedef 는 **타입의 별칭**만 만들 수 있다
 	* using은 타입뿐만 아니라 **템플릿의 별칭**도 만들 수 있다  
+  
   ```c++
   //typedef int DWORD;
   //typedef void(*F)(int, int);
@@ -101,7 +106,7 @@ decltype(n1) n3;
       F f;     // void(*f)(int, int)
   }
   ```  
-5. constexpr  
+## 5. constexpr  
 * **컴파일 시간에 결정되는 상수 값**으로만 초기화 (C++11 도입)  
 * const vs. constexpr  
 	* const  
@@ -112,22 +117,22 @@ decltype(n1) n3;
 		* 컴파일 시간에 계산될 수 있는 값으로만 초기화가능  
 		* 템플릿 인자로 사용될 수 있다  
 * 따라서 변수값으로 초기화하는 경우가 아니라면 constexpr을 사용하여 최적화시켜야  
-```c++
-constexpr double pi = 3.14;
 
-int main()
-{
-    int n = 10;
-    
-    const int c1 = 10; // 컴파일 시간 상수. 배열 크기
-    const int c2 = n;  // 실행시간 상수. cl 컴파일러 기준으로 배열 크기 안됨..
-    
-    constexpr int c3 = 10; // ok
-    constexpr int c4 = n; // error
-    
-}
-```
-{: .notice}
+  ```c++
+  constexpr double pi = 3.14;
+
+  int main()
+  {
+      int n = 10;
+      
+      const int c1 = 10; // 컴파일 시간 상수. 배열 크기
+      const int c2 = n;  // 실행시간 상수. cl 컴파일러 기준으로 배열 크기 안됨..
+      
+      constexpr int c3 = 10; // ok
+      constexpr int c4 = n; // error
+      
+  }
+  ```
 
 
 * C언어와 배열의 크기  
