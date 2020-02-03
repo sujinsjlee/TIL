@@ -4,6 +4,7 @@ categories:
   - C++
 tags:
   - C++
+published: false
 ---
 ## C++ 함수  
 1. Default parameter  
