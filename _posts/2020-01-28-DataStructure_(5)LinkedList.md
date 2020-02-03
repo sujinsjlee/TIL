@@ -600,6 +600,7 @@ int main()
 }
 ```  
 * [Why using pointer-to-pointer for data deletion member function](https://stackoverflow.com/questions/12914917/using-pointers-to-remove-item-from-singly-linked-list)  
+* [why using one pointer for deletion function](https://stackoverflow.com/questions/59970713/single-pointer-for-linked-list-deletion-function-is-it-possible)  
 
 ## Search_data    
 ```c++
