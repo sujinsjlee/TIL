@@ -147,4 +147,4 @@ decltype(n1) n3;
 	int s1 = 10;  
 	int arr2[s1]; //g++ :ok, cl: error  
 	```
-	{: .notice--warning}
+	
