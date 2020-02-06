@@ -4,7 +4,6 @@ categories:
   - Security
 tags:
   - Computer, Security
-published: false
 ---
 [노마드 코더 - 암호화](https://www.youtube.com/watch?v=67UwxR3ts2E)
 
