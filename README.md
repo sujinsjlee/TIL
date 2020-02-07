@@ -1,5 +1,3 @@
-# BE USEFUL, BE KIND
-
 # TIL
 Today I Learned
 
