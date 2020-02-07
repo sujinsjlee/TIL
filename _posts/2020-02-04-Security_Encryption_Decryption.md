@@ -20,7 +20,7 @@ tags:
 * 그래서 **Salt** 가 등장  
 		* [Salt](https://en.wikipedia.org/wiki/Salt_(cryptography))  
 		* salt는 작은 랜덤 데이터고 이 salt와 함께 입력값을 해쉬함수에 전달하면 Rainbow_table 를 이용하는 해커로부터 패스워드를 지켜낼 수 있음  
-[노마드 코더 - 암호화](https://www.youtube.com/watch?v=67UwxR3ts2E)
+* [노마드 코더 - 암호화](https://www.youtube.com/watch?v=67UwxR3ts2E)
 {: .notice}
 
 ## 암호화  
