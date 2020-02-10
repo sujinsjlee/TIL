@@ -57,6 +57,15 @@ and end the text with
 **-->**
 <!-- This is commented out. -->
 
+[보여지는 텍스트]  
+(#이동할위치의텍스트)  
+~생략~  
+#이동할위치의텍스트  
+
+* 이동할 위치의 영어 텍스트는 반드시 **소문자**만 가능  
+* 띄어쓰기는 - 로 구분해야한다.   
+
+
 ## collapsible markdown?
 
 <details><summary>CLICK ME</summary>

@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io//data%20structure/2020/01/11/DataStructure_(1)_Concept/
+link: https://mg729.github.io//datastructure/2020/01/11/DataStructure_(1)_Concept/
 ---
 ## 1. Data Structure - 자료구조  
 >**대량의 데이터를 효율적으로 관리할 수 있는 데이터 구조**  

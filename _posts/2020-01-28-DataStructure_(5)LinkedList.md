@@ -4,8 +4,11 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io//data%20structure/2020/01/14/DataStructure_(5)_LinkedList/
+link: https://mg729.github.io//datastructure/2020/01/14/DataStructure_(5)_LinkedList/
 ---
+
+> [C++ list STL 바로가기](#stl)
+
 ##  Linked List (단순연결리스트의 구조)  
  ![sindly_linked_list](/images/Singly-linked-list.png)  
  *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* 
@@ -810,10 +813,25 @@ int main()
    * singly linked list는 데이터 탐색시 head 노드부터 tail까지 탐색을 해야함 -> 원하는 데이터가 뒤에 있다면?
      * <u>노드 탐색이 <b>양쪽</b>으로 가능한</u> *Double Linked list*    
    * 더블 링크드 리스트의 Node의 구조는 **이전데이터주소 , 데이터, 다음 데이터 주소** 로 이루어져있음     
-  
+    
+## stl
 
 ##  **Doubly** Linked List - C++ Container library  
 [c++ **list** (*doubly linked list*)](https://en.cppreference.com/w/cpp/container/list).  
+
+* **list<int> lt(10)**
+    * lt 연결리스트에 10개의 요소를 default 값으로 생성 및 초기화  
+* **list<int> lt{10}**
+    * lt 연결리스트에 10이라는 데이터를 하나 생성  
+* **list<string> words1 {"I", "love", "Sunny", "weather"};**  
+    * workds 리스트 초기화  
+* **list<string> words2(words1.begin(), words1.end());**  
+    * words2 == words1 연결 리스트 복사  
+* **list<string> words3(words1);**  
+    * words3 == words1 연결 리스트 복사  
+* **list<string> words4(5, "Sunny");**
+    * words4 {"Sunny","Sunny","Sunny","Sunny","Sunny"}  
+
 ```c++
 #include <algorithm>
 #include <iostream>
