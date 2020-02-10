@@ -819,18 +819,18 @@ int main()
 ##  **Doubly** Linked List - C++ Container library  
 [c++ **list** (*doubly linked list*)](https://en.cppreference.com/w/cpp/container/list).  
 
-* **list<int> lt(10)**
-    * lt 연결리스트에 10개의 요소를 default 값으로 생성 및 초기화  
-* **list<int> lt{10}**
+* <b> list<int> lt(10)  
+    * lt 연결리스트에 10개의 요소를 default 0 값으로 생성 및 초기화  
+* <b>list<int> lt{10}  
     * lt 연결리스트에 10이라는 데이터를 하나 생성  
-* **list<string> words1 {"I", "love", "Sunny", "weather"};**  
+* <b>list<string> words1 {"I", "love", "Sunny", "weather"};  
     * workds 리스트 초기화  
-* **list<string> words2(words1.begin(), words1.end());**  
+* <b>list<string> words2(words1.begin(), words1.end());  
     * words2 == words1 연결 리스트 복사  
-* **list<string> words3(words1);**  
+* <b>list<string> words3(words1);  
     * words3 == words1 연결 리스트 복사  
-* **list<string> words4(5, "Sunny");**
-    * words4 {"Sunny","Sunny","Sunny","Sunny","Sunny"}  
+* <b>list<string> words4(5, "Sunny");  
+    * words4 {"Sunny","Sunny","Sunny","Sunny","Sunny"} 
 
 ```c++
 #include <algorithm>
