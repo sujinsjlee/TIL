@@ -43,16 +43,16 @@ link: https://mg729.github.io//datastructure/2020/01/14/DataStructure_(5)_Linked
 # C++ Code
 * [Linked List C++ code](https://www.codesdope.com/blog/article/c-linked-lists-in-c-singly-linked-list/)  
 * *Below C++ code is for __Singly Linked List__*
-> [Node 구현 & Linked List class 구현](#Node&LinkedList)   
-> [Linked List 에 데이터 추가하기](#Add_data)  
-> [Linked List 데이터 출력하기](#Print_data)  
-> [Node 와 Node를 연결하기](#Node_concatenate)  
-> [Linked List 데이터 사이에 데이터 추가하기](#Insert_data)  
-> [데이터 삭제하기](#Delete_data)  
-> [데이터 검색하기](#Search_data)  
+> [Node 구현 & Linked List class 구현](#node&linkedlist)   
+> [Linked List 에 데이터 추가하기](#add_data)  
+> [Linked List 데이터 출력하기](#print_data)  
+> [Node 와 Node를 연결하기](#node_concatenate)  
+> [Linked List 데이터 사이에 데이터 추가하기](#insert_data)  
+> [데이터 삭제하기](#delete_data)  
+> [데이터 검색하기](#search_data)  
 
 
-## Node&LinkedList클래스  
+## node&linkedlist  
 * Struct를 이용하여 Node만들기  
 
 ```c++  
@@ -107,7 +107,7 @@ int main()
 	* node *head, *tail; (o)
 
 
-## Add_data  
+## add_data  
 
 ```c++
 #include <iostream>
@@ -178,7 +178,7 @@ int main()
 * 새로운 노드는 새로운 tail노드    
 * 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다
 
-## Print_data    
+## print_data    
 ```c++
 #include <iostream>
 using namespace std;
@@ -241,7 +241,7 @@ int main()
 * temp = **this**->head;  
 * 현재 객체의 head node  
 
-## Node_concatenate  
+## node_concatenate  
 ```c++
 #include <iostream>
 using namespace std;
@@ -335,7 +335,7 @@ int main()
 ```  
 
 
-## Insert_data
+## insert_data
 ```c++
 #include <iostream>
 using namespace std;
@@ -456,7 +456,7 @@ int main()
 }
 ```  
 
-## Delete_data  
+## delete_data  
 ```c++
 #include <iostream>
 using namespace std;
@@ -605,7 +605,7 @@ int main()
 * [Why using pointer-to-pointer for data deletion member function](https://stackoverflow.com/questions/12914917/using-pointers-to-remove-item-from-singly-linked-list)  
 * [why using one pointer for deletion function](https://stackoverflow.com/questions/59970713/single-pointer-for-linked-list-deletion-function-is-it-possible)  
 
-## Search_data    
+## search_data    
 ```c++
 #include <iostream>
 using namespace std;
