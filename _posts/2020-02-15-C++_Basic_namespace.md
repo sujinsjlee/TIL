@@ -7,7 +7,8 @@ tags:
 ---
 ## namespace의 필요성  
 * 함수의 구조체등의 **이름 충돌** 해결  
-```c++
+
+```cpp
 #include <stdio.h>
 
 namespace Audio
