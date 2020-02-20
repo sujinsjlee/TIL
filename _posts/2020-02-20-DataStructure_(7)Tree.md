@@ -7,13 +7,11 @@ tags:
 link: https://mg729.github.io//datastructure/2020/02/11/DataStructure_(7)_Tree/
 ---
 
-<!--트리는 면접에서 가장 자주 물어보는 자료구조-->
-
 ## 트리 구조  
 > **트리** : Node 와 Edge (branch) 를 이용해서, 사이클을 이루지 않도록 구성한 데이터 구조   
 > tree는 **계층적 자료구조**(hierarchical structure)  
 > stack, queue, list 의 자료구조는 *선형자료구조*(Linear data structure)  
-
+<!--트리는 면접에서 가장 자주 물어보는 자료구조-->
 
 * 주요 용도  
     * 트리 중 이진 트리 형태의 구조로, 탐색(검색)알고리즘 구현을 위해 많이 사용됨  
@@ -217,15 +215,15 @@ else if(tn->rChild != nullptr && tn->lChild == nullptr)
 ```
 
 ### Case 3. Child Node가 두 개인 Node 삭제 
-**option1 - Rightmost. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
-option2 - Leftmost. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
+* **option1 - Rightmost. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
+* option2 - Leftmost. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
 
 #### Case 3-1. 삭제할 Node가 Parent Node의 왼쪽에 있을 때  
-Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
-Case 3-1-2. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
+* Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+* Case 3-1-2. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
 #### Case 3-2. 삭제할 Node가 Parent Node의 오른쪽에 있을 때  
-Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
-Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
+* Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+* Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
 
 ```cpp
 //Case3. Two Degree Node deletion
