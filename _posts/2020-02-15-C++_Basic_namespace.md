@@ -33,7 +33,7 @@ void init()
 
 int main()
 {
-    init(); // 
+    init();
     Audio::init();
     Video::init();
 }
@@ -44,7 +44,7 @@ int main()
 
 ### qualified name 사용  
 > **Audio::init();**  
-*qualified name 사용법을 가장 권장  
+> qualified name 사용법을 가장 권장  
 
 ### using declaration (using 선언)을 사용한 접근  
 > **using Audio::init();**  
