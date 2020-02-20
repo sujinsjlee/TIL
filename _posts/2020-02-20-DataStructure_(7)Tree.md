@@ -53,7 +53,7 @@ link: https://mg729.github.io//datastructure/2020/02/11/DataStructure_(7)_Tree/
 		* 50%의 실행시간을 단축  
 
 
-	log n의 시간 복잡도에 대한 증명  
+	0. **log n의 시간 복잡도에 대한 증명**  
 	1. n 의 크기를 반씩 줄이는 걸 가정  
 	n 이 반씩 줄다보면 k 단계에서 최종적으로 1이 된다 가정하자.  
 	2. 단계별로 n -> n/2 -> n/4 -> n/2의k 승 진행  
@@ -214,16 +214,19 @@ else if(tn->rChild != nullptr && tn->lChild == nullptr)
 }
 ```
 
-### Case 3. Child Node가 두 개인 Node 삭제 
+### Case 3. Child Node가 두 개인 Node 삭제   
+
 * **option1 - Rightmost. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
 * option2 - Leftmost. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
+{: .notice--info}
 
-#### Case 3-1. 삭제할 Node가 Parent Node의 왼쪽에 있을 때  
-* Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
-* Case 3-1-2. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
-#### Case 3-2. 삭제할 Node가 Parent Node의 오른쪽에 있을 때  
-* Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
-* Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
+* Case 3-1. 삭제할 Node가 Parent Node의 왼쪽에 있을 때  
+	* Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+	* Case 3-1-2. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
+
+* Case 3-2. 삭제할 Node가 Parent Node의 오른쪽에 있을 때  
+	* Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+	* Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
 
 ```cpp
 //Case3. Two Degree Node deletion
