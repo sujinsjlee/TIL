@@ -1,5 +1,5 @@
 ---
-title: "Data Structure - (7) 트리"
+title: "Data Structure - (8) 힙"
 categories:
   - Data Structure
 tags:
