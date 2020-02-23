@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io//datastructure/2020/01/12/DataStructure_(4)_Stack/
+link: https://mg729.github.io/datastructure/2020/01/12/DataStructure_(4)_Stack/
 ---
 
 ##  Stack (스택의 구조)

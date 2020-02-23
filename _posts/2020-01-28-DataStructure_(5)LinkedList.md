@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io//datastructure/2020/01/14/DataStructure_(5)_LinkedList/
+link: https://mg729.github.io/datastructure/2020/01/14/DataStructure_(5)_LinkedList/
 ---
 
 > [C++ list STL 바로가기](#stl)

@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io//datastructure/2020/01/12/DataStructure_(3)_Queue/
+link: https://mg729.github.io/datastructure/2020/01/12/DataStructure_(3)_Queue/
 ---
 
 ##  Queue (큐의 구조)

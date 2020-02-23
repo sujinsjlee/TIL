@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io//datastructure/2020/02/20/DataStructure_(8)_Heap/
+link: https://mg729.github.io/datastructure/2020/02/20/DataStructure_(8)_Heap/
 ---
 
 ## 힙(Heap)  
@@ -71,6 +71,7 @@ link: https://mg729.github.io//datastructure/2020/02/20/DataStructure_(8)_Heap/
 * 힙 구현 **std::make_heap**  
 * 힙 데이터 삽입 **std::push_heap**  
 * 힙 데이터 삭제 **std::pop_heap**  
+* **std::is_heap**  
 
 ```cpp
 #include <iostream>

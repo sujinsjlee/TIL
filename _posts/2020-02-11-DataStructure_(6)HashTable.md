@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io//datastructure/2020/01/30/DataStructure_(6)_HashTable/
+link: https://mg729.github.io/datastructure/2020/01/30/DataStructure_(6)_HashTable/
 ---
 
 ## Hash Table 구조  
