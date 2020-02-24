@@ -6,7 +6,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - Git
 tags:
-  - git
+  - markdown
 ---
 
 _italic_  
