@@ -54,7 +54,25 @@ published: false
   * type deduction  
     * 함수템플릿 사용시 타입을 명시적으로 지정하지 않으면, **함수호출인자를 보고 컴파일러가 결정**  
 
-* 구조체 템플릿  
+* 클래스(구조체) 템플릿  
+  * 함수뿐 아니라 클래스, 구조체도 템플릿으로 만들 수 있음  
+  ```cpp
+  template<typename T>
+  struct Point
+  {
+      T x;
+      T y;
+  };
+
+  int main()
+  { 
+      Point<int> pt;
+      pt.x = 1;
+      pt.y = 1;
+
+      Point<double> pt2;
+  }
+  ```   
 
 ### 4. inline function  
 
