@@ -75,7 +75,10 @@ published: false
   ```   
 
 ### 4. inline function  
-
+* inline 함수  
+  * 함수 호출 시 함수로 이동하지 않고 **함수의 기계어 코드를 치환**함  
+  * 장점: 실제 함수 호출보다 빠르다
+  * 단점: 치환되는 함수가 큰 경우 목적코드가 커짐(실행파일 크기가 커짐)  
 ### 5. delete function  
 
 ### 6. constexpr function  
