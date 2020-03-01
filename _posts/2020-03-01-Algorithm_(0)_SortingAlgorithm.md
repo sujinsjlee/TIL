@@ -1,0 +1,21 @@
+---
+layout: post
+title:  - (0) 정렬 알고리즘
+description: (0) Understanding of sorting algorithm
+modified: 2020-03-01
+tags: [Algorithm]
+categories: [Algorithm]
+---
+
+## 알고리즘 공부 방법  
+기술면접에서도 화이트보드에 알고리즘 수도코드작성하라고함  
+따라서 연습장과 펜을 필수  
+1. 알고리즘 문제 분석 후  
+2. 구현알고리즘 세부항목으로 나누기  
+3. 코드화하기 위한 데이터 구조 또는 사용할 변수 정리  
+4. 연습장에 각 문장을 코드레벨로 정리  
+5. 임의 데이터로 코드가 동작하는지를 연습장과 펜으로 검증  
+{: .notice--success}
+
+## 정렬  
+* 정렬(sorting) : 어떤 데이터들이 주어졌을 때 이를 정해진 순서대로 나열하는 것  
