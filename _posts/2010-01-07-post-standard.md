@@ -10,6 +10,7 @@ tags:
 ---
 
 _italic_  
+__bold__  
 **bold**  
 **_italic+bold_**  
 ~~hello~~  
