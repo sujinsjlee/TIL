@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  - (0) 정렬 알고리즘
+title: Algorithm - (0) 정렬 알고리즘
 description: (0) Understanding of sorting algorithm
 modified: 2020-03-01
 tags: [Algorithm]
