@@ -1,10 +1,9 @@
 ---
-layout: post
-title: Algorithm - (1) 버블 정렬
-description: (1) Understanding of Bubble Sort
-modified: 2020-03-08
-tags: [Algorithm]
-categories: [Algorithm]
+title: "Algorithm - (1) 버블 정렬"
+categories:
+  - Algorithm
+tags:
+  - Algorithm
 ---
 
 ## 버블 정렬

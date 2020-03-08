@@ -1,10 +1,9 @@
 ---
-layout: post
-title: Algorithm - (0) 정렬 알고리즘
-description: (0) Understanding of sorting algorithm
-modified: 2020-03-01
-tags: [Algorithm]
-categories: [Algorithm]
+title: "Algorithm - (0) 정렬 알고리즘"
+categories:
+  - Algorithm
+tags:
+  - Algorithm
 ---
 
 ## 알고리즘 공부 방법  
