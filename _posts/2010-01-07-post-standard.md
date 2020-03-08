@@ -32,7 +32,15 @@ __bold__
 | bonjour | 3           | 4   |
 
 `simple highlighter`  
+<center>가운데</center>  
+<div style="text-align: left"> 왼쪽 </div>
+<div style="text-align: right"> 오른쪽 </div>
 
+<center>
+	<a href="https://en.wikipedia.org/wiki/Bubble_sort">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif"/>
+	</a>
+</center>
 
 $a^2 + b^2 = c^2$  
 
