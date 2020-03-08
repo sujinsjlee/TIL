@@ -5,18 +5,6 @@ categories:
 tags:
   - Data Structure
 ---
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 ## 알고리즘 복잡도
 > 시간복잡도 (**Time Complexity**) : 알고리즘 실행속도  
@@ -85,6 +73,7 @@ int sumNumber (int n)
     - $ S_p(n) $: 가변 공간  
 
 > 빅 오 표기법을 생각해볼 때, 고정 공간은 상수이므로 공간 복잡도는 가변 공간에 좌우됨  
+
 * 상수: 입력값과 상관없으니까 상수라고 표현 -- 즉 고정공간은 입력값과 비례하여 차지되는 공간이 아니므로 상수취급함  
 
 1. n! 팩토리얼 구하기  
