@@ -21,7 +21,7 @@ tags:
 
 ## 코드 디자인  
 * __조건체크__ : 두 개의 데이터의 크기비교  
-* __turn__ : 전체 데이터 리스트에 대한 swaping비교하는 turn (전체 데이터를 총 조건체크하는 한 번의 로테이션)  
+* __turn__ : 전체 데이터 리스트에 대한 swapping비교하는 turn (전체 데이터를 총 조건체크하는 한 번의 로테이션)  
 
 
 1. 데이터가 **두 개**일 때 버블 정렬  
@@ -48,27 +48,28 @@ tags:
 ```cpp
 for(int n = 0; n < 데이터 길이 -1; n++)
 {
-    bool swaps = false;
+   bool swaps = false;
 	for(int index = 0; index < 데이터 길이 - n -1 ; index++)
-    {
-		if(앞 데이터 > 뒤 데이터)
-			swap two datas;
-      		swaps = true;		
-    }
-    if(!swaps)
-       break;
+   {
+	   if(앞 데이터 > 뒤 데이터)
+	      swap two datas;
+      	swaps = true;		
+   }
+   if(!swaps)
+      break;
 }
 ```	
 {: .notice--success}
-`length of the entire data - n -1`: __-n__ : -n을 하는 이유는 한 번의 턴을 거칠 때마다 뒤에 있는 데이터는 정렬이 되기때문에 정렬되지 않은 데이터에대해서만 조건체크를 하기 위함  
+* `length of the entire data - n -1`  
+   * __-n__ : -n을 하는 이유는 한 번의 턴을 거칠 때마다 뒤에 있는 데이터는 정렬이 되기때문에 정렬되지 않은 데이터에대해서만 조건체크를 하기 위함  
 
 1. for num in range(len(data_list)) 반복
-2. swap = 0 (교환이 되었는지를 확인하는 변수를 두자)
+2. swap = false (교환이 되었는지를 확인하는 변수를 두자)
 3. 반복문 안에서, for index in range(len(data_list) - num - 1) n - 1번 반복해야 하므로
 4. 반복문안의 반복문 안에서, if data_list[index] > data_list[index + 1] 이면
-5. data_list[index], data_list[index + 1] = data_list[index + 1], data_list[index]
-6. swap += 1
-7. 반복문 안에서, if swap == 0 이면, break 끝
+5. __swapping__ : data_list[index], data_list[index + 1] = data_list[index + 1], data_list[index]
+6. swap = true
+7. 반복문 안에서, if swap == false 이면, break 끝
 
 ## 알고리즘 시간복잡도
 > 반복문이 두 개 : **O(n^2)**  
