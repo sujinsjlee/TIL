@@ -5,6 +5,18 @@ categories:
 tags:
   - Data Structure
 ---
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 ## 알고리즘 복잡도
 > 시간복잡도 (**Time Complexity**) : 알고리즘 실행속도  
@@ -12,6 +24,7 @@ tags:
 <!--시간 복잡도가 중요-->
 <!-- 면접에서도 공간복잡도를 물어보는 경우는 거의 없을 것-->
 <!-- 시간 복잡도에 대해서 꼭 이해하고 계산할 수 있어야함-->
+
 - 알고리즘 계산 복잡도는 다음 두 가지 척도로 표현될 수 있음  
    - 시간 복잡도: 얼마나 빠르게 실행되는지  
    - 공간 복잡도: 얼마나 많은 저장 공간이 필요한지  
@@ -67,9 +80,9 @@ int sumNumber (int n)
 - 총 필요 저장 공간  
   - 고정 공간 (알고리즘과 무관한 공간): 코드 저장 공간, 단순 변수 및 상수  
   - 가변 공간 (알고리즘 실행과 관련있는 공간): 실행 중 동적으로 필요한 공간  
-    - $ S(P) = c + S_p(n) $  
+    - $$ S(P) = c + S_p(n) $$  
     - c: 고정 공간  
-    - $ S_p(n) $: 가변 공간  
+    - $$ S_p(n) $$: 가변 공간  
 
 > 빅 오 표기법을 생각해볼 때, 고정 공간은 상수이므로 공간 복잡도는 가변 공간에 좌우됨  
 * 상수: 입력값과 상관없으니까 상수라고 표현 -- 즉 고정공간은 입력값과 비례하여 차지되는 공간이 아니므로 상수취급함  
