@@ -61,11 +61,10 @@ use_math: true
 
 ## 선택 정렬 알고리즘 (Pseudocode)  
 ```cpp
-for(int i = 0; i < 데이터길이 - 1; ++i) //turn
+for(int standard = 0; standard < 데이터길이 - 1; ++standard) //turn
 {
-	int lowest = i;
-	int standard = i;
-	for(int index = i+1; index < 데이터길이 ; ++index)
+	int lowest = standard;
+	for(int index = standard+1; index < 데이터길이 ; ++index)
 		if(data[lowest] > data[index])
 			lowest = index;
 	
