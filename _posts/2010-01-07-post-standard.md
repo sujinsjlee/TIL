@@ -31,6 +31,11 @@ __bold__
 | hello  | 1           | 2   |
 | bonjour | 3           | 4   |
 
+| 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
+| :--- | :---: | ---: |
+| 내용 11 | 내용 12 | 내용 13 |
+| 내용 21 | 내용 22 | 내용 23 |
+
 `simple highlighter`  
 <center>가운데</center>  
 <div style="text-align: left"> 왼쪽 </div>
@@ -190,3 +195,7 @@ This post has a manual excerpt `<!--more-->` set after the second paragraph. The
 ```yaml
 excerpt_separator: "<!--more-->"
 ```
+
+## Github supports emoji
+You can add emoji to your writing by typing :EMOJICODE:
+[github_emoji_cheat_sheet](https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax#using-emoji) 
