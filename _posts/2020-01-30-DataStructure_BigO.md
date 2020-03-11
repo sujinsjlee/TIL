@@ -4,6 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
+use_math: true
 ---
 
 ## 알고리즘 복잡도
