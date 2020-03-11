@@ -1,6 +1,5 @@
 ---
 title: "Algorithm - (3) 삽입 정렬"
-published: false
 categories:
   - Algorithm
 tags:
@@ -62,6 +61,14 @@ use_math: true
 
 ## 알고리즘 (Pseudocode)
 ```cpp
+for(int i = 0; i < 데이터 길이 -1 ; ++i)
+  for(int base = i+1; base != 0 ; ++i)
+  {
+      if(data[base] < data[base-1])
+        swapping two datas
+      else
+        break;
+  }
 ```
 1. for stand in range(len(data_list)) 로 반복  
 2. key = data_list[stand]  
@@ -71,11 +78,48 @@ use_math: true
 
 ## 알고리즘 시간복잡도
 * 반복문이 두 개 **O($n^2$)**  
- 
+
 
 ## C++코드 구현
 ```cpp
+#include<iostream>
+using namespace std;
 
+void insertionSort(int * data, int size)
+{
+	for(int i = 0; i < size-1 ; ++i )
+	{
+		for(int base = i+1 ; base != 0 ; --base)
+		{
+			if(data[base] < data[base-1])
+			{
+				int temp = data[base];
+				data[base] = data[base-1];
+				data[base-1] = temp;
+			}
+			else
+				break;
+		}
+	}	
+}
+int main()
+{
+	int data_i[] = {4,5,3,2,1};
+
+	int len = sizeof(data_i) / sizeof(data_i[0]);
+	cout  << len << endl;
+
+	for(int i = 0; i < len; ++i)
+		cout << data_i[i] << endl;
+
+	insertionSort(data_i, len);
+	
+	for(int i = 0; i < len; ++i)
+		cout << data_i[i] << endl;
+		
+	return 0;
+	
+}
 ```
 
 ## Python 코드 구현
