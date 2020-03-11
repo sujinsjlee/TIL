@@ -70,11 +70,6 @@ for(int i = 0; i < 데이터 길이 -1 ; ++i)
         break;
   }
 ```
-1. for stand in range(len(data_list)) 로 반복  
-2. key = data_list[stand]  
-3. for num in range(stand, 0, -1) 반복  
-	* 내부 반복문 안에서 data_list[stand] < data_list[num - 1] 이면,  
-		* data_list[num - 1], data_list[num] = data_list[num], data_list[num - 1]  
 
 ## 알고리즘 시간복잡도
 * 반복문이 두 개 **O($n^2$)**  
