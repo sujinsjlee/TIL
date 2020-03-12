@@ -129,10 +129,13 @@ int main()
 ```python
 def insertion_sort(data):
     for index in range(len(data) - 1):
-        for index2 in range(index + 1, 0, -1): #-1씩줄여가면서 index+1 부터 0직전 즉 1번까지 for루프반복 -기준점1까지가야 1 0 도 비교
+        for index2 in range(index + 1, 0, -1): 
             if data[index2] < data[index2 - 1]:
                 data[index2], data[index2 - 1] = data[index2 - 1], data[index2]
             else:
                 break
     return data
 ```
+* for index2 in range(index + 1, 0, -1)
+  * -1씩줄여가면서 index+1 부터 0 직전, 즉 1번까지 for루프반복 
+  * 기준점 1까지가야 1 0 도 비교
