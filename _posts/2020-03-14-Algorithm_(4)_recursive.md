@@ -17,9 +17,12 @@ use_math: true
 > 순서를 거꾸로 읽어도 제대로 읽은 것고 동일한 단어를 판별하는 함수  
 > ex) level, mom  
 
+
 <!--면접에 자주 출제되는 문제-->
 
+
 * 회문을 **재귀 용법**으로 구현  
+
 ```cpp
 #include <iostream>
 #include <cstdio>
@@ -72,6 +75,7 @@ int main()
 ```
 
 * 회문을 **반복문**으로 구현  
+
 ```cpp
 #include <iostream>
 #include <cstdio>
