@@ -4,7 +4,6 @@ categories:
   - Algorithm
 tags:
   - Algorithm
-use_math: true
 ---
 
 ## 재귀 용법 (recursive call, 재귀 호출)  
@@ -14,7 +13,7 @@ use_math: true
 # 프로그래밍 연습 (C++)  
 
 ## 회문(palindrome) 
-> 순서를 거꾸로 읽어도 제대로 읽은 것고 동일한 단어를 판별하는 함수  
+> 순서를 거꾸로 읽어도 제대로 읽은 것과 동일한 단어를 판별하는 함수  
 > ex) level, mom  
 
 
@@ -45,7 +44,6 @@ bool isPalindrome(char * str_s, int s, int e)
 		return false;
 	
 	if(e - s > 1) // in case of len is even
-	//if( end - begin > 1 )
 		return isPalindrome(str_s, s+1, e-1);
 	
 	return true;
@@ -182,6 +180,9 @@ int main()
 
 > **point: 정수 n을 만들 수 있는 경우의 수를 리턴하는 함수 - f(n)**  
 > f(n) = f(n-1) + f(n-2) + f(n-3)  
+
+
+![recursive_img](/images/recursiveimg.png)  
 
 
 ```cpp
