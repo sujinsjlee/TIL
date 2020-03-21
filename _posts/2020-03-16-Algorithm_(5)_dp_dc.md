@@ -1,10 +1,10 @@
 ---
 title: "Algorithm - (5) 동적계획법과 분할 정복"
+use_math: true
 categories:
   - Algorithm
 tags:
   - Algorithm
-use_math: true
 ---
 
 ## 동적 계획법 (Dynamic Programming)과 분할 정복 (Divide and Conquer)
@@ -55,7 +55,9 @@ F_0=0
 F_1=1  
 F_n=F_{n-1}+F_{n-2}\qquad(n\in\{2,3,4,\dots\})  
 
-1. 분할 정복  
+
+1. 분할 정복 
+
 ```cpp
 #include<iostream>
 #include<cstdio>
@@ -84,7 +86,8 @@ int main()
 
 
 2. 동적 계획법
-* C++  
+
+### C++  
 
 ```cpp
 #include<iostream>
@@ -117,7 +120,8 @@ int main()
 }
 ```
 
-* Python  
+### Python  
+
 ```python
 def fibo_dp(num):
     cache = [ 0 for index in range(num + 1)]
