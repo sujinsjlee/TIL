@@ -1,5 +1,5 @@
 ---
-title: "Algorithm - (8) 퀵 소트"
+title: "Algorithm - (7) 퀵 소트"
 categories:
   - Algorithm
 tags:
