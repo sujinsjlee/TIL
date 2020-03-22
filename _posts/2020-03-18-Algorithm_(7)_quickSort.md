@@ -80,7 +80,7 @@ def qsort(data):
     return qsort(left) + [pivot] + qsort(right)
 ```
 
-```phtyon
+```python
 import random
 
 data_list = random.sample(range(100), 10)
