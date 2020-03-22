@@ -156,3 +156,5 @@ void swap(int* a, int* b)
     *b = temp;  
 }
 ```
+
+[quick_sort_geeksforgeeks](https://www.geeksforgeeks.org/quick-sort/)
