@@ -126,7 +126,7 @@ void quickSort(int* data, int start, int end)
 	if(start >= end)
 		return;
 	
-	//index means the pivot data index of the result for quickSplit 
+	//index means the pivot data's index of the result for quickSplit 
 	int index = quickSplit(data, start, end); 
 	
 	quickSort(data, start, index-1);
