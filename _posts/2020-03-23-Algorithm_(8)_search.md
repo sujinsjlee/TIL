@@ -17,6 +17,7 @@ use_math: true
 	* $O(n)$  
 
 * C++ example   
+
 ```cpp
 #include<iostream>
 #include<cstdio>
@@ -49,6 +50,7 @@ int main()
 ```
 
 * Python example  
+
 ```python
 from random import *
 
