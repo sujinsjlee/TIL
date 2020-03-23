@@ -156,7 +156,7 @@ int main()
 ```
 * merge sort 코드와 유사한 점 참고할 것  
 	* divide and conqure function 에서 인자로 data, left, right 를 넘겨줌  
-* https://www.geeksforgeeks.org/binary-search/  
+* [geeksforgeeks](https://www.geeksforgeeks.org/binary-search/)  
 
 ## Python
 
