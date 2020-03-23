@@ -60,7 +60,7 @@ for num in range(10):
 ```
 
 ```python
-def sequencial(data_list, search_data):
+def sequential(data_list, search_data):
     for index in range(len(data_list)):
         if data_list[index] == search_data:
             return index
@@ -101,7 +101,7 @@ def sequencial(data_list, search_data):
 		- 그렇지 않다면, data_list의 중간값은 find_data 인 경우로, return data_list 중간위치  
 {: .notice--primary}
 
-## 알고리즘 시간 복잡
+## 알고리즘 시간 복잡도
 * n개의 리스트를 매번 2로 나누어 1이 될 때까지 비교연산을 k회 진행
 	- n X $\frac { 1 }{ 2 }$ X $\frac { 1 }{ 2 }$ X $\frac { 1 }{ 2 }$ ... = 1
 	- n X $\frac { 1 }{ 2 }^k$ = 1
@@ -114,9 +114,49 @@ def sequencial(data_list, search_data):
 ## C++ 
 
 ```cpp
+#include<iostream>
+#include<cstdio>
 
+using namespace std;
+
+void binarySearch(int* data, int left, int right, int key)
+{
+	if(right < left)
+	{
+		cout << "search fail" << endl;
+		return;
+	}
+	
+	int mid = left + (right-left)/2;
+	
+	if(data[mid] == key)
+	{
+		cout << "search success" << endl;
+		return;
+	}
+	
+	if(data[mid] < key)
+		binarySearch(data, mid+1, right, key);
+	else
+		binarySearch(data, left, mid-1, key);
+}
+
+int main()
+{
+	int list_s[] = {2,5,8,12,16,23,38,56,72,91};
+	
+	int len = sizeof(list_s) / sizeof(list_s[0]);
+	
+	binarySearch(list_s, 0, len-1, 23);
+	binarySearch(list_s, 0, len-1, 10);
+	
+	return 0;
+
+}
 ```
-
+* merge sort 코드와 유사한 점 참고할 것  
+	* divide and conqure function 에서 인자로 data, left, right 를 넘겨줌  
+* https://www.geeksforgeeks.org/binary-search/  
 
 ## Python
 
