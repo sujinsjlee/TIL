@@ -5,6 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
+link: https://mg729.github.io/algorithm/2020/03/17/Algorithm_(6)_mergesort/
 ---
 
 ## 병합 정렬 (merge sort)

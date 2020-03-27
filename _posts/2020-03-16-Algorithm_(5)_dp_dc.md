@@ -5,6 +5,7 @@ categories:
   - Algorithm
 tags:
   - Algorithm
+link: https://mg729.github.io/algorithm/2020/03/16/Algorithm_(5)_dp_dc/
 ---
 
 ## 동적 계획법 (Dynamic Programming)과 분할 정복 (Divide and Conquer)

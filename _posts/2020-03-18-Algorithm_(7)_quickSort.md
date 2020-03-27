@@ -5,6 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
+link: https://mg729.github.io/algorithm/2020/03/18/Algorithm_(7)_quicksort/
 ---
 
 ## 퀵 정렬 (Quick sort)  
