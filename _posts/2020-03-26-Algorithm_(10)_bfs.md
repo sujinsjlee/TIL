@@ -5,7 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
-<!--link: -->
+link: https://mg729.github.io/algorithm/2020/03/26/Algorithm_(9)_bfs/
 ---
 
 ## BFS (Breadth-First Search)   
@@ -105,13 +105,14 @@ int main()
 	return 0;
 }
 ```
-* **int visited[7];**   
+`int visited[7];`   
 	* visited 배열 원소를 모두 0 (false)로 초기화   
-* **vector<int> need_visit[8];**   
+`vector<int> need_visit[8];`   
 	* 그래프 인덱스가 1부터 시작하도록 설정    
 
 ## Python
-* 파이썬에서 제공하는 딕셔너리와 리스트 자료 구조를 활용해서 그래프를 표현할 수 있음 
+* 파이썬에서 제공하는 딕셔너리와 리스트 자료 구조를 활용해서 그래프를 표현할 수 있음  
+ 
 ```python
 graph = dict()
 
@@ -128,6 +129,7 @@ graph['J'] = ['I']
 ```
 
 * pop(), extend() 함수
+
 ```python
 data = [1, 2, 3]
 data.pop() #뒤 데이터 삭제
@@ -137,6 +139,7 @@ data
 ```
 
 * BFS 코드
+
 ```python
 def bfs(graph, start_node):
     visited = list()
@@ -154,6 +157,7 @@ def bfs(graph, start_node):
 ```
 
 * 시간복잡도
+
 ```python
 def bfs(graph, start_node):
     visited = list()

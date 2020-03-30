@@ -5,7 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
-<!--link: -->
+link: https://mg729.github.io/algorithm/2020/03/29/Algorithm_(10)_dfs/
 ---
 
 ## DFS (Depth-First Search)
