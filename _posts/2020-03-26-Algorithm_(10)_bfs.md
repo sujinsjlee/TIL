@@ -1,6 +1,5 @@
 ---
 title: "Algorithm - (10) BFS"
-published: false
 categories:
   - Algorithm
 tags:
@@ -16,7 +15,7 @@ use_math: true
 
 <center>
 	<a href="https://en.wikipedia.org/wiki/Breadth-first_search">
-		<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif"/>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/450px-Breadth-first-tree.svg.png"/>
 	</a>
 </center>
 
@@ -32,9 +31,84 @@ use_math: true
 
 ## C++ 
 ```cpp
+#include<iostream>
+#include<cstdio>
+#include<vector> //to store data
+#include<queue>
 
+using namespace std;
+
+int number = 7;
+int visited[7]; 
+vector<int> need_visit[8];
+ 
+void bfs(int start)
+{
+	queue<int> q;
+	q.push(start);
+	
+	visited[start] = true;
+	while(!q.empty())
+	{
+		int x = q.front();
+		q.pop();
+		printf("%d ", x);
+		
+		for(int i = 0; i < need_visit[x].size(); ++i)
+		{
+			int y = need_visit[x][i];
+			if(!visited[y])
+			{
+				q.push(y);
+				visited[y] = true;
+			}
+		}
+	}
+}
+int main()
+{
+	need_visit[1].push_back(2);
+	need_visit[2].push_back(1);
+	
+	need_visit[1].push_back(3);
+	need_visit[3].push_back(1);
+	
+	need_visit[1].push_back(4);
+	need_visit[4].push_back(1);
+	
+	need_visit[2].push_back(5);
+	need_visit[5].push_back(2);
+
+	need_visit[2].push_back(6);
+	need_visit[6].push_back(2);
+	
+	need_visit[4].push_back(7);
+	need_visit[7].push_back(4);
+	
+	need_visit[4].push_back(8);
+	need_visit[8].push_back(4);
+	
+	need_visit[5].push_back(9);
+	need_visit[9].push_back(5);
+
+	need_visit[5].push_back(10);
+	need_visit[10].push_back(5);	
+		
+	need_visit[7].push_back(11);
+	need_visit[11].push_back(7);
+	
+	need_visit[7].push_back(12);
+	need_visit[12].push_back(7);
+	
+	bfs(1);
+	
+	return 0;
+}
 ```
-
+* **int visited[7];**   
+	* visited 배열 원소를 모두 0 (false)로 초기화   
+* **vector<int> need_visit[8];**   
+	* 그래프 인덱스가 1부터 시작하도록 설정    
 
 ## Python
 * 파이썬에서 제공하는 딕셔너리와 리스트 자료 구조를 활용해서 그래프를 표현할 수 있음 
@@ -99,3 +173,4 @@ def bfs(graph, start_node):
 - 위 코드에서 while need_visit 은 V + E 번 만큼 수행함  
 	- 간선의 수 :9 노드의 수: 10  
 	- 시간복잡도 : $O(19)$  
+	

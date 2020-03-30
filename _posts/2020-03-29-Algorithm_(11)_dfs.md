@@ -1,6 +1,5 @@
 ---
 title: "Algorithm - (11) DFS"
-published: false
 categories:
   - Algorithm
 tags:
@@ -36,8 +35,72 @@ use_math: true
   
 ## C++
 ```cpp
+#include <iostream>
+#include <cstdio> 
+#include <vector>
 
+using namespace std;
+
+int number = 7;
+int visited[8];
+vector<int> need_visit[8];
+ 
+void dfs(int start)
+{
+	if(visited[start])
+		return;
+	visited[start] = true;
+	cout << start << " ";
+	
+	for(int i = 0; i < need_visit[start].size(); ++i)
+	{
+		int next_index = need_visit[start][i];
+		dfs(next_index);
+	}
+}
+
+int main()
+{
+	need_visit[1].push_back(2);
+	need_visit[2].push_back(1);
+	
+	need_visit[2].push_back(3);
+	need_visit[3].push_back(2);
+	
+	need_visit[3].push_back(4);
+	need_visit[4].push_back(3);
+	
+	need_visit[3].push_back(5);
+	need_visit[5].push_back(3);
+
+	need_visit[2].push_back(6);
+	need_visit[6].push_back(2);
+	
+	need_visit[1].push_back(7);
+	need_visit[7].push_back(1);
+	
+	need_visit[1].push_back(8);
+	need_visit[8].push_back(1);
+	
+	need_visit[8].push_back(9);
+	need_visit[9].push_back(8);
+
+	need_visit[9].push_back(10);
+	need_visit[10].push_back(9);	
+		
+	need_visit[9].push_back(11);
+	need_visit[11].push_back(9);
+	
+	need_visit[8].push_back(12);
+	need_visit[12].push_back(8);
+	
+	dfs(1);
+	
+	return 0;
+}
 ```
+* **재귀함수는 _스택_처럼 동작**
+* 보통 프로그래밍 문제를 풀이할 때 stack 을 구현하기보다는 재귀함수를 호출하면 더 코드가 깔끔    
 
 
 ## Python
