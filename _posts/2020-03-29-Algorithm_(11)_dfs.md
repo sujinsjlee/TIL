@@ -104,7 +104,8 @@ int main()
 
 
 ## Python
-* 파이썬에서 제공하는 딕셔너리와 리스트 자료 구조를 활용해서 그래프를 표현할 수 있음
+* 파이썬에서 제공하는 딕셔너리와 리스트 자료 구조를 활용해서 그래프를 표현할 수 있음  
+
 ```python
 graph = dict()
 
@@ -120,6 +121,7 @@ graph['I'] = ['C', 'J']
 graph['J'] = ['I']
 ```
 ​
+
 ```python
 def dfs(graph, start_node):
     visited, need_visit = list(), list()
