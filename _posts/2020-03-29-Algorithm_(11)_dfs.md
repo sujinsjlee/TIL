@@ -41,9 +41,8 @@ link: https://mg729.github.io/algorithm/2020/03/29/Algorithm_(10)_dfs/
 
 using namespace std;
 
-int number = 7;
-int visited[8];
-vector<int> need_visit[8];
+int visited[13];
+vector<int> graph[13];
  
 void dfs(int start)
 {
@@ -52,47 +51,47 @@ void dfs(int start)
 	visited[start] = true;
 	cout << start << " ";
 	
-	for(int i = 0; i < need_visit[start].size(); ++i)
+	for(int i = 0; i < graph[start].size(); ++i)
 	{
-		int next_index = need_visit[start][i];
+		int next_index = graph[start][i];
 		dfs(next_index);
 	}
 }
 
 int main()
 {
-	need_visit[1].push_back(2);
-	need_visit[2].push_back(1);
+	graph[1].push_back(2);
+	graph[2].push_back(1);
 	
-	need_visit[2].push_back(3);
-	need_visit[3].push_back(2);
+	graph[2].push_back(3);
+	graph[3].push_back(2);
 	
-	need_visit[3].push_back(4);
-	need_visit[4].push_back(3);
+	graph[3].push_back(4);
+	graph[4].push_back(3);
 	
-	need_visit[3].push_back(5);
-	need_visit[5].push_back(3);
+	graph[3].push_back(5);
+	graph[5].push_back(3);
 
-	need_visit[2].push_back(6);
-	need_visit[6].push_back(2);
+	graph[2].push_back(6);
+	graph[6].push_back(2);
 	
-	need_visit[1].push_back(7);
-	need_visit[7].push_back(1);
+	graph[1].push_back(7);
+	graph[7].push_back(1);
 	
-	need_visit[1].push_back(8);
-	need_visit[8].push_back(1);
+	graph[1].push_back(8);
+	graph[8].push_back(1);
 	
-	need_visit[8].push_back(9);
-	need_visit[9].push_back(8);
+	graph[8].push_back(9);
+	graph[9].push_back(8);
 
-	need_visit[9].push_back(10);
-	need_visit[10].push_back(9);	
+	graph[9].push_back(10);
+	graph[10].push_back(9);	
 		
-	need_visit[9].push_back(11);
-	need_visit[11].push_back(9);
+	graph[9].push_back(11);
+	graph[11].push_back(9);
 	
-	need_visit[8].push_back(12);
-	need_visit[12].push_back(8);
+	graph[8].push_back(12);
+	graph[12].push_back(8);
 	
 	dfs(1);
 	

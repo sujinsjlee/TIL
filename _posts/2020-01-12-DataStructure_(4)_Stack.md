@@ -39,22 +39,27 @@ Last In First Out(LIFO)
 ```c++
 #include <iostream>
 #include <stack>
+
 using namespace std;
 
 int main()
 {
-    stack<int> s1; 
+	stack <int> s;
+	s.push(1);
+	s.push(2);
+	s.push(3);
 	
-    s1.push(10);
-    s1.push(20);
-    s1.push(30);
-    
-    cout << s1.top() << endl; //30
-    
-    s1.pop();
-    
-    cout << s1.top() << endl; //20
-    
+	s.pop();
+	s.push(4);
+	s.pop();
+	while(!s.empty())
+	{
+		cout << s.top() << " ";
+		s.pop();
+	}
+	
+	//2 1
+	return 0;
 }
 ```
 

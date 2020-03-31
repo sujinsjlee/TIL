@@ -42,6 +42,34 @@ int main()
 }
 {% endhighlight %}
 
+
+```cpp
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main()
+{
+	queue<int> q;
+	q.push(1);
+	q.push(2);
+	q.push(3);
+	
+	q.pop();
+	q.push(4);
+	q.pop();
+			
+	while(!q.empty())
+	{
+		cout << q.front()<< " ";
+		q.pop();
+	}
+	//3 4
+	return 0;
+}
+```
+
 ##  Priority Queue  
 [c++ priority queue](https://en.cppreference.com/w/cpp/container/priority_queue).  
 * 각각의 데이터를 넣을 때마다 데이터의 우선순위번호를 함께넣음  
