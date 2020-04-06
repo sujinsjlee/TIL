@@ -1,6 +1,5 @@
 ---
 title: "Algorithm - (12) 탐욕 알고리즘"
-published: false
 categories:
   - Algorithm
 tags:
@@ -69,7 +68,38 @@ min_coin_count(4720, coin_list)  ##(31, [[500, 9], [100, 2], [50, 0], [1, 20]])
 #### C++
 
 ```cpp
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
 
+using namespace std;
+
+bool compare(int a, int b)
+{
+	return a > b;
+}
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	
+	int answer = 0;
+	int coins[] = {1, 100, 50, 500};
+	int length = sizeof(coins)/sizeof(coins[0]);
+	
+	sort(coins, coins+4, compare);
+	
+	for(int i = 0; i < length; ++i)
+	{
+		int balance = n % coins[i];
+		answer += (n/coins[i]);
+		printf("%d %d %d \n", coins[i], n/coins[i], balance);
+		n = balance;
+	}
+	
+	printf("%d", answer);
+	return 0;
+}
 ```
 
 ### 부분 배낭 문제 (Fractional Knapsack Problem)
