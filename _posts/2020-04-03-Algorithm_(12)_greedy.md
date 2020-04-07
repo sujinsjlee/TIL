@@ -1,5 +1,6 @@
 ---
 title: "Algorithm - (12) 탐욕 알고리즘"
+published: false
 categories:
   - Algorithm
 tags:
