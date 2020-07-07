@@ -397,6 +397,161 @@ int main()
 	- 교체 가능하고 확장성이 좋다  
 
 ## RTTI
+- Run Time Type Information  
+	- 실행시간에 **타입의 정보를 얻을 때 사용**하는 기술  
 
+- `<typeinfo>` 헤더를 포함해야  RTTI 기술을 사용할 수 있음  
+- **typeid** 연산자를 사용하면 타입의 정보를 담은 **type_info**객체를 얻을 수 있다  
+- type_info 객체의 멤버함수 **name()** 사용  
+
+```cpp
+#include <iostream>
+#include <typeinfo>
+
+int main()
+{
+    int  n1 = 10;
+    auto n2 = n1; // n2 - int 
+    
+    const std::type_info& t1 = typeid(n2);
+    
+    std::cout << t1.name() << std::endl;  //int
+}
+```
+- std::type_info  
+	- 타입의 정보를 담고 있는 클래스  
+	- 사용자가 직접 객체를 만들수는 없고, **typeid()** 연산자를 통해서만 얻을 수 있음  
+
+- 변수 n 이 int 타입인지 **조사**하는 일반적인 코드
+```cpp
+if( typeid(n2) == typeid(int))
+{
+}
+```
+## dynamic_cast
+- 함수가 인자로 기반클래스의 포인터를 받으면  
+	- 기반 클래스 뿐 아니라 **모든 파생 클래스를 전달**받을 수 있다  
+
+- **기반 클래스 포인터로 파생 클래스의 고유멤버에 접근할 수 없다**  
+	- 파생클래스의 고유멤버에 접근하려면 파생클래스 타입으로 캐스팅(Downcasting) 해야한다  
+
+- typeid
+	- 가상함수가 없는 객체 (non plymorphic type): 컴파일 시간에 포인터 타입으로 조사  
+	- 가상함수가 있는 객체 (plymorphic type): 실행시간 타입조사  
+	
+```cpp
+#include <iostream>
+#include <typeinfo>
+
+class Animal 
+{
+public:
+    virtual ~Animal() {}
+};
+
+class Dog : public Animal 
+{
+public:
+    int color;
+};
+
+void foo(Animal* p)
+{
+    //const std::type_info& t = typeid(p);
+    const std::type_info& t = typeid(*p);
+    std::cout << t.name() << std::endl;
+    
+    if ( typeid(*p) == typeid(Dog))
+    {
+        Dog* pDog = static_cast<Dog*>(p);
+        pDog->color = 10;
+        std::cout << "Dog" << std::endl;
+    }
+}
+
+int main()
+{
+    Animal a; foo(&a);
+    Dog    d; foo(&d);    
+}
+```
+- upcasting vs. downcasting
+	- upcasting : 파생클래스 포인터를 기반 클래스 타입으로 캐스팅하는 것  
+		- 항상 안전하다
+	- downcasting : 기반 클래스 포인터를 파생 클래스 타입으로 캐스팅하는 것  
+		- 안전하지 않을 수도 있다  
+
+- downcasting 과 casting 연산자  
+	- **static_cast** : 잘못된 downcasting을 조사할 수 없다  
+		- 단, 컴파일 시간에 캐스팅을 수행하므로 오버헤드가 없다  
+	- **dynamic_cast** : 잘못된 downcasting을 하면 0을 반환함  
+		- 실행 시간에 캐스팅을 수행하므로 약간의 오버헤드가 있다  
+		
+- 즉 아래 코드에서 Dog 객체가 확실하다면 static_cast를 쓰는게 좋은데 Dog 일지아닐지 불확실하면 dynamic_cast  
+
+```cpp
+#include <iostream>
+#include <typeinfo>
+
+class Animal 
+{
+public:
+    virtual ~Animal() {}
+};
+
+class Dog : public Animal 
+{
+public:
+    int color;
+};
+
+void foo(Animal* p)
+{
+    //Dog* pDog = static_cast<Dog*>(p);
+    
+    Dog* pDog = dynamic_cast<Dog*>(p);
+    
+    if ( pDog != 0 )
+    {
+        pDog->color = 10;
+    }
+    std::cout << pDog << std::endl;
+}
+
+int main()
+{
+    Animal a; foo(&a);
+    Dog    d; foo(&d);    
+}
+```
 ## 다중 상속 
+- 다중 상속이란? 
+	- 클래스가 2개 이상의 기반 클래스로 부터 **상속** 되는 것  
+- 다중상속의 문제점  
+	- 서로다른 기반클래스에 동일 이름의 멤버가 있을 때 이름 충돌  
+```cpp
+class InputFile
+{
+public:
+    void read() {}
+    void open() {}
+};
 
+class OutputFile
+{
+public:
+    void write(){}
+    void open() {}
+};
+
+class IOFile : public InputFile, public OutputFile
+{    
+};
+
+int main()
+{
+    IOFile file;
+    //file.open();
+    file.InputFile::open();
+}
+```
