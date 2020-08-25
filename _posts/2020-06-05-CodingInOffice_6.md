@@ -1,12 +1,12 @@
 ---
-title: "코딩잘하고싶다 - macro?"
+title: "[ETC] - macro?"
 published : false
 categories:
   - CodingInOffice
 tags:
   - CodingInOffice
 ---
-
+<!--코딩잘하고싶다-->
 
 ## macro 로 정의하는 것들은 왜 macro로 정의하나?
 

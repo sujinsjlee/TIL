@@ -1,11 +1,11 @@
 ---
-title: "코딩잘하고싶다 - Tree"
+title: "[ETC] - Tree"
 categories:
   - CodingInOffice
 tags:
   - CodingInOffice
 ---
-
+<!--코딩잘하고싶다-->
 ## graph에서 parent node를 삭제하는데 자식노드가 존재하는 경우에 대해서 handling을 어떻게 할 것인가
 
 

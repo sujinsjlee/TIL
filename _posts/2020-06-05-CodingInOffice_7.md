@@ -1,12 +1,11 @@
 ---
-title: "코딩잘하고싶다 - code에대해서 받은 comment들"
-published : false
+title: "[ETC] code에대해서 받은 comment들"
 categories:
   - CodingInOffice
 tags:
   - CodingInOffice
 ---
-
+<!--코딩잘하고싶다-->
 
 ## Doxygen comment 
 - Add some short descriptive comment (preferably doxygn format) on what it does and what it returns  

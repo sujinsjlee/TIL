@@ -1,9 +1,9 @@
 ---
-title: "코딩잘하고싶다 - C++ 상속"
+title: "C++ 상속"
 categories:
-  - CodingInOffice
+  - C++
 tags:
-  - CodingInOffice
+  - C++
 ---
 
 ## 상속

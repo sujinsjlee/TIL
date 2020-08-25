@@ -1,13 +1,12 @@
 ---
-title: "코딩잘하고싶다 - minor code notice"
-published : false
+title: "[ETC] - minor code notice"
 categories:
   - CodingInOffice
 tags:
   - CodingInOffice
 ---
 
-
+<!--코딩잘하고싶다-->
 ## string
 ```cpp
 string s1;

@@ -1,12 +1,12 @@
 ---
-title: "코딩잘하고싶다 - C++ Concept"
+title: "[ETC] - C++ Concept"
 publish:false
 categories:
   - CodingInOffice
 tags:
   - CodingInOffice
 ---
-
+<!--코딩잘하고싶다-->
 ## Concept 
 - __Client__ : The originator of a request. The destinaction endpoint of a response.  
 - __Server__ : The destination endpoint of a request. The originator of a response.  
