@@ -38,7 +38,10 @@ tags:
 d839f20a A
 ```
 * __HEAD__ is currently pointing at D
-* Squash D,C,B into A
+
+## git reabase -i HEAD~3
+>  Squash D,C,B into A
+
 
 ```
 git reabase -i HEAD~3
@@ -66,3 +69,36 @@ s 4beaeec1 D
   * **r, reword** : use commint, but edit the commit message
   * e, edit : use commit, but stop for amending
   * **s, squash** : use commit, but meld inro previous commit
+
+
+## git merge --squash [branch name]
+> multiple commits can be squashed by **git merge --squash [branch name]** command  
+
+
+```git
+(feature_branch)$  touch a.txt
+(feature_branch)$  git commit -m "A"
+
+(feature_branch)$  touch b.txt
+(feature_branch)$  git commit -m "B"
+
+(feature_branch)$  touch c.txt
+(feature_branch)$  git commit -m "C"
+
+(feature_branch)$  touch d.txt
+(feature_branch)$  git commit -m "D"
+
+(feature_branch)$  git checkout master
+(master)$  git merge --squash feature_branch
+(master)$  git status
+D
+C
+B
+A
+...
+
+(master)$  git checkuot -b personal/test
+(personal/test)$ git commit
+```
+
+* in above example, **git merge --squash [branch name]** will squash all commits different from master into one commit  
