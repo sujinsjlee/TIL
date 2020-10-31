@@ -1,6 +1,5 @@
 ---
 title: "[ETC] - C++ Concept"
-publish: false
 categories:
   - CodingInOffice
 tags:
