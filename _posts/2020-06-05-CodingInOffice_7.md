@@ -1,5 +1,5 @@
 ---
-title: "[ETC] code에대해서 받은 comment들"
+title: "[ETC] - code에대해서 받은 comment들"
 categories:
   - CodingInOffice
 tags:
