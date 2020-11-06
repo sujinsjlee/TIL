@@ -4,7 +4,7 @@ categories:
   - C++
 tags:
   - C++
-link:
+link: https://mg729.github.io/c++/2020/10/19/C++_vectorStl/
 ---
 
 # ABOUT Vector index
