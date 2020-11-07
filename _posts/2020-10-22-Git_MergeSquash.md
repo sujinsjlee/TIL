@@ -9,29 +9,29 @@ tags:
 # Merge Squash
 > 여러개의 커밋 로그를 하나로 묶기  
 
-```
-(master) git init
-(master) git add .
-(master) git commit -m 'initial file'
-(master) git checkout -b feature
+```shell
+(master)$  git init
+(master)$  git add .
+(master)$  git commit -m 'initial file'
+(master)$  git checkout -b feature
 
-(feature) touch fileA
-(feature) git add .
-(feature) git commit -m 'feature file - A'
+(feature)$  touch fileA
+(feature)$  git add .
+(feature)$  git commit -m 'feature file - A'
 
-(feature) touch fileB
-(feature) git add .
-(feature) git commit -m 'feature file - B'
+(feature)$  touch fileB
+(feature)$  git add .
+(feature)$  git commit -m 'feature file - B'
 
-(feature) touch fileA
-(feature) git add .
-(feature) git commit -m 'feature file - C'
+(feature)$  touch fileA
+(feature)$  git add .
+(feature)$  git commit -m 'feature file - C'
 
-(feature) touch fileA
-(feature) git add .
-(feature) git commit -m 'feature file - D'
+(feature)$  touch fileA
+(feature)$  git add .
+(feature)$  git commit -m 'feature file - D'
 
-(feature) git log --oneline
+(feature)$  git log --oneline
 4beaeec1 D
 670fb04e C
 93a666e1 B
@@ -43,8 +43,8 @@ d839f20a A
 >  Squash D,C,B into A
 
 
-```
-git reabase -i HEAD~3
+```shell
+$ git reabase -i HEAD~3
 ```
 * An editor will be fired up with all the commits in your current branch (ignoring merge commits), which come after the given commit. You can reorder the commits in this list to your heart’s content, and you can remove them. The list looks more or less like this:
 
@@ -75,7 +75,8 @@ s 4beaeec1 D
 > multiple commits can be squashed by **git merge --squash [branch name]** command  
 
 
-```git
+
+```shell
 (feature_branch)$  touch a.txt
 (feature_branch)$  git commit -m "A"
 
@@ -95,7 +96,6 @@ D
 C
 B
 A
-...
 
 (master)$  git checkuot -b personal/test
 (personal/test)$ git commit
