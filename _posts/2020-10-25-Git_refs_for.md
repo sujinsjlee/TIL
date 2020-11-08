@@ -18,7 +18,7 @@ tags:
 * 모든 refs는 .git/refs에 저장 
 * 하위에는 heads, remotes, tags 디렉토리가 존재  
 
-```git
+```console
 $ pwd
 .git/refs
 
@@ -45,8 +45,8 @@ $ cat master
 When pushing a new or updated commit to Gerrit, you push that commit using a reference, in the refs/for namespace. This reference must also define the target branch, such as `refs/for/[BRANCH_NAME]`.
 
 For example, to create a new change on the master branch, you would use the following command:
-```
-git push origin HEAD:refs/for/master
+```cnosole
+$ git push origin HEAD:refs/for/master
 ```
 The `refs/for/[BRANCH_NAME]` syntax allows Gerrit to differentiate between commits that are pushed for review and commits that are pushed directly into the repository.
 
