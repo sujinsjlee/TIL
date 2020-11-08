@@ -39,12 +39,12 @@ d839f20a A
 ```
 * __HEAD__ is currently pointing at D
 
-## git reabase -i HEAD~3
+## git rebase -i HEAD~3
 >  Squash D,C,B into A
 
 
 ```shell
-$ git reabase -i HEAD~3
+$ git rebase -i HEAD~3
 ```
 * An editor will be fired up with all the commits in your current branch (ignoring merge commits), which come after the given commit. You can reorder the commits in this list to your heart’s content, and you can remove them. The list looks more or less like this:
 
