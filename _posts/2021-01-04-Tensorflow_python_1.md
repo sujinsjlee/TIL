@@ -1,5 +1,5 @@
 ---
-title: "Tensorflow - Python"
+title: "Tensorflow - Python (1) 레모네이드 판매 예측"
 categories:
   - Tensorflow
 tags:
