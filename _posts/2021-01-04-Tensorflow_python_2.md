@@ -1,10 +1,11 @@
 ---
-title: "Tensorflow - Python (2) 보스턴 집 값 예측"
+title: "Tensorflow - Python (2) Perceptron, Weight, Bias"
 categories:
   - Tensorflow
 tags:
   - Tensorflow
 ---
+
 ## 보스턴 집 값 예측
 - 각각의 행 : town
 - 열 : 해당 town에 영향을 미치는 변수
@@ -81,3 +82,7 @@ print(종속[5:10])
 # 모델의 수식 확인
 print(model.get_weights()) # bias 값을 print된 결과에서 array에서 볼 수 있음
 ```
+
+
+
+> 강의 출처 : [생활코딩](https://opentutorials.org/course/4570)

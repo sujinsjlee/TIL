@@ -1,5 +1,5 @@
 ---
-title: "Tensorflow - Python (1) 레모네이드 판매 예측"
+title: "Tensorflow - Python (1) Pandas"
 categories:
   - Tensorflow
 tags:
@@ -43,6 +43,9 @@ tags:
 - 단축키
     - ctrl + enter : 실행
     - shift + enter : 실행 후 다음셀로 넘어감
+
+- 참고 : 학습할때마다 초기화를 막기 위해서는 `model.fit` 코드 부분만 따로 셀을 만들어 주셔야 합니다. 
+    - fit을 여러번 돌리면 추가 학습을 하지만  model.compile 코드가 실행되면 모델을 초기화합니다.
 
 ## 표를 다루는 도구 - 판다스
 >  pandas는 데이터 처리를 전문적으로 할 수 있는 함수들을 모아놓은 라이브러리  
@@ -177,3 +180,6 @@ model.fit(독립, 종속, epochs=10)
 print(model.predict(독립)) 
 print(model.predict([[15]]))
 ```
+
+
+> 강의 출처 : [생활코딩](https://opentutorials.org/course/4570)

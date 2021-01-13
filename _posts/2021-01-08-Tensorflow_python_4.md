@@ -136,3 +136,7 @@ model.fit(독립, 종속, epochs=100)
 print(model.predict(독립[:5]))
 print(종속[:5])
 ```
+
+
+> 강의 출처 : [생활코딩](https://opentutorials.org/course/4570)
+

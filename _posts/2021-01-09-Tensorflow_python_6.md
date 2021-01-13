@@ -1,5 +1,5 @@
 ---
-title: "Tensorflow - Python (5) 데이터를 위한 팁 2"
+title: "Tensorflow - Python (6) 데이터를 위한 팁 2"
 categories:
   - Tensorflow
 tags:
@@ -124,3 +124,7 @@ model.compile(loss='categorical_crossentropy',
 # 3.데이터로 모델을 학습(FIT)합니다.
 model.fit(독립, 종속, epochs=1000)
 ```
+
+
+
+> 강의 출처 : [생활코딩](https://opentutorials.org/course/4570)

@@ -60,3 +60,6 @@ print(mean)
 아이리스['꽃잎폭'] = 아이리스['꽃잎폭'].fillna(mean)
 아이리스.tail()
 ```
+
+
+> 강의 출처 : [생활코딩](https://opentutorials.org/course/4570)

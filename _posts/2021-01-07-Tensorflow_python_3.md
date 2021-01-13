@@ -80,3 +80,6 @@ print(종속[-5:])
 # weights & bias 출력
 print(model.get_weights())
 ```
+
+
+> 강의 출처 : [생활코딩](https://opentutorials.org/course/4570)
