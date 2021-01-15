@@ -89,6 +89,52 @@ optional<T (not a ref)> make_optional( bool condition, T const& v )
 - Returns: optional<T>(v) for the deduced type T of v.
 - Returns: optional<T>(condition,v) for the deduced type T of v.
 
+- Example 1
+    - when using make_optional - can utilize condition
+    - Creates an optional<T> initialized with 'val' IFF cond is true, otherwise creates an **uninitialized optional**.
+    
+```cpp
+#include "boost/optional/optional.hpp" // boost/none.hpp is included automatically
+
+boost::optional<int> foo ( int a )
+{
+  return some_condition(a) ? boost::make_optional(a) : boost::none ; 
+  // NOTE: in real code you can just use this: make_optional(some_condition(a), a) 
+}
+```
+
+- defined code 
+
+```cpp
+typedef optional_detail::optional_base<T> base ;
+// Creates an optional<T> initialized with 'val' IFF cond is true, otherwise creates an uninitialzed optional<T>.
+// Can throw if T::T(T const&) does
+optional_base ( bool cond, argument_type val )
+  :
+  m_initialized(false)
+{
+  if ( cond )
+    construct(val);
+}
+
+// Creates an optional<T> initialized with 'val' IFF cond is true, otherwise creates an uninitialized optional.
+// Can throw if T::T(T const&) does
+optional ( bool cond, argument_type val ) : base(cond,val) {}
+
+
+// Returns optional<T>(cond,v)
+template<class T>
+inline
+optional<T> make_optional ( bool cond, T const& v )
+{
+  return optional<T>(cond,v);
+}
+```
+## uninitialized optional
+- **uninitialized optional**
+    - In C++ there is no formal notion of uninitialized objects, which means that objects always have an initial value even if indeterminate. As discussed on the previous section, this has a drawback because you need additional information to tell if an object has been effectively initialized. One of the typical ways in which this has been historically dealt with is via a special value: EOF,npos,-1, etc... This is equivalent to adding the special value to the set of possible values of a given type.  
+    - when a variable is declared as optional<T> and no initial value is given, the variable is formally uninitialized. A formally uninitialized optional object has conceptually no value at all and this situation can be tested at runtime. It is formally undefined behavior to try to access the value of an uninitialized optional. An uninitialized optional can be assigned a value, in which case its initialization state changes to initialized. Furthermore, given the formal treatment of initialization states in optional objects, it is even possible to reset an optional to uninitialized.
+
 ## boost::none
 
 ```c++
