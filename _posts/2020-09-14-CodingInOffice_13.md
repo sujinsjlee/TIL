@@ -18,4 +18,4 @@ tags:
 ## Test coverage variance
 * [GoogleTest User’s Guide](https://google.github.io/googletest/)
 * [TDD](https://en.wikipedia.org/wiki/Test-driven_development)
-* [Branch coverage(White-Box testing)] (https://www.cs.odu.edu/~cs252/Book/branchcov.html)
+* [Branch coverage(White-Box testing)](https://www.cs.odu.edu/~cs252/Book/branchcov.html)
