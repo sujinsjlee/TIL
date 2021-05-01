@@ -5,6 +5,7 @@ categories:
 tags:
   - C++
 ---
+
 ## namespace의 필요성  
 * 함수의 구조체등의 **이름 충돌** 해결  
 
@@ -87,3 +88,6 @@ int main()
 ## std namespace  
 > C++ 표준의 모든 요소는 **std** namespace 안에 있음  
  
+## namespace rule
+> Two classes with the same name can be created inside 2 different namespaces in a single program.  
+> **Inside a namespace, no two classes can have the same name.**
