@@ -8,6 +8,8 @@ tags:
 
 ## 조합 
 
+- c++ code
+
 ```c++
 #include<bits/stdc++.h>
 
