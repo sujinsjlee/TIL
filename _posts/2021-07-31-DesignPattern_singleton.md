@@ -1,5 +1,5 @@
 ---
-title: "Design Pattern - Sigleton Pattern"
+title: "Design Pattern - Singleton Pattern"
 categories:
   - Design Pattern
 tags:
