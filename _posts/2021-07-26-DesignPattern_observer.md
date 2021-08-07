@@ -1,5 +1,5 @@
 ---
-title: "Design Pattern - Proxy Pattern"
+title: "Design Pattern - Observer Pattern"
 categories:
   - Design Pattern
 tags:
