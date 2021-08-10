@@ -4,6 +4,7 @@ categories:
   - CodingInOffice
 tags:
   - CodingInOffice
+published: false
 ---
 <!--코딩잘하고싶다-->
 - veriyfyMessage 함수에서 에러가 나서 ....계속 verifyMessage 함수에서 선언된 객체의 class 를 변경하려고 애썻는데

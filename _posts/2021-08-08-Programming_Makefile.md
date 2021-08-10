@@ -1,9 +1,9 @@
 ---
 title: "Programming - Understanding Makefile"
 categories:
-  - CodingInOffice
+  - Programming
 tags:
-  - CodingInOffic
+  - Programming
 ---
 
 ## Makefile
