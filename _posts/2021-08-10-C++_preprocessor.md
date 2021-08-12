@@ -1,5 +1,5 @@
 ---
-title: "C++ - preprocessor"
+title: "C++ - preprocessor 전처리문"
 categories:
   - C++
 tags:
