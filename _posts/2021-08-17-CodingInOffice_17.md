@@ -40,14 +40,19 @@ const std::vector<StudentS>& LocalDataImpl::getPeopleInformation(const std::vect
 ```c++
 typedef struct StudentS
 {
-    int age;
-    int phone;
-    string address;
-    int height;
-    int weight;
-    StudentS operator=(const StudentS& data)  
+    int m_age;
+    int m_phone;
+    string m_address;
+    int m_height;
+    int m_weight;
+    StudentS& operator=(const StudentS& data)  
     {
-        this->aflag = data.age...;
+        this->m_age = data.m_age;
+        this->m_phone = data.m_phone;
+        this->m_address = data.m_address;
+        this->m_height = data.m_height;
+        this->m_weight = data.m_weight;
+        return *this;
     }
     bool operator==(const StudentS& data) const 
     {
