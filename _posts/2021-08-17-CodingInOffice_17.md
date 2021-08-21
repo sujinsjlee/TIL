@@ -12,6 +12,8 @@ tags:
 
 
 1. myCode
+
+
 ```c++
 const std::vector<StudentS>& LocalDataImpl::getPeopleInformation(const std::vector<StudentS>& inputStudents )
 {
@@ -36,6 +38,7 @@ const std::vector<StudentS>& LocalDataImpl::getPeopleInformation(const std::vect
 
 2. comment
 > if input value and member data has same type, please just assign data with **"="** directly
+
 
 ```c++
 typedef struct StudentS
