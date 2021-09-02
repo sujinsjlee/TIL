@@ -6,6 +6,8 @@ tags:
   - AWS
 ---
 
+> [생활코딩](https://opentutorials.org/course/2717)
+
 ## AWS
 > **아마존 웹서비스** : 클라우드 컴퓨팅의 대표적인 서비스  
 
