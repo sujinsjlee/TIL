@@ -66,6 +66,45 @@ void AA::handleMessage(Message* internalMessage)
 ​- in this case all bbInstance will receive exactly the same message, an then it can extract info which is related to given bbInstance
 - with **find** of **find_if** function.
 
+## Lamda function
+- 람다는 람다 함수 또는 이름없는 함수라고 부르며 함수 object
+- 람다를 정의한 곳의 외부 변수를 람다 내부에서 사용하고 싶을때는 캡쳐
+- 외부 변수를 참조 또는 복사로 캡쳐할 수 있음
+- 클래스에서도 람다를 사용할 수 있음
+
+
+- [find_if](https://en.cppreference.com/w/cpp/algorithm/find)
+- [람다](https://skstormdummy.tistory.com/entry/%EB%9E%8C%EB%8B%A4lamda)
+
+> **캡쳐기능**
+
+- 람다 함수 외의 변수를 람다 함수에 가져와 사용하는 것을 **캡쳐** 라고 함
+
+```c++
+int main()
+{
+  int n1, n2, n3, n4, n5;
+  [&, n1, n2]{} // n3, n4, n5는 참고, n1, n2는 복사
+  [=, &n1, &n2]{} // n3, n4, n5는 복사, n1, n2는 참조
+
+  //[&, &n1]{} // ERROR --> n1을 이미 default 참조로 사용
+  //[=, n1]{} // ERROR --> n1을 이미 default 복사로 사용
+}
+```
+
+- 클래스에서의 람다 사용
+  - 클래스 멤버 내의 람다 식은 해당 클래스에서 friend로 인식하므로 람다식에서 private멤버의 접근도 가능
+  - **this** 를 캡쳐
+
+```c++
+[this]{} // this capture--> allow access to member data of the class/Instance
+```
+
+- find_if와 람다함수
+  - find_if함수는 세개의 인자를 가지고 있음
+  - 세번 째 인자인 Functor (또는 람다) 의 반환 값이 true 인 경우 검색을 중단
+
+
 ## Code update
 
 
