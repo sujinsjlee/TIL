@@ -13,8 +13,11 @@ tags:
   - DNS Server 가 google.com의 IP addr 를 알고 있음
 - DNS 로부터 IP addr 를 얻으면 해당 IP addr 로 접속
 
+<<<<<<< HEAD
 - **Domain == IP**
 
+=======
+>>>>>>> 7b72c3e70bc907fff853eb1e328960fff6b7edfb
 ## hosts 파일
 - DNS Server가 있기 전에 각각의 컴퓨터마다 hosts file에 적혀있는 domain의 ip addr찾아서 접속
 
