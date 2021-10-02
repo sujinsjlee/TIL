@@ -1,9 +1,9 @@
 ---
 title: "C++ [STL] update whole existing vector data with new input"
 categories:
-  - C++
+  - CodingInOffice
 tags:
-  - C++
+  - CodingInOffice
 ---
 
 ## STL - vector 

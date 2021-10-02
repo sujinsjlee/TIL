@@ -1,9 +1,9 @@
 ---
 title: "Code update and Using Lambda function with find_if()"
 categories:
-  - C++
+  - CodingInOffice
 tags:
-  - C++
+  - CodingInOffice
 ---
 
 ## Code Comment(09/03/2021)
