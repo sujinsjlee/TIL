@@ -57,3 +57,16 @@ tags:
 - **IP 주소 대역 중복할당 불가능**
 - **양방향 Peering 불가능**
 - **VPC Peering 에서 Jumbo Frame 사용 불가능**
+
+
+## Useful Links
+- edx :
+AWS Cloud Technical Essentials
+https://www.edx.org/course/aws-cloud-technical-essentials
+Introduction to AWS Identity and Access Management
+https://www.edx.org/course/introduction-to-aws-identity-and-access-management
+- aws training :
+Exam Readiness: AWS Certified Solutions Architect – Associate (Digital)
+https://www.aws.training/Details/Curriculum?id=20685
+
+
