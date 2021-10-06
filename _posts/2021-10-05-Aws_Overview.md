@@ -61,12 +61,9 @@ tags:
 
 ## Useful Links
 - edx :
-AWS Cloud Technical Essentials
-https://www.edx.org/course/aws-cloud-technical-essentials
-Introduction to AWS Identity and Access Management
-https://www.edx.org/course/introduction-to-aws-identity-and-access-management
+  - [AWS Cloud Technical Essentials](https://www.edx.org/course/aws-cloud-technical-essentials)
+  - [Introduction to AWS Identity and Access Management](https://www.edx.org/course/introduction-to-aws-identity-and-access-management)
 - aws training :
-Exam Readiness: AWS Certified Solutions Architect – Associate (Digital)
-https://www.aws.training/Details/Curriculum?id=20685
+  - [Exam Readiness: AWS Certified Solutions Architect – Associate (Digital)](https://www.aws.training/Details/Curriculum?id=20685)
 
 
