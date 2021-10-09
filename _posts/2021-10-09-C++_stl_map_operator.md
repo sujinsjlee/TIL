@@ -17,10 +17,10 @@ tags:
  
 int main()
 {
-    std::map<int, char> alice{{1, 'a'}, {2, 'b'}, {3, 'c'}};
-    std::map<int, char> bob{{7, 'Z'}, {8, 'Y'}, {9, 'X'}, {10, 'W'}};
-    std::map<int, char> eve1{{1, 'a'}, {2, 'b'}, {3, 'c'}};
-    std::map<int, char> eve2{{2, 'b'}, {1, 'a'}, {3, 'c'}};
+    std::map<int, char> alice{ {1, 'a'}, {2, 'b'}, {3, 'c'} };
+    std::map<int, char> bob{ {7, 'Z'}, {8, 'Y'}, {9, 'X'}, {10, 'W'} };
+    std::map<int, char> eve1{ {1, 'a'}, {2, 'b'}, {3, 'c'} };
+    std::map<int, char> eve2{ {2, 'b'}, {1, 'a'}, {3, 'c'} };
  
     std::cout << std::boolalpha;
  
