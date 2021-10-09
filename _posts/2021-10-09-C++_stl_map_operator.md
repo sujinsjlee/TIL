@@ -6,6 +6,10 @@ tags:
   - C++
 ---
 
+## Map operator ==()
+
+- Example
+
 
 ```c++
 #include <iostream>
@@ -33,6 +37,9 @@ int main()
     std::cout << "alice != eve2 returns " << (alice != eve2) << '\n';
 }
 ```
+
+- output
+
 
 ```
 alice == bob returns false
