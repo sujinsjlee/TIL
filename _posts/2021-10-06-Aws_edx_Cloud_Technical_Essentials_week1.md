@@ -1,5 +1,5 @@
 ---
-title: "AWS - AWS Cloud Technical Essentials"
+title: "AWS - AWS Cloud Technical Essentials_week1"
 categories:
   - AWS
 tags:
