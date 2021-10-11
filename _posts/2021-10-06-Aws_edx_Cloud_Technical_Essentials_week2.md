@@ -56,7 +56,7 @@ tags:
   -  Docker is a popular container runtime that simplifies the management of the entire operating system stack needed for container isolation, including networking and storage. Docker makes it easy to create, package, deploy, and run containers.
 
 - **What Is the Difference Between Containers and VMs?**
-  - ![VM and Container](../assets/images/vmAndContainer.png)
+  - ![VM and Container](/images/vmAndContainer.png)
   - Containers share the same operating system and kernel as the host they exist on, whereas virtual machines contain their operating system. Since each virtual machine has to maintain a copy of an operating system, there’s a degree of wasted space.
   - A container is more lightweight. They spin up quicker, almost instantly. This difference in startup time becomes instrumental when designing applications that need to scale quickly during input/output (I/O) bursts.
   - While containers can provide speed, virtual machines offer you the full strength of an operating system and offer more resources, like package installation, a dedicated kernel, and more.
@@ -145,7 +145,7 @@ def lamda_handler(event, context):
   - 192.168.1.30 is a single IP address. If you wanted to express IP addresses between the range of 192.168.1.0 and 192.168.1.255, how can you do that?
   - One way is by using CIDR notation. CIDR notation is a compressed way of specifying a range of IP addresses. Specifying a range determines how many IP addresses are available to you.
   - It begins with a starting IP address and is separated by a forward slash (the “/” character) followed by a number. The number at the end specifies how many of the bits of the IP address are fixed. In this example, the first 24 bits of the IP address are fixed. The rest are flexible.
-    - ![CIDR image](../assets/images/CIDR.png)
+    - ![CIDR image](/images/CIDR.png)
 
   - 32 total bits subtracted by 24 fixed bits leaves 8 flexible bits. Each of these flexible bits can be either 0 or 1, because they are binary. That means you have two choices for each of the 8 bits, providing 256 IP addresses in that IP range.
 
@@ -155,7 +155,7 @@ def lamda_handler(event, context):
 
 ## Introduction to Amazon VPC
 
-![VPC](../assets/images/vpc1.png)
+![VPC](/images/vpc1.png)
 
 - **Create a VPC**
   - A VPC is an isolated network you create in the AWS cloud, similar to a traditional network in a data center. When you create a VPC, you need to choose three main things.
@@ -182,7 +182,7 @@ def lamda_handler(event, context):
   - Once you create and attach a VGW to a VPC, the gateway acts as anchor on the AWS side of the connection. On the other side of the connection, you’ll need to connect a customer gateway to the other private network. A customer gateway device is a physical device or software application on your side of the connection. Once you have both gateways, you can then establish an encrypted VPN connection between the two sides.
 
 ## Amazon VPC Routing
-![routingTable](../assets/images/routingTable.png)
+![routingTable](/images/routingTable.png)
 
 - **The Main Route Table**
   - When you create a VPC, AWS creates a route table called the main route table. A route table contains a set of rules, called routes, that are used to determine where network traffic is directed. AWS assumes that when you create a new VPC with subnets, you want traffic to flow between them. Therefore, the default configuration of the main route table is to allow traffic between all subnets in the local network. 
