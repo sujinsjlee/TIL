@@ -179,7 +179,7 @@ tags:
 [Exercise 6: Amazon DynamoDB](https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-GCNv2/lab-6-databases.html)
 
 
-## Week 3 Assessment and Discussion (/8)
+## Week 3 Assessment and Discussion (6/8)
 > [Week3 Quiz](https://learning.edx.org/course/course-v1:AWS+AWS-AWS-OTP-AWSD16+1T2021/block-v1:AWS+AWS-AWS-OTP-AWSD16+1T2021+type@sequential+block@01699057842f469caa028e61bbe4050d/block-v1:AWS+AWS-AWS-OTP-AWSD16+1T2021+type@vertical+block@d760a113854043b69652fa50374a88ef)  
 
 
