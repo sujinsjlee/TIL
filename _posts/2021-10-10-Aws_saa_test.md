@@ -27,3 +27,8 @@ tags:
 - [examtopic 사이트](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c02/)
 - [AWS 학습 자료집](https://gist.github.com/serithemage/9993400aa483c95ade954a1e36b1004b)
 - [Qwiklabs 실습](https://www.qwiklabs.com)
+
+## Udemy
+
+- [Ultimate AWS Certified Solutions Architect Associate 2021](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c02/)
+- [AWS Certified Solutions Architect Associate Practice Exams](https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams-saa-c02/)
