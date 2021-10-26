@@ -54,6 +54,21 @@ tags:
     - Configuration and vulnerability analysis
     - Compliance validation
     
+## section5
+### EC2
 
+- EC2 Bootstrap
+  - It is possible to bootstrap our instances using an EC2 User data script
+  - 부트스트랩은 EC2 인스턴스를 AWS가 내부적으로 생성하면서 초기에 EC2가 수행할 명령을 미리 지정하는 것을 의미
+  - 주로 운영체제의 패치/모듈의 설치 혹은 업데이트를 진행할때 사용
+  - 관리콘솔 -> EC2 설정 -> Configure Instance Details -> Advance Details > User Data
+  - UserData 에 text로 입력하는 내용
+    - 첫 라인은 #!/bin/bash
+    - 그 아래 라인부터 각종 패키지  설치, 기존 패키지 업데이트, 서비스 시작할 데몬 등
+
+```js
+#!/bin/bash
+aws s3 sp s3://myInternalBucket/myfilefolder/myfile.jar /myfolder
+```
 
 
