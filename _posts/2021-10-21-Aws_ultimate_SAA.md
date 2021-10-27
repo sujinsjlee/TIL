@@ -66,9 +66,22 @@ tags:
     - 첫 라인은 #!/bin/bash
     - 그 아래 라인부터 각종 패키지  설치, 기존 패키지 업데이트, 서비스 시작할 데몬 등
 
-```js
-#!/bin/bash
-aws s3 sp s3://myInternalBucket/myfilefolder/myfile.jar /myfolder
-```
+    ```js
+    #!/bin/bash
+    aws s3 sp s3://myInternalBucket/myfilefolder/myfile.jar /myfolder
+    ```
 
+- Classic Ports
+  - 22 = SSH(Secure Shell) : log into a Linux instance
+  - 21 = FTP(File Transfer Potocol) : upload files into a file share
+  - 22 = SFTP(Secure File Transfer Protocol) : upload files using SSH
+  - 80 = HTTP : access unsecured website
+  - 443 = HTTPS : access secured website
+  - 3389 = RDP (Remote Desktop Protocol) : log into a Windows instance
+
+- SSH
+  - SSH
+    - SSH란 Secure Sell의 약자이다. 원격지의 컴퓨터. 즉 멀리 떨어져있는 컴퓨터. 내 컴퓨터가 SSH 클라이언트, 원격에 있는 컴퓨터를 SSH Server라고 부른다. 이것은 Shell로 접근이 가능하고 제어가 가능하다 SSH는 통신 프로토콜이다. 이러한 것들을 SSH라고 부른다. Secure가 붙은 이유는 안전하기 때문이다. 
+    - 리눅스와 MAC과 같은 유닉스 계열에서는 SSH 서버와 SSH 클라이언트를 모두 내장하고 있지만, 윈도우의 경우에는 유닉스 계열의 컴퓨터를 제어하기 위해 프로그램 설치가 필요하다. 이 때 쓰이는 프로그램이 Putty
+    - [생활코딩 SSH](https://opentutorials.org/module/432/3738)
 
