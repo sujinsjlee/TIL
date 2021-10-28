@@ -10,6 +10,8 @@ tags:
 # Udemy - Ultimate AWS Certified Solutions Architect Associate 2021
 > [Section3 Getting started with AWS](#section3)  
 > [Section4 IAM & AWS CLI](#section4)  
+> [Section5 EC2 Fundamentals](#section5)  
+> [Section6 EC2 Solution Architect Associate Level](#section6)    
 
 
 
@@ -84,4 +86,28 @@ tags:
     - SSH란 Secure Sell의 약자이다. 원격지의 컴퓨터. 즉 멀리 떨어져있는 컴퓨터. 내 컴퓨터가 SSH 클라이언트, 원격에 있는 컴퓨터를 SSH Server라고 부른다. 이것은 Shell로 접근이 가능하고 제어가 가능하다 SSH는 통신 프로토콜이다. 이러한 것들을 SSH라고 부른다. Secure가 붙은 이유는 안전하기 때문이다. 
     - 리눅스와 MAC과 같은 유닉스 계열에서는 SSH 서버와 SSH 클라이언트를 모두 내장하고 있지만, 윈도우의 경우에는 유닉스 계열의 컴퓨터를 제어하기 위해 프로그램 설치가 필요하다. 이 때 쓰이는 프로그램이 Putty
     - [생활코딩 SSH](https://opentutorials.org/module/432/3738)
+
+- 퀴즈 2 : EC2 Fundamentals Quiz
+  - How long can you reserve an EC2 Reserved Instance?
+    - EC2 Reserved Instances can be reserved for 1 or 3 years only.
+  
+  - Which EC2 Instance Type should you choose for a critical application that uses an in-memory database?
+    - Memory Optimized EC2 instances are great for workloads requiring large data sets in memory.
+  
+  - You have an e-commerce application with an OLTP database hosted on-premises. This application has popularity which results in its database has thousands of requests per second. You want to migrate the database to an EC2 instance. Which EC2 Instance Type should you choose to handle this high-frequency OLTP database?
+    - Storage Optimized
+
+## section6
+### EC2
+- Placement Groups
+  - Cluster
+  - Spread
+  - Partition
+    - EC2 instances get access to the partition information as metadata
+    - *metadata* : Contrtucted data with purpose (Metadata is "data that provides information about other data", but not the content of the data, such as the text of a message or the image itself.)
+
+- ENI (Elastic Network Interfaces)
+  - Elastic Network Interface(이 문서에서는 네트워크 인터페이스로 표시)는 VPC에서 가상 네트워크 카드를 나타내는 논리적 네트워킹 구성 요소
+  - [ENI Concept - AWS officials](https://aws.amazon.com/ko/blogs/aws/new-elastic-network-interfaces-in-the-virtual-private-cloud/)
+
 
