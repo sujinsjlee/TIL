@@ -12,6 +12,7 @@ tags:
 > [Section4 IAM & AWS CLI](#section4)  
 > [Section5 EC2 Fundamentals](#section5)  
 > [Section6 EC2 Solution Architect Associate Level](#section6)    
+> [Section7 EC2 Instance Storage](#section7)  
 
 
 
@@ -109,5 +110,21 @@ tags:
 - ENI (Elastic Network Interfaces)
   - Elastic Network Interface(이 문서에서는 네트워크 인터페이스로 표시)는 VPC에서 가상 네트워크 카드를 나타내는 논리적 네트워킹 구성 요소
   - [ENI Concept - AWS officials](https://aws.amazon.com/ko/blogs/aws/new-elastic-network-interfaces-in-the-virtual-private-cloud/)
+
+## section7
+### EBS & EFS
+- **Elastic Block Storage**
+  - network volume that should be mounted only on one instance and locked to an AZ
+- **EC2 Instance Store** (attache directly EC2 with physical connection)
+  - to get the mamximum amount of IO onto an EC2 instance
+  - ephemeral drive
+- **Elastic File System**
+  - network file system to be mounted across multiple AZs
+
+- **POSIX**
+  - *Portable operating system interface*
+  - 서로 다른 UNIX OS의 공통 API를 정리하여 이식성이 높은 유닉스 응용 프로그램을 개발하기 위한 목적으로 IEEE가 책정한 애플리케이션 인터페이스 규격
+  - POSIX는 운영체제 자체가 아니라 응용 프로그램과 운영체제 간의 ‘인터페이스’를 정의하는 개념이기 때문에 프로그래머는 인터페이스가 존중되는 한 운영체제와 응용 프로그램을 자유롭게 작성
+
 
 
