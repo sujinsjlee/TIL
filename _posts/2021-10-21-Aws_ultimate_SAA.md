@@ -13,6 +13,7 @@ tags:
 > [Section5 EC2 Fundamentals](#section5)  
 > [Section6 EC2 Solution Architect Associate Level](#section6)    
 > [Section7 EC2 Instance Storage](#section7)  
+> [Section8 High Availability and Scalability:ELB & ASG](#section8)  
 
 
 
@@ -125,6 +126,16 @@ tags:
   - *Portable operating system interface*
   - 서로 다른 UNIX OS의 공통 API를 정리하여 이식성이 높은 유닉스 응용 프로그램을 개발하기 위한 목적으로 IEEE가 책정한 애플리케이션 인터페이스 규격
   - POSIX는 운영체제 자체가 아니라 응용 프로그램과 운영체제 간의 ‘인터페이스’를 정의하는 개념이기 때문에 프로그래머는 인터페이스가 존중되는 한 운영체제와 응용 프로그램을 자유롭게 작성
+
+
+## section8
+### ELB
+
+### ASG
+
+
+
+
 
 
 
