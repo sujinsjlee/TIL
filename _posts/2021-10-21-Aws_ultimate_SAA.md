@@ -14,6 +14,8 @@ tags:
 > [Section6 EC2 Solution Architect Associate Level](#section6)    
 > [Section7 EC2 Instance Storage](#section7)  
 > [Section8 High Availability and Scalability:ELB & ASG](#section8)  
+> [Section9 AWS Fundamentals: RDS + Aurora + ElasticCache](#section9)  
+
 
 
 
@@ -130,8 +132,29 @@ tags:
 
 ## section8
 ### ELB
+- Application LB
+  - Load Balancing to multiple applications 
+  - A great fit for micro services & container-based application
+  - fixed hostname
 
-### ASG
+- Network LB
+  - one static IP per AZ
+  - Forward TCP & UDP traffic to your instances
+
+- SSL & TLS
+  - SSL과 TLS는 모두 웹 서버와 사용자의 웹 브라우저 간 통신을 암호화 하는데 사용되는 프로토콜입니다. 공개 키와 개인 키를 교환하여 보안 세션을 생성하여 통신을 암호화하는 방식을 사용합니다. TLS는 MAC 함수 생성을 위해 다른 암호화 알고리즘을 사용하며, 이는 이전 버전의 SSL보다 많은 경고 코드를 포함하고 있습니다.
+
+- SNI(Server Name Indication)
+  - SNI solves the problem of loading multiple SSL certificate onto one web server (to serve multiple servers)
+  - TLS 프로토콜 확장형이고 랜선을 통하여 tcp 통신을 수행할 시에 핸드세이크 과정을 거치게 되는데, 이때 핸드세이크 과정의 시작점에서 웹브라우저에게 호스트명을 정해줍니다. 이 방식을 통하여 동일서버에서 여러개의 SSL 통신이 가능하게 됩니다.
+  - TLS는 HTTP 아래 단계인 전송 레이어에 속하기 때문에 클라이언트가 요청하는 호스트 이름을 알지 못합니다. 이때 클라이언트가 처음 연결 시 서버에게 “이것이 내가 인증서를 원하는 도메인입니다”라고 지정할 수 있도록 도와주는 것이 바로 SNI입니다. 그러면 서버가 올바른 인증서를 선택하여 클라이언트에게 응답할 수 있습니다. 오늘날 모든 웹 브라우저와 대다수 클라이언트는 SNI를 지원합니다. 실제로 CloudFront에 연결되는 클라이언트의 99.5% 이상이 SNI를 지원하고 있습니다.
+
+- Connection Draining
+  - *ELB Connection Draining – Remove Instances From Service With Care*
+  - Auto Scaling이 사용자의 요청을 처리 중인 EC2 인스턴스를 바로 삭제하지 못하도록 방지하는 기능입니다. 
+  - 예를 들어 사용자 수가 줄어들면 Auto Scaling이 EC2 인스턴스를 삭제합니다. 마침 사용자가 해당 EC2 인스턴스에서 파일을 다운로드하고 있었는데 EC2 인스턴스가 삭제되어버리면 파일 다운로드는 중간에 끊어집니다. EC2 인스턴스를 삭제하기 전에 사용자의 요청을 처리할 수 있도록 지정한 시간만큼 기다립니다. 그리고 기다리는 동안에는 새로운 커넥션을 받지 않습니다
+  - When Connection Draining is enabled and configured, the process of deregistering an instance from an Elastic Load Balancer gains an additional step. For the duration of the configured timeout, the load balancer will allow existing, in-flight requests made to an instance to complete, but it will not send any new requests to the instance.
+
 
 
 
