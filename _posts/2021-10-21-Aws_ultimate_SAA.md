@@ -11,7 +11,7 @@ tags:
 > [Section3 Getting started with AWS](#section3)  
 > [Section4 IAM & AWS CLI](#section4)  
 > [Section5 EC2 Fundamentals](#section5)  
-> [Section6 EC2 Solution Architect Associate Level](#section6)    
+> [Section6 EC2 Solution Architect Associate Level](#section6)  
 > [Section7 EC2 Instance Storage](#section7)  
 > [Section8 High Availability and Scalability:ELB & ASG](#section8)  
 > [Section9 AWS Fundamentals: RDS + Aurora + ElasticCache](#section9)  
@@ -154,6 +154,33 @@ tags:
   - Auto Scaling이 사용자의 요청을 처리 중인 EC2 인스턴스를 바로 삭제하지 못하도록 방지하는 기능입니다. 
   - 예를 들어 사용자 수가 줄어들면 Auto Scaling이 EC2 인스턴스를 삭제합니다. 마침 사용자가 해당 EC2 인스턴스에서 파일을 다운로드하고 있었는데 EC2 인스턴스가 삭제되어버리면 파일 다운로드는 중간에 끊어집니다. EC2 인스턴스를 삭제하기 전에 사용자의 요청을 처리할 수 있도록 지정한 시간만큼 기다립니다. 그리고 기다리는 동안에는 새로운 커넥션을 받지 않습니다
   - When Connection Draining is enabled and configured, the process of deregistering an instance from an Elastic Load Balancer gains an additional step. For the duration of the configured timeout, the load balancer will allow existing, in-flight requests made to an instance to complete, but it will not send any new requests to the instance.
+
+## section9
+### DB
+- Stateless란 http와 같이 client의 이전 상태를 기록하지 않는 접속이란 의미입니다. 그에 비해 Stateful은 client의 이전 상태를 기록하고 있는 것이죠.
+- Stateless는 웹서버가 사용자의 작업을 기억하고 있지 않다는 의미이고 Stateful은 사용자의 상태를 서버가 기억하고 있다가 유용한 정보로써 활용한다는 것입니다.
+
+> Here's a list of standard ports you should see at least once. You shouldn't remember them (the exam will not test you on that), but you should be able to differentiate between an Important (HTTPS - port 443) and a database port (PostgreSQL - port 5432) 
+
+
+
+- **Important ports**
+
+  - FTP: 21
+  - SSH: 22
+  - SFTP: 22 (same as SSH)
+  - HTTP: 80
+  - HTTPS: 443
+
+- **RDS Databases ports**
+
+  - PostgreSQL: 5432
+  - MySQL: 3306
+  - Oracle RDS: 1521
+  - MSSQL Server: 1433
+  - MariaDB: 3306 (same as MySQL)
+  - Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
+
 
 
 
