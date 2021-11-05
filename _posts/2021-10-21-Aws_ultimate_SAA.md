@@ -15,7 +15,13 @@ tags:
 > [Section7 EC2 Instance Storage](#section7)  
 > [Section8 High Availability and Scalability:ELB & ASG](#section8)  
 > [Section9 AWS Fundamentals: RDS + Aurora + ElasticCache](#section9)  
-
+> [Section10 Route53](#section10)  
+> [Section11 Classic Solutions Architecture Discussions](#section11)  
+> [Section12 Amazon S3 Introduction](#section12)  
+> [Section13 AWS SDK, IAM Roles & Policies](#section13)    
+> [Section14 Advanced Amazon S3 & Athena](#section14)    
+> [Section15 CloudFont & AWS Global Accelerator](#section15)    
+> [Section16 AWS Storage Extras](#section16)   
 
 
 
@@ -181,11 +187,30 @@ tags:
   - MariaDB: 3306 (same as MySQL)
   - Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
 
+# section10
+- **Routing Policies Latency-based vs. Geolocation**
+  - Latency-based routing policy does ensure that the user will have a good experience in terms of latency. However, latency based routing does not always ensure that the traffic is routed to the nearest resource in terms of proximity to the source of the query.
 
+  - For latency-based routing, you create latency records for your resources in multiple AWS Regions. When a DNS query is received by Route 53 for your domain or sub-domain, it evaluates the latency records that you have created for AWS Regions. Then, it will determine which region provides the lowest latency to the user, and then selects the appropriate latency record for that region.
 
+  - However, latency will not remain same all the time. It can change as the network connectivity, traffic and routing change over time. Latency-based routing works according to the latency measurements over a period of time, and the changes are revealed in the measurements. So in this case, the latency routing policy will not work since the routing changes over time.
 
+  - Now let us look at the Geolocation routing. It allows Route 53 to route the traffic to the resources according to the geographic location of the source query. You can make your content localized and display your website in your own language in the Geolocation routing.
 
+  - A use case for Geolocation routing:
+    - *If you’ve country-specific distribution rights you can control the content distribution to a specific country.*
+  - With Geolocation routing policy all the criteria mentioned in the scenario is satisfied. Hence, a user from Lille will be directed to a resource in the Paris region, similarly a user in Bristol will be directed to London region and a person in California will be directed to US West region and the user data will be stored in the appropriate servers located in that region. So here using Geolocation routing policy will also ensure that the person from Lille will view the website and contents in French, a user from Bristol will view it in English. 
+  - It is important to note that Geolocation route policy maps IP addresses to locations while working. However, some IP addresses aren’t mapped to geographic locations. In such cases, Route 53 returns a “no answer” response for queries from those locations unless the default record is created. And when a default record is created, it will handle the queries from IP addresses that are not mapped to any location
 
+- **ELB vs. Multi-Value**
+  - [ELB vs. Routing 53 Policies(Multi-Value)](https://acloud.guru/forums/aws-certified-solutions-architect-associate/discussion/-KTWtu_Y5HscAAS8NCyc/elb-vs-route-53-routing)
+  - In summary, I believe ELBs are intended to load balance across EC2 instances in a **single** region. Whereas DNS load-balancing (Route 53) is intended to help balance traffic **across** regions. Route53 policies like geolocation may help direct traffic to preferred regions, then ELBs route between instances within one region.
 
+  - Functionally, another difference is that DNS-based routing (e.g. Route 53) only changes the address that your clients' requests resolve to. On the other hand, an ELB actually reroutes traffic.
 
+  - One analogy is: if you ask for the closest WalMart, you may get an address based on your location, but you could choose to go to another Walmart if you know one. That's Route 53; it just switches the address resolved based on some context. On the other hand, a policeman redirecting traffic because of construction, is more like an ELB, he/she is actually changing the traffic flow, not just suggesting.
+
+- 퀴즈 오답
+  - **CNAME vs. Alias 비교**
+    - You can't create a CNAME record that has the same name as the top node of the DNS namespace (Zone Apex), in our case "mycoolcompany.com."
 
