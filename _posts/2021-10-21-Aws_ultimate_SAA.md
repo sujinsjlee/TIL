@@ -214,3 +214,8 @@ tags:
   - **CNAME vs. Alias 비교**
     - You can't create a CNAME record that has the same name as the top node of the DNS namespace (Zone Apex), in our case "mycoolcompany.com."
 
+# section11
+- **A cache hit** is a state in which data requested for processing by a component or application is found in the cache memory. 
+
+
+
