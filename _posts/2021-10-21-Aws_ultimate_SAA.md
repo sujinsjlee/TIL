@@ -187,7 +187,7 @@ tags:
   - MariaDB: 3306 (same as MySQL)
   - Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
 
-# section10
+## section10
 - **Routing Policies Latency-based vs. Geolocation**
   - Latency-based routing policy does ensure that the user will have a good experience in terms of latency. However, latency based routing does not always ensure that the traffic is routed to the nearest resource in terms of proximity to the source of the query.
 
@@ -214,8 +214,41 @@ tags:
   - **CNAME vs. Alias 비교**
     - You can't create a CNAME record that has the same name as the top node of the DNS namespace (Zone Apex), in our case "mycoolcompany.com."
 
-# section11
+## section11
 - **A cache hit** is a state in which data requested for processing by a component or application is found in the cache memory. 
+
+- **Golden AMI** is an image that contains all your software installed and configured so that future EC2 instances can boot up quickly from that AMI.
+
+- Golden AMI is an image that contains all your software, dependencies, and configurations, so that future EC2 instances can boot up quickly from that AMI.
+
+- Which of the following will NOT help us while designing a STATELESS application tier? 다음 중 STATELESS 애플리케이션 계층을 설계할 때 도움이 되지 않는 것은 무엇입니까?
+
+## section12
+-  an IAM principal can access an S3 object if 
+  - the user IAM permissions allow it OR the resource policy ALLOWS it
+  - AND there’s no explicit DENY
+- **Explicit DENY in an IAM Policy will take precedence over an S3 bucket policy.**
+
+- **CORS**
+  - Cross-Origin Resource Sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. 
+  - [To learn more about CORS](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html)
+
+
+## section13
+- **curl**
+  - http를 이용하여 경로의 데이터를 가져온다.
+  - `curl [옵션][url]`
+
+- **Versioning**
+  - S3는 특정 버킷의 객체들에 대하여 버전 관리 기능을 하는 버저닝 기능을 제공한다. 버저닝 기능을 사용하면 파일을 삭제 후 복원할 수 있고 이전으로 되돌릴 수도 있다. 하지만 버저닝 되는 객체도 그만큼 S3의 용량을 차지한다. 
+  - 버저닝은 Suspend도 가능한데 Enable된 상태에서 Versioning을 보면 Enable이 Suspend로 바뀌어 있는 것을 볼 수 있다. Suspend 상태에서 파일을 바꾸면 Version ID가 null이 되며 이 상태로 복원할 수 없다.
+
+
+
+
+
+
+
 
 
 
