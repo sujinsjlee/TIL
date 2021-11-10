@@ -282,6 +282,7 @@ tags:
 - **AWS Snow Family**
   - The AWS Snow Family is a service that helps customers who need to run operations in austere, non-data center environments, and in locations where there's no consistent network connectivity. You can use these devices to locally and cost-effectively access the storage and compute power of the AWS Cloud in places where an internet connection might not be an option.
 
-
+- **FTP**
+  - FTP란 파일 전송 프로토콜(File Transfer Protocol)의 약자입니다. 그 의미를 자세히 살펴봅시다. 기본적으로 '프로토콜'은 전자기기가 서로 통신하는 데 필요한 절차나 규칙을 뜻하죠. FTP는 TCP/IP 네트워크(인터넷)상의 장치가 파일을 전송할 때 사용하는 규칙입니다. 인터넷을 사용할 때 우리는 다양한 프로토콜을 사용합니다. 인터넷을 둘러볼 때는 HTTP를 사용하고, 인스턴트 메시지를 주고받을 때는 XMPP를 사용하죠. 간단히 말해 FTP란 파일을 이동할 때 사용하는 프로토콜이라고 보시면 됩니다.
 
   
