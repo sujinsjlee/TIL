@@ -22,6 +22,11 @@ tags:
 > [Section14 Advanced Amazon S3 & Athena](#section14)    
 > [Section15 CloudFont & AWS Global Accelerator](#section15)    
 > [Section16 AWS Storage Extras](#section16)   
+> [Decoupling applications: SQS, SNS, Kinesis, Active MQ](#section17)  
+> [Containers on AWS: ECS, Fargate, ECR & EKS](#section18)  
+> [Serverless Overviews from a Solution Architect Perspective](#section19)  
+> [Serverless Solution Discussions](#section20)  
+> [Databases in AWS](#section21)  
 
 
 
@@ -285,4 +290,13 @@ tags:
 - **FTP**
   - FTP란 파일 전송 프로토콜(File Transfer Protocol)의 약자입니다. 그 의미를 자세히 살펴봅시다. 기본적으로 '프로토콜'은 전자기기가 서로 통신하는 데 필요한 절차나 규칙을 뜻하죠. FTP는 TCP/IP 네트워크(인터넷)상의 장치가 파일을 전송할 때 사용하는 규칙입니다. 인터넷을 사용할 때 우리는 다양한 프로토콜을 사용합니다. 인터넷을 둘러볼 때는 HTTP를 사용하고, 인스턴트 메시지를 주고받을 때는 XMPP를 사용하죠. 간단히 말해 FTP란 파일을 이동할 때 사용하는 프로토콜이라고 보시면 됩니다.
 
-  
+## section17
+
+- Q: How does Amazon Kinesis Data Streams differ from Amazon SQS?
+
+  - Amazon Kinesis Data Streams enables real-time processing of streaming big data. It provides ordering of records, as well as the ability to read and/or replay records in the same order to multiple Amazon Kinesis Applications. The Amazon Kinesis Client Library (KCL) delivers all records for a given partition key to the same record processor, making it easier to build multiple applications reading from the same Amazon Kinesis data stream (for example, to perform counting, aggregation, and filtering).
+
+  - Amazon Simple Queue Service (Amazon SQS) offers a reliable, highly scalable hosted queue for storing messages as they travel between computers. Amazon SQS lets you easily move data between distributed application components and helps you build applications in which messages are processed independently (with message-level ack/fail semantics), such as automated workflows.
+
+
+
