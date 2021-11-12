@@ -292,11 +292,13 @@ tags:
 
 ## section17
 
-- Q: How does Amazon Kinesis Data Streams differ from Amazon SQS?
+- **SQS Request-Response Systems**
+  - 메시지별로 응답 대기열을 생성하지 마십시오. 그 대신 시작할 때 생산자별로 응답 대기열을 생성하고 상관 ID 메시지 속성을 사용하여 응답을 요청에 매핑합니다.
 
-  - Amazon Kinesis Data Streams enables real-time processing of streaming big data. It provides ordering of records, as well as the ability to read and/or replay records in the same order to multiple Amazon Kinesis Applications. The Amazon Kinesis Client Library (KCL) delivers all records for a given partition key to the same record processor, making it easier to build multiple applications reading from the same Amazon Kinesis data stream (for example, to perform counting, aggregation, and filtering).
+  - 생산자가 응답 대기열을 공유할 수 없도록 하십시오. 이로 인해 생산자는 다른 생산자를 위한 응답 메시지를 수신할 수 있습니다.
 
-  - Amazon Simple Queue Service (Amazon SQS) offers a reliable, highly scalable hosted queue for storing messages as they travel between computers. Amazon SQS lets you easily move data between distributed application components and helps you build applications in which messages are processed independently (with message-level ack/fail semantics), such as automated workflows.
+  - *SQS Temporary Queue Client* 요청-응답 메시징 패턴(가상 대기열) : 임시 대기열의 가장 일반적인 사용 사례는 요청-응답 메시징 패턴
 
 
 
+  
