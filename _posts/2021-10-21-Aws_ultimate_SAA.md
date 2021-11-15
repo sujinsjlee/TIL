@@ -25,8 +25,7 @@ tags:
 > [Decoupling applications: SQS, SNS, Kinesis, Active MQ](#section17)  
 > [Containers on AWS: ECS, Fargate, ECR & EKS](#section18)  
 > [Serverless Overviews from a Solution Architect Perspective](#section19)  
-> [Serverless Solution Discussions](#section20)  
-> [Databases in AWS](#section21)  
+> [Networking - VPC](#section25)  
 
 
 
@@ -318,14 +317,33 @@ tags:
 
     - VM은 시스템 자원을 많이 잡아먹는다. 각 VM은 운영 체제의 전체 복제본 뿐만 아니라 운영 체제가 실행해야 하는 모든 하드웨어의 가상 복제본을 구동한다. 이로 인해 소모되는 RAM과 CPU가 빠른 속도로 늘어난다. 반면, 컨테이너에 필요한 것은 운영 체제, 지원 프로그램과 라이브러리, 특정 프로그램을 실행할 시스템 자원이면 충분하다.
 
-
 - **mount**
   - Mounting a file system attaches that file system to a directory (mount point) and makes it available to the system. 
   - 물리적인 장치를 특정위치 디렉터리에 연결시켜주는 것
-  - **PnP** : Plug and Play (디바이스를 꼽기만 하면 알아서 설저하고 플레이되는..) : 리눅스의 경우 특히 서버 환경의 경우는 PnP 기능이 작동하지 않고 관리자가 직접 mount 작업을 수행해야함
+  - **PnP** : Plug and Play (디바이스를 꼽기만 하면 알아서 설정하고 플레이되는..) : 리눅스의 경우 특히 서버 환경의 경우는 PnP 기능이 작동하지 않고 관리자가 직접 mount 작업을 수행해야함
 
 - **POD**
   - 파드 는 (고래 떼(pod of whales)나 콩꼬투리(pea pod)와 마찬가지로) 하나 이상의(도커 컨테이너 같은) 컨테이너 그룹이다. 이 그룹은 스토리지/네트워크를 공유하고, 해당 컨테이너를 구동하는 방식에 대한 명세를 갖는다. 파드의 콘텐츠들은 항상 함께 배치되고 같이 스케줄되며, 공유 컨텍스트 내에서 구동된다. 파드는 애플리케이션에 특화된 "논리 호스트"를 모델로 하고 있다. 이것은 하나 또는 강하게 서로 결합되어 있는 여러 애플리케이션 컨테이너를 포함한다. 컨테이너 이전의 세상에서 같은 물리적 또는 가상의 머신에서 실행되는 것은 같은 논리적 호스트에서 실행되고 있는 것을 의미한다.
   - Pod
     - Pod 는 쿠버네티스에서 가장 기본적인 배포 단위로, 컨테이너를 포함하는 단위이다.
     - 쿠버네티스의 특징중의 하나는 컨테이너를 개별적으로 하나씩 배포하는 것이 아니라 Pod 라는 단위로 배포하는데, Pod는 하나 이상의 컨테이너를 포함한다.
+
+## section19
+- **production**
+  - 실제 서비스를 위한 운영 환경
+- **deployment**
+  - 배포
+  - 배포는 최종 사용자에게 결과물을 전달하는 과정이다. 내가 내 컴퓨터에서 동작하게 만든 코드를 다른 컴퓨터에서도 동작할 수 있도록 하는 것이다. 
+
+## section25
+- **octect**
+  - 컴퓨터에서의 옥텟은 8 비트의 배열
+  - octet-stream이라는 것은 말 그대로 8비트로 된 일련의 데이타
+  - IPv4 주소에서의 옥텟이라는 말의 의미는 32비트의 IP 주소를 8비트로 나누는 단위라고 할수 있다. IP 주소는 32비트로 이루어져 있고, 그것을 옥텟(Octet)단위로 끊어서 표현한다. 각 옥텟은 10진수로 0~255의 값을 가지게 된다. 그리고 나누어진 옥텟을 마침표(.)단위로 나누어서 표기하는 것이다.
+  - IPv4 주소는 총 32비트로 이루어져 있는데 4구간으로 나누어서 사용된다. 그래서 8비트씩 4구간으로 나누어서 사용하게 되는데 8비트씩 나누어진 것을 옥텟이라고 한다.
+  - ![IPv4](https://qph.fs.quoracdn.net/main-qimg-a4e28e6d0a7c25607b8fb34a2956267f)
+
+
+- **Cloud**
+  - servers that are accessed over the internet, along with the software and databases that run on those servers
+
