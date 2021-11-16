@@ -9,6 +9,8 @@ tags:
 # AWS Certification Challenge Program
 - [AWS Certification Challenge Program](https://pages.awscloud.com/GLBL-traincert-solutions-architect-assocaite-reg-ko.html)
 
+- Udemy 실전모의고사 800넘으면 무난하게 합격
+- dump 구매시 최신 dump 와 가까운 번호 구매해서 문제 풀이할 것
 
 ### 시험
 - 객관식 문제, 답을 하나 또는 여러개 선택할 수 있습니다.
@@ -17,6 +19,7 @@ tags:
 - 나중에 검토할 문항은 표시를 해둘 수 있습니다. (**Flag 버튼** 클릭)
 - 어소시에이트 수준의 시험에서 필기도구는 제공되지 않습니다.
 - 시험지를 제출하기에 앞서 모든 문항 또는 다시 확인하려고 표시한 문항의 답을 검토 할 수 있습니다.
+
 
 ### 시험고려사항
 - 단일 AZ는 정답이 아닐 것이라고 예상 --> Multi - AZ에 서비스를 배포해서 고가용성을 구축하는 것을 권장
@@ -34,6 +37,17 @@ tags:
 - 각 워크로드에 대해 가장 비용 효과적인 EC2 요금모델과 인스턴스 유형을 결정합니다.
 - 사용되지 않은 CPU시간은 비용낭비입니다 --> 서버리스 (람다) 구축해야
 - 가장 비용효과적인 데이터스토리지 서비스(S3 class) 및 클래스를 사용하십시오
+- 성능이 안좋으면 --> 타입 업그레이드 m4.large -> m4.xlarge
+- SQS 큐 내용을 안지움 --> timeout 설정기능
+- 가용성 --> Multi AZ
+- Region에 종속되지 않는 것들 IAM / Route53 : 어디에서든 자원에 접근 가능
+- AMI 를 활용해서 다른리전에 서비스를 올리고 싶을때 AMI는 리전별로 복사가가능하므로 EC2 instance configuration만 바꿔서 AMI복사
+- **DynamoDB**'s limit on the size of each record : 400KB
+- proxy~~이런단어 나오면 NAT
+- DB 성능향상 : Add read Replica / Modify Provisioned IOPS
+- CloudWatch에서 제공안하는 것 : Memory (보완 by CloudAgent --> Cloud Agent로는 Memory정보 수집가능)
+- VPC Peering의 단점 : does not support edge to edge routing
+
 - **배치그룹** = Placement Group 
     - Cluster / Spread / Partition
     - 어떤 배치그룹이 필요한가? 에대한 문제나옴
