@@ -22,10 +22,11 @@ tags:
 > [Section14 Advanced Amazon S3 & Athena](#section14)    
 > [Section15 CloudFont & AWS Global Accelerator](#section15)    
 > [Section16 AWS Storage Extras](#section16)   
-> [Decoupling applications: SQS, SNS, Kinesis, Active MQ](#section17)  
-> [Containers on AWS: ECS, Fargate, ECR & EKS](#section18)  
-> [Serverless Overviews from a Solution Architect Perspective](#section19)  
-> [Networking - VPC](#section25)  
+> [Section17 Decoupling applications: SQS, SNS, Kinesis, Active MQ](#section17)  
+> [Section18 Containers on AWS: ECS, Fargate, ECR & EKS](#section18)  
+> [Section19 Serverless Overviews from a Solution Architect Perspective](#section19)  
+> [Section20 Serverless Solution Architecture Discussions](#section20)  
+> [Section25 Networking - VPC](#section25)  
 
 
 
@@ -347,3 +348,54 @@ tags:
 - **Cloud**
   - servers that are accessed over the internet, along with the software and databases that run on those servers
 
+## section20
+- **Amamzon API Gateway**
+  - Amazon API Gateway는 규모와 관계없이 REST 및 WebSocket API를 생성, 게시, 유지, 모니터링 및 보호하기 위한 AWS 서비스
+
+- **REST API**
+  - API Gateway의 REST API는 백엔드 HTTP 엔드포인트, Lambda 함수 또는 기타 AWS 서비스와 통합되어 있는 리소스 및 메서드의 모음
+  - API Gateway 기능을 사용하여 생성에서 프로덕션 API 모니터링에 이르기까지 API 수명 주기의 모든 측면을 지원
+  - API Gateway REST API는 클라이언트가 서비스에 요청을 보내고 서비스가 동기식으로 응답하는 요청/응답 모델을 사용
+  - 이러한 종류의 모델은 동기식 통신을 사용하는 다양한 종류의 애플리케이션에 적합
+
+- **Amazon Cognito**
+  - Amazon Cognito는 웹 및 모바일 앱에 대한 인증, 권한 부여 및 사용자 관리를 제공
+  - 사용자는 사용자 이름과 암호를 사용하여 직접 로그인하거나 Facebook, Amazon, Google 또는 Apple 같은 타사를 통해 로그인
+
+- **STS(Security Token Service)**
+  - AWS provides AWS Security Token Service (AWS STS) as a web service that enables you to request temporary, limited-privilege credentials for AWS Identity and Access Management (IAM) users or for users you authenticate (federated users). 
+
+- **Read Capacity Units and Write Capacity Units(RCU WCU)**
+  - [읽기 용량 단위 및 쓰기 용량 단위](https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.SwitchReadWriteCapacityMode)
+
+- **DAX Caching layer**
+  - Amazon DynamoDB Accelerator(DAX)는 Amazon Virtual Private Cloud(Amazon VPC) 환경 내에서 실행되도록 설계
+  - Amazon VPC 서비스는 기존 데이터 센터와 매우 유사한 가상 네트워크를 정의
+  - VPC를 사용하면 IP 주소 범위, 서브넷, 라우팅 테이블, 네트워크 게이트웨이 및 보안 설정을 통제
+  - Amazon VPC 보안 그룹을 사용하여 가상 네트워크에서 DAX 클러스터를 시작하고 클러스터에 대한 액세스를 제어
+
+- **CloudFront** - **S3** : Enhanced security with CloudFront Origin Access Identity (OAI)
+
+- **s3 transfer acceleration**
+  - Amazon S3 Transfer Acceleration can speed up content transfers to and from Amazon S3 by as much as 50-500% for long-distance transfer of larger objects.
+
+- **S3 Security**
+  - Pre-Signed URLs: URLs that are valid only for a limited time (ex: premium video service for logged in users)
+
+- **CloudFront Signed URL / Signed Cookies**
+  - Signed URL = access to individual files
+
+- **AWS IoT Core**
+  - AWS IoT Core는 인프라를 관리하지 않고도 수십억 개의 IoT 디바이스를 연결하고, 수조 개의 메시지를 AWS 서비스에 라우팅 할 수 있게 함
+- **Kinesus Data Streams**
+  - pipe big data in real time
+- **Kinesus Data Firehose**
+  - load data stream into AWS data store
+
+- **Athena**
+  - Serverless query service to perform analytics against S3 objects
+  - analyze data in S3 using serverless SQL, use Athena
+  - Athena is a serverless SQL service and results are stored in S3
+- **Redshift**
+  - Redshift is based on PostgreSQL
+  
