@@ -26,7 +26,12 @@ tags:
 > [Section18 Containers on AWS: ECS, Fargate, ECR & EKS](#section18)  
 > [Section19 Serverless Overviews from a Solution Architect Perspective](#section19)  
 > [Section20 Serverless Solution Architecture Discussions](#section20)  
+> [Section21 Database in AWS](#section21)  
+> [Section22 Monitoring & Audit:CloudWatch, CloudTrail & Config](#section22)  
+> [Section23 IAM - Advanced](#section23)  
+> [Section24 AWS Security & Encryption: KMS, SSM Parameter Store, CloudHSM, Shield, WAF](#section24)  
 > [Section25 Networking - VPC](#section25)  
+
 
 
 
@@ -361,6 +366,7 @@ tags:
 - **Amazon Cognito**
   - Amazon Cognito는 웹 및 모바일 앱에 대한 인증, 권한 부여 및 사용자 관리를 제공
   - 사용자는 사용자 이름과 암호를 사용하여 직접 로그인하거나 Facebook, Amazon, Google 또는 Apple 같은 타사를 통해 로그인
+  - Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.
 
 - **STS(Security Token Service)**
   - AWS provides AWS Security Token Service (AWS STS) as a web service that enables you to request temporary, limited-privilege credentials for AWS Identity and Access Management (IAM) users or for users you authenticate (federated users). 
@@ -373,6 +379,9 @@ tags:
   - Amazon VPC 서비스는 기존 데이터 센터와 매우 유사한 가상 네트워크를 정의
   - VPC를 사용하면 IP 주소 범위, 서브넷, 라우팅 테이블, 네트워크 게이트웨이 및 보안 설정을 통제
   - Amazon VPC 보안 그룹을 사용하여 가상 네트워크에서 DAX 클러스터를 시작하고 클러스터에 대한 액세스를 제어
+
+- **DynamoDB Streams**
+  - DynamoDB Streams enable DynamoDB to get a changelog and use that changelog to replicate data across replica tables in other AWS Regions.
 
 - **CloudFront** - **S3** : Enhanced security with CloudFront Origin Access Identity (OAI)
 
@@ -396,6 +405,43 @@ tags:
   - Serverless query service to perform analytics against S3 objects
   - analyze data in S3 using serverless SQL, use Athena
   - Athena is a serverless SQL service and results are stored in S3
+  
 - **Redshift**
   - Redshift is based on PostgreSQL
-  
+
+- *AWS Lambda Limits to Know - per region*
+  - maximum execution : 15min
+
+- Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds. Amazon CloudFront can be used in front of an Application Load Balancer. // CloudFront는 global 한 usage뿐만 아니라 traffic 분산처리에도 도움
+
+## section21
+
+- **OLTP VS OLAP**
+  - OLTP is what most people thinks of databases. It stands for Online Transactional Processing and is designed to serve as a persistent state store for front-end applications. They excel at quickly looking up specific information as well as transactional procedures like INSERT, UPDATE, or DELETE.  
+- **OLTP online Transaction processing**
+  - INSERT와 같이 종종 사용되어지는, 혹은 규모가 작은 데이터를 불러올때 사용되는 SQL쿼리가 필요할때 유용 -> xm
+  - ex) Order # 210에만 해당되는 이름, 주소, 시간 정보 INSERT
+- **OLAP - online analytical processing**
+  - 매우 큰 데이터를 불러올때 사용. 주로 덩치가 큰 SELECT 쿼리가 사용됨 -> 조인, select, 트랜잭션 프로세싱이 쓰이지 않음
+  - ex) 특정 회사 부서의 Net Profit, Products
+
+- **AWS ElastiCache for Redis**
+  - Amazon ElastiCache for Redis is a blazing fast in-memory data store that provides sub-millisecond latency to power internet-scale real-time applications.
+  - *Redis* : 데이터베이스, 캐시, 메시지 브로커 및 대기열로 사용하는 빠른 오픈 소스 인 메모리 데이터 스토어
+
+- **ElasticCache**
+  - Amazon ElastiCache는 유연한 실시간 사용 사례를 지원하는 완전관리형 인 메모리 캐싱 서비스입니다. 캐싱에 ElastiCache를 사용하면 애플리케이션 및 데이터베이스 성능을 가속화할 수 있으며, 세션 스토어, 게임 리더보드, 스트리밍 및 분석과 같이 내구성이 필요하지 않는 사용 사례에서는 기본 데이터 스토어로 사용할 수 있습니다. ElastiCache는 Redis 및 Memcached와 호환 가능합니다.
+
+- **What is sharding in ElastiCache?**
+  - A shard is a collection of one or more nodes in an ElastiCache cluster. It is created to support *replication of data* into various nodes in the ElastiCache cluster so that cache remains reachable in case of loss of few nodes.
+
+- **What is Presto or PrestoDB?**
+  - Presto (or PrestoDB) is an open source, distributed SQL query engine, designed from the ground up for fast analytic queries against data of any size.
+
+
+- **Kinesis Data Streams**
+  - Streaming service for ingest at scale
+
+- **Kinesis Data Firehose**
+  - Load streaming data into S3 / Redshift / ES / 3rd party / custom HTTP
+
