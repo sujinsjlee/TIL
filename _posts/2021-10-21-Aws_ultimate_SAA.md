@@ -405,7 +405,7 @@ tags:
   - Serverless query service to perform analytics against S3 objects
   - analyze data in S3 using serverless SQL, use Athena
   - Athena is a serverless SQL service and results are stored in S3
-  
+
 - **Redshift**
   - Redshift is based on PostgreSQL
 
@@ -445,3 +445,29 @@ tags:
 - **Kinesis Data Firehose**
   - Load streaming data into S3 / Redshift / ES / 3rd party / custom HTTP
 
+## section22
+- **EC2 Detailed Monitoring**
+    - This is a paid offering and is disabled by default. When enabled, the EC2 instance's metrics are available in 1-minute periods.
+
+- **CloudWatch Custom Metrics**
+    - High Resolution: 1/5/10/30 second(s) – Higher cost
+    - Standard: 1 minute (60 seconds)
+
+- *The number of EC2 instances in an ASG can not go below the minimum capacity, even if the CloudWatch alarm would in theory trigger an EC2 instance termination.*
+
+- Amazon CloudWatch is a monitoring service that allows you to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. It is used to monitor your applications' performance and metrics.
+    - *configuration change , want to evaluate the impact of the performance --> CloudWatch*
+
+- **CloudTrail Insights**
+    - Enable CloudTrail Insights to detect unusual activity in your account
+
+- You can use the **CloudTrail Console** to view the **last 90 days*** of recorded API activity. For events older than 90 days, use Athena to analyze CloudTrail logs stored in S3.
+    - Analyze CloudTrail logs in S3 bucket using Amazon Athena
+
+- **AWS Config Rules**
+    - AWS Config Rules does not prevent actions from happening
+    - Can make custom config rules (must be defined in AWS Lambda)
+    - *Config Rules – Remediations*
+        - Automate remediation of non-compliant resources using SSM Automation Documents
+        - Which AWS Config feature can you use to automatically re-configure your Security Groups to their correct state?
+        
