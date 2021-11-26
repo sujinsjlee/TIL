@@ -470,4 +470,32 @@ tags:
     - *Config Rules – Remediations*
         - Automate remediation of non-compliant resources using SSM Automation Documents
         - Which AWS Config feature can you use to automatically re-configure your Security Groups to their correct state?
-        
+
+## section 23
+
+- **Single sign-on (SSO)** is an authentication method that enables users to securely authenticate with multiple applications and websites by using just one set of credentials. 
+
+- **SAML(Security Assertion Markup Language)**은 네트워크를 통해 여러 컴퓨터에서 보안 자격 증명을 공유할 수 있도록 하는 공개 표준이다. 한 대의 컴퓨터가 하나 이상의 다른 컴퓨터를 대신해 몇 가지 보안 기능을 수행할 수 있도록 하는 프레임워크를 설명한다.
+  - 인증(Authentication) : 사용자가 자신이 주장하는 사람임을 확인
+  - 허가(Authorization) : 사용자가 특정 시스템이나 콘텐츠에 접속할 수 있는 권한이 있는지 확인
+
+  - 엄밀히 말하면 SAML은 모든 정보를 인코딩하는 데 사용되는 XML 변형 언어를 의미한다. 하지만 이 용어는 표준의 일부를 구성하는 다양한 프로토콜 메시지와 프로파일을 포함할 수 있다. 
+
+  - SAML 2.0은 2005년에 도입됐으며, 현재 표준으로 남아있다. 이전 버전인 1.1은 이제 거의 사용하지 않는다. 
+  
+- SAML(Security Assertion Markup Language)은 사용자 ID, 인증 및 속성 정보를 표시하고 교환하기 위한 OASIS 개방형 표준입니다. SAML 어설션은 싱글 사인온 요청을 완료하는 일부로서 사용자 ID 및 속성 정보를 사용자의 ID 제공자로부터 신뢰 서비스 제공자로 전송하기 위해 사용되는 XML 형식화된 토큰입니다. SAML 어설션은 연합 비즈니스 파트너 간에 정보를 전송하는 벤더 중립적인 수단을 제공합니다. SAML을 사용하여 엔터프라이즈 서비스 제공자는 별도의 엔터프라이즈 ID 제공자에 접속하여 보안 컨텐츠에 액세스를 시도 중인 사용자를 인증할 수 있습니다. 
+
+ 
+
+- **ADFS (Active Directory Federation Service)**
+  - 사용자 계정 및 응용 프로그램이 완전히 다른 네트워크나 조직에 있는 경우에도 하나 이상의 보호된 인터넷 연결 응용 프로그램에 대한 완벽한 "단일 프롬프트" 액세스를 가진 브라우저 기반 클라이언트(네트워크 내부 또는 외부)를 제공하는 ID 액세스 솔루션 이다
+
+  - 응용 프로그램이 한 네트워크에 있고 사용자 계정이 다른 네트워크에 있을 경우 일반적으로 사용자가 응용 프로그램에 액세스하려고 할 때 보조 자격 증명을 묻는 메시지가 표시 됩니다.
+
+  - 이러한 보조 자격 증명은 응용 프로그램이 상주하는 영역의 사용자 ID를 나타냅니다. 일반적으로 응용 프로그램을 호스팅하는 웹 서버에서 가장 적절한 권한 부여 결정을 내리는데 이러한 자격증명이 필요하다.
+
+  - 쉽게 말하자면 ADFS는 Office 365, 클라우드 기반 SaaS Application, 내부의 Network, 내부의 Application의 다양한 엑세스 제어 및 Single Sign On (SSO) 를 제공합니다.
+
+ 
+- **What is ADFS and how it works?**
+  - What is ADFS? Active Directory Federation Services is a feature and web service in the Windows Server Operating System that allows sharing of identity information outside a company's network. It authenticates users with their usernames and passwords.
