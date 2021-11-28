@@ -471,7 +471,7 @@ tags:
         - Automate remediation of non-compliant resources using SSM Automation Documents
         - Which AWS Config feature can you use to automatically re-configure your Security Groups to their correct state?
 
-## section 23
+## section23
 
 - **Single sign-on (SSO)** is an authentication method that enables users to securely authenticate with multiple applications and websites by using just one set of credentials. 
 
@@ -485,8 +485,6 @@ tags:
   
 - SAML(Security Assertion Markup Language)은 사용자 ID, 인증 및 속성 정보를 표시하고 교환하기 위한 OASIS 개방형 표준입니다. SAML 어설션은 싱글 사인온 요청을 완료하는 일부로서 사용자 ID 및 속성 정보를 사용자의 ID 제공자로부터 신뢰 서비스 제공자로 전송하기 위해 사용되는 XML 형식화된 토큰입니다. SAML 어설션은 연합 비즈니스 파트너 간에 정보를 전송하는 벤더 중립적인 수단을 제공합니다. SAML을 사용하여 엔터프라이즈 서비스 제공자는 별도의 엔터프라이즈 ID 제공자에 접속하여 보안 컨텐츠에 액세스를 시도 중인 사용자를 인증할 수 있습니다. 
 
- 
-
 - **ADFS (Active Directory Federation Service)**
   - 사용자 계정 및 응용 프로그램이 완전히 다른 네트워크나 조직에 있는 경우에도 하나 이상의 보호된 인터넷 연결 응용 프로그램에 대한 완벽한 "단일 프롬프트" 액세스를 가진 브라우저 기반 클라이언트(네트워크 내부 또는 외부)를 제공하는 ID 액세스 솔루션 이다
 
@@ -499,3 +497,24 @@ tags:
  
 - **What is ADFS and how it works?**
   - What is ADFS? Active Directory Federation Services is a feature and web service in the Windows Server Operating System that allows sharing of identity information outside a company's network. It authenticates users with their usernames and passwords.
+
+- **AWS prod**
+  - A product is an IT service that you want to make available for deployment on AWS. 
+
+- **AWS PCI**
+  - AWS PCI Compliance is an Amazon Web Service (AWS) that is Payment Card Industry (PCI) compliant. 
+
+- **IAM 역할과 리소스 기반 정책의 차이**
+  - [IAM 역할과 리소스 기반 정책의 차이](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_compare-resource-policies.html)
+  - ID 기반 정책과 달리 리소스 기반 정책은 해당 리소스에 액세스할 수 있는 사용자(보안 주체)를 지정
+  - 리소스 기반 정책을 통해 액세스한 리소스로 인해 보안 주체는 여전히 신뢰할 수 있는 계정에서 작업을 할 수 있고, 역할 권한을 수신하기 위해 **자신의 권한을 포기할 필요가 없습니다.** 즉, 보안 주체는 신뢰하는 계정의 리소스에 액세스하는 동시에 신뢰할 수 있는 계정의 리소스에 계속 액세스할 수 있습니다. 다른 계정의 공유 리소스로 정보를 복사하거나 공유 리소스의 정보를 복사하는 등의 작업에서 이는 특히 유용합니다. 
+
+- You have a mobile application and would like to give your users access to their own personal space in the S3 bucket. How do you achieve that?
+  - Never make an S3 bucket public to your mobile application users. This would result in data leaks!
+  - **Amazon Cognito can be used to federate mobile user accounts and provide them with their own IAM permissions, so they can be able to access their own personal space in the S3 bucket.**
+
+- **AWS RAM**
+  - AWS *Resource Access Manager* (AWS RAM) helps you securely share your AWS resources within your organization or organizational units (OUs) in AWS Organizations and with AWS Accounts. You can also share resources with IAM Roles and IAM Users.
+
+
+
