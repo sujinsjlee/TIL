@@ -31,6 +31,10 @@ tags:
 > [Section23 IAM - Advanced](#section23)  
 > [Section24 AWS Security & Encryption: KMS, SSM Parameter Store, CloudHSM, Shield, WAF](#section24)  
 > [Section25 Networking - VPC](#section25)  
+> [Section26 Disaster Recovery & Migrations](#section26)  
+> [Section27 More Solution Architectures](#section27)  
+> [Section28 Other Services](#section28)  
+
 
 
 
@@ -341,18 +345,6 @@ tags:
   - 배포
   - 배포는 최종 사용자에게 결과물을 전달하는 과정이다. 내가 내 컴퓨터에서 동작하게 만든 코드를 다른 컴퓨터에서도 동작할 수 있도록 하는 것이다. 
 
-## section25
-- **octect**
-  - 컴퓨터에서의 옥텟은 8 비트의 배열
-  - octet-stream이라는 것은 말 그대로 8비트로 된 일련의 데이타
-  - IPv4 주소에서의 옥텟이라는 말의 의미는 32비트의 IP 주소를 8비트로 나누는 단위라고 할수 있다. IP 주소는 32비트로 이루어져 있고, 그것을 옥텟(Octet)단위로 끊어서 표현한다. 각 옥텟은 10진수로 0~255의 값을 가지게 된다. 그리고 나누어진 옥텟을 마침표(.)단위로 나누어서 표기하는 것이다.
-  - IPv4 주소는 총 32비트로 이루어져 있는데 4구간으로 나누어서 사용된다. 그래서 8비트씩 4구간으로 나누어서 사용하게 되는데 8비트씩 나누어진 것을 옥텟이라고 한다.
-  - ![IPv4](https://qph.fs.quoracdn.net/main-qimg-a4e28e6d0a7c25607b8fb34a2956267f)
-
-
-- **Cloud**
-  - servers that are accessed over the internet, along with the software and databases that run on those servers
-
 ## section20
 - **Amamzon API Gateway**
   - Amazon API Gateway는 규모와 관계없이 REST 및 WebSocket API를 생성, 게시, 유지, 모니터링 및 보호하기 위한 AWS 서비스
@@ -533,3 +525,37 @@ tags:
 
 - You have a secret value that you use for encryption purposes, and you want to store and track the values of this secret over time. Which AWS service should you use?
   - SSM Parameters Store can be used to store secrets and has built-in version tracking capability. Each time you edit the value of a parameter, SSM Parameter Store creates a new version of the parameter and retains the previous versions. You can view the details, including the values, of all versions in a parameter's history.
+
+
+## section25
+- **octect**
+  - 컴퓨터에서의 옥텟은 8 비트의 배열
+  - octet-stream이라는 것은 말 그대로 8비트로 된 일련의 데이타
+  - IPv4 주소에서의 옥텟이라는 말의 의미는 32비트의 IP 주소를 8비트로 나누는 단위라고 할수 있다. IP 주소는 32비트로 이루어져 있고, 그것을 옥텟(Octet)단위로 끊어서 표현한다. 각 옥텟은 10진수로 0~255의 값을 가지게 된다. 그리고 나누어진 옥텟을 마침표(.)단위로 나누어서 표기하는 것이다.
+  - IPv4 주소는 총 32비트로 이루어져 있는데 4구간으로 나누어서 사용된다. 그래서 8비트씩 4구간으로 나누어서 사용하게 되는데 8비트씩 나누어진 것을 옥텟이라고 한다.
+  - ![IPv4](https://qph.fs.quoracdn.net/main-qimg-a4e28e6d0a7c25607b8fb34a2956267f)
+
+
+- **Cloud**
+  - servers that are accessed over the internet, along with the software and databases that run on those servers
+
+
+## section26
+
+- **RPO an RTO**
+  - RPO(Recovery Point Object) : 데이터 손실을 허용할 수 있는 최대 기간
+  - RTO(Recovery Time Objective) : 장애 후 데이터를 복구하고 처리를 재개하는 데까지 최대 허용시간
+  - 예를 들어 1시에 백업을 한다고 가정하면 6시에 장애가 나면 RPO는 5시간입니다. 복구에 걸리는 시간이 3시간이어서 9시에 복구가 완료되었다고 한다면 RTO는 3시간입니다. RPO와 RTO를 줄이기 위해서는 비용이 수반되는데, 이를 위해서 업무중요도 및 영향도에 따라서 RPO와 RTO를 고려하여 재해복구 또는 무중단 인프라를 구축하도록 설계하는 것이 최근의 인프라 스트럭처 트렌드입니다.
+  - Recovery point objective (RPO): The maximum acceptable amount of time since the last data recovery point.
+  - Recovery time objective (RTO): The maximum acceptable delay between the interruption of service and restoration of service. This determines an acceptable length of time for service downtime. 
+  
+- **Downtime**
+  - 다운타임(downtime 또는 outage duration)은 시스템을 이용할 수 없는 시간
+  - 사용사능한 가동시간 uptime
+
+- [point-in-time recovery (PITR)](https://aws.amazon.com/ko/blogs/storage/point-in-time-recovery-and-continuous-backup-for-amazon-rds-with-aws-backup/)
+
+- Server Messaging protocol (SMB) protocol
+- Network File System (NFS) protocol 
+
+- AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS Storage services, as well as between AWS Storage services.
