@@ -516,5 +516,20 @@ tags:
 - **AWS RAM**
   - AWS *Resource Access Manager* (AWS RAM) helps you securely share your AWS resources within your organization or organizational units (OUs) in AWS Organizations and with AWS Accounts. You can also share resources with IAM Roles and IAM Users.
 
+## section24
+- **SSM**: AWS Systems Manager
 
+-  Define Web ACL (Web Access Control List):
+  - Protects from common attack - SQL injection and **Cross-Site Scripting (XSS)**
+  - 사이트 간 스크립팅(또는 크로스 사이트 스크립팅, 영문 명칭 cross-site scripting, 영문 약어 XSS)은 웹 애플리케이션에서 많이 나타나는 취약점의 하나로 웹사이트 관리자가 아닌 이가 웹 페이지에 악성 스크립트를 삽입할 수 있는 취약점이다.
+  - What is cross site scripting (XSS) Cross site scripting (XSS) is a common attack vector that injects malicious code into a vulnerable web application
 
+- **In-flight Encryption = HTTPS**, and HTTPS can not be enabled without an SSL certificate.
+
+- You need to create KMS Keys in AWS KMS before you are able to use the encryption features for EBS, S3, RDS ...
+  - False
+  - You could also create your own keys for AWS to do the encryption, but it's not mandatory.
+  - You can use the AWS Managed Service keys in KMS, therefore we don't need to create our own KMS keys.
+
+- You have a secret value that you use for encryption purposes, and you want to store and track the values of this secret over time. Which AWS service should you use?
+  - SSM Parameters Store can be used to store secrets and has built-in version tracking capability. Each time you edit the value of a parameter, SSM Parameter Store creates a new version of the parameter and retains the previous versions. You can view the details, including the values, of all versions in a parameter's history.
