@@ -559,3 +559,58 @@ tags:
 - Network File System (NFS) protocol 
 
 - AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS Storage services, as well as between AWS Storage services.
+
+## section27
+- **DLQ**
+  - A dead-letter queue is an Amazon SQS queue that an Amazon SNS subscription can target for messages that can't be delivered to subscribers successfully. 
+
+- single root I/O virtualization (SR-IOV)
+- **Amazon FSx for Lustre**
+  - Lustre is a type of parallel distributed file system, for large-scale computing
+  - The name Lustre is derived from “Linux” and “cluster”
+
+- Bastion Hosts
+  - public EC2 instance to SSH into, that has SSH connectivity to EC2 instances in private subnets
+
+
+## section28
+
+- **CI**
+  - CI/CD의 "CI"는 개발자를 위한 자동화 프로세스인 지속적인 통합(Continuous Integration)을 의미
+  - CI를 성공적으로 구현할 경우 애플리케이션에 대한 새로운 코드 변경 사항이 정기적으로 빌드 및 테스트되어 공유 리포지토리에 통합되므로 여러 명의 개발자가 동시에 애플리케이션 개발과 관련된 코드 작업을 할 경우 서로 충돌할 수 있는 문제를 해결할 수 있습니다.
+
+- **CD**
+  - CI/CD의 "CD"는 지속적인 서비스 제공(Continuous Delivery) 및/또는 지속적인 배포(Continuous Deployment)를 의미하며 이 두 용어는 상호 교환적으로 사용됩니다. 두 가지 의미 모두 파이프라인의 추가 단계에 대한 자동화를 뜻하지만 때로는 얼마나 많은 자동화가 이루어지고 있는지를 설명하기 위해 별도로 사용되기도 합니다.
+
+- 지속적인 제공이란 개발자들이 애플리케이션에 적용한 변경 사항이 버그 테스트를 거쳐 리포지토리(예: GitHub 또는 컨테이너 레지스트리)에 자동으로 업로드되는 것을 뜻하며, 운영팀은 이 리포지토리에서 애플리케이션을 실시간 프로덕션 환경으로 배포할 수 있습니다. 이는 개발팀과 비즈니스팀 간의 가시성과 커뮤니케이션 부족 문제를 해결해 줍니다. 지속적인 제공은 최소한의 노력으로 새로운 코드를 배포하는 것을 목표로 합니다.
+
+- 지속적인 배포(또 다른 의미의 "CD": Continuous Deployment)란 개발자의 변경 사항을 리포지토리에서 고객이 사용 가능한 프로덕션 환경까지 자동으로 릴리스하는 것을 의미합니다. 이는 애플리케이션 제공 속도를 저해하는 수동 프로세스로 인한 운영팀의 프로세스 과부하 문제를 해결합니다. 지속적인 배포는 파이프라인의 다음 단계를 자동화함으로써 지속적인 제공이 가진 장점을 활용합니다.
+
+ 
+- **CloudFormation**
+  - AWS에 구축한 configuration을 템플릿화하여 재사용하기 쉽게 해주는 서비스
+  - AWS CloudFormation은 Amazon Web Services 리소스를 모델링하고 설정하여 리소스 관리 시간을 줄이고 AWS에서 실행되는 애플리케이션에 더 많은 시간을 사용하도록 해 주는 서비스입니다. 필요한 모든 AWS 리소스(예: Amazon EC2 인스턴스 또는 Amazon RDS DB 인스턴스)를 설명하는 템플릿을 생성하면 AWS CloudFormation이 해당 리소스의 프로비저닝과 구성을 담당합니다. AWS 리소스를 개별적으로 생성하고 구성할 필요가 없으며 어떤 것이 무엇에 의존하는지 파악할 필요도 없습니다. AWS CloudFormation에서 모든 것을 처리합니다. 다음 시나리오는 AWS CloudFormation이 얼마나 유용한지를 보여줍니다
+
+- **Where are Docker images stored?**
+  - ECR
+
+- **CloudFormation StackSets** allows you to create, update, or delete CloudFormation stacks across multiple AWS accounts and AWS regions with a single operation.
+
+- **ECS = Elastic Container Service**
+  - Launch Docker containers on AWS
+  - Which AWS service allows you to manage a fleet of Docker containers in AWS Cloud and on-premises?
+  - Amazon ECS is a fully managed container orchestration service that helps you easily deploy, manage, and scale containerized applications.
+
+- **AWS Glue**
+  - It is a Serverless data-preparation service for extract, transform, and load (ETL) operations.
+
+- **AWS OpsWorks** is a configuration management service that provides managed instances of **Chef and Puppet**.
+
+- AWS **AppSync** is a fully managed service that makes it easy to develop **GraphQL** APIs by handling the heavy lifting of securely connecting to data sources like DynamoDB, Lambda, and more
+
+
+
+## test 
+- **Blue/green deployment** is a technique for releasing applications by shifting traffic between two identical environments running different versions of the application: "Blue" is the currently running version and "green" the new version. This type of deployment allows you to test features in the green environment without impacting the currently running version of your application. When you’re satisfied that the green version is working properly, you can gradually reroute the traffic from the old blue environment to the new green environment. Blue/green deployments can mitigate common risks associated with deploying software, such as downtime and rollback capability.
+
+
