@@ -610,7 +610,67 @@ tags:
 
 
 
-## test 
+## Practice Exam 
 - **Blue/green deployment** is a technique for releasing applications by shifting traffic between two identical environments running different versions of the application: "Blue" is the currently running version and "green" the new version. This type of deployment allows you to test features in the green environment without impacting the currently running version of your application. When you’re satisfied that the green version is working properly, you can gradually reroute the traffic from the old blue environment to the new green environment. Blue/green deployments can mitigate common risks associated with deploying software, such as downtime and rollback capability.
 
 
+- **AWS Trusted Advisor** : Analyze your AWS accounts and provides recommendation
+  - Which AWS Service analyzes your AWS account and gives recommendations for cost optimization, performance, security, fault tolerance, and service limits?
+  - AWS Trusted Advisor provides recommendations that help you follow AWS best practices. It evaluates your account by using checks. These checks identify ways to optimize your AWS infrastructure, improve security and performance, reduce costs, and monitor service quotas.
+  - Trusted Advisor는 수십만 명의 AWS 고객에게 서비스를 제공하면서 익힌 모범 사례를 활용합니다. Trusted Advisor는 AWS 환경을 검사한 후 비용 절감, 시스템 가용성 및 성능 향상 또는 보안 격차를 해결할 기회가 있을 때 권장 사항을 제시합니다.
+
+- **Amazon CloudFront**
+	- Amazon CloudFront는 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게 더 빨리 배포하도록 지원하는 웹 서비스입니다. CloudFront는 엣지 로케이션이라고 하는 데이터 센터의 전 세계 네트워크를 통해 콘텐츠를 제공합니다. CloudFront를 통해 서비스하는 콘텐츠를 사용자가 요청하면 지연 시간이 가장 낮은 엣지 로케이션으로 요청이 라우팅되므로 가능한 최고의 성능으로 콘텐츠가 제공됩니다.
+
+- Lambda , log , analysis --> **CloudWatch Execution log**
+
+- Load balancer 는 항상 public subnet에 두는 것으로 알고있어야.
+- 특정기간내에 삭제 --> Lifecycle
+
+- **s3 intelligent tiering**
+  - 여기서 S3 Intelligent-Tiering은 객체 기준으로 액세스 요청의 빈도수에 따라 알아서 객체의 티어를 S3 Standard, S3 Standard-IA 분류해주는 기능이었다.
+  - (30일 동안 액세스가 없으면 객체가 Stadard-IA로 이동 / 액세스가 발생되면 다시 Stadard로 이동)
+
+- S3 – CloudFront(CDN) : CloudFront와 S3 사이의 데이터흐름은 공짜 
+  - CloudFront : 엣지 서비스
+  - 한국의 영상을 미국의 엣지서버로 CDN 엣지 캐시 호출해서 response타임을 줄일 수 있음
+  - Response 타임 줄이고
+  - 보안강화
+
+- 우선 DB는 절대 Public subnet에 놓지 않습니다.
+
+- ? VPC Routing ?
+  - Redshift Enhanced VPC Routing: COPY / UNLOAD goes through VPC
+
+- Instance store은 EBS랑 비슷한 temporary 용 저장장소 (Ec2 에 딱붙어있는 저장장치 EBS보다 10배빠름..Ec2꺼지면 instace store에있는 정보 날아감)
+
+- **!!Disk RAID : 이거 기본적인 면접질문!!**
+
+- 데이터 파이트라인으로 전달
+  - Kinesis (real time / coorinate)
+  - SQS
+
+
+- 보안적으로 안전하게 설정하는 방법
+  - Web서버의 ip를 DB security 그룹에 넣는 것은 좋지않습니다.
+  - Web서버의 security group을 소스로 DB security 그룹에 넣어야
+
+- Config는 aws 자원의 설정을 확인/백업/롤백
+
+- 인증서 certification --> SNI
+  - SNI solves the problem of loading multiple SSL certificates onto one web server (to serve multiple websites)
+
+- AWS Organization service : RAM 
+  - Resource Access MAnager
+
+- proportionately이란 단어 -->  weighted routing
+
+- Auto Scaling Groups - Scaling Cooldowns
+- 서로다른 VPC간 접근하고싶다 --> VPC Peering
+  - Cf ) Transit Gateway – transitive peering connections for VPC, VPN & DX
+
+- Low inter-node latency
+  - Cluster placement Groups
+
+- Hibernating : 인스턴스를 끄게 되면 컴퓨팅비용은 안들고 elastic IP 와 디스크비용 ebs 비용만 추가됨
+- AWS 내의 flow log  --> VPC Flow log
