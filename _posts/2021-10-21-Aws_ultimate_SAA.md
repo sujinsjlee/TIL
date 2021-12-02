@@ -34,6 +34,7 @@ tags:
 > [Section26 Disaster Recovery & Migrations](#section26)  
 > [Section27 More Solution Architectures](#section27)  
 > [Section28 Other Services](#section28)  
+> [Test](#Practice_Exam)
 
 
 
@@ -610,7 +611,7 @@ tags:
 
 
 
-## Practice Exam 
+## Practice_Exam 
 - **Blue/green deployment** is a technique for releasing applications by shifting traffic between two identical environments running different versions of the application: "Blue" is the currently running version and "green" the new version. This type of deployment allows you to test features in the green environment without impacting the currently running version of your application. When you’re satisfied that the green version is working properly, you can gradually reroute the traffic from the old blue environment to the new green environment. Blue/green deployments can mitigate common risks associated with deploying software, such as downtime and rollback capability.
 
 
@@ -620,7 +621,8 @@ tags:
   - Trusted Advisor는 수십만 명의 AWS 고객에게 서비스를 제공하면서 익힌 모범 사례를 활용합니다. Trusted Advisor는 AWS 환경을 검사한 후 비용 절감, 시스템 가용성 및 성능 향상 또는 보안 격차를 해결할 기회가 있을 때 권장 사항을 제시합니다.
 
 - **Amazon CloudFront**
-	- Amazon CloudFront는 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게 더 빨리 배포하도록 지원하는 웹 서비스입니다. CloudFront는 엣지 로케이션이라고 하는 데이터 센터의 전 세계 네트워크를 통해 콘텐츠를 제공합니다. CloudFront를 통해 서비스하는 콘텐츠를 사용자가 요청하면 지연 시간이 가장 낮은 엣지 로케이션으로 요청이 라우팅되므로 가능한 최고의 성능으로 콘텐츠가 제공됩니다.
+	- Amazon CloudFront는 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게 더 빨리 배포하도록 지원하는 웹 서비스입니다. CloudFront는 엣지 로케이션이라고 하는 데이터 센터의 전 세계 네트워크를 통해 콘텐츠를 제공합니다.
+  - CloudFront를 통해 서비스하는 콘텐츠를 사용자가 요청하면 지연 시간이 가장 낮은 엣지 로케이션으로 요청이 라우팅되므로 가능한 최고의 성능으로 콘텐츠가 제공됩니다.
 
 - Lambda , log , analysis --> **CloudWatch Execution log**
 
@@ -666,6 +668,7 @@ tags:
 - proportionately이란 단어 -->  weighted routing
 
 - Auto Scaling Groups - Scaling Cooldowns
+
 - 서로다른 VPC간 접근하고싶다 --> VPC Peering
   - Cf ) Transit Gateway – transitive peering connections for VPC, VPN & DX
 
@@ -673,4 +676,313 @@ tags:
   - Cluster placement Groups
 
 - Hibernating : 인스턴스를 끄게 되면 컴퓨팅비용은 안들고 elastic IP 와 디스크비용 ebs 비용만 추가됨
+
 - AWS 내의 flow log  --> VPC Flow log
+
+<!--
+- [Basic Newtork Tips](https://6kkki.tistory.com/14)
+- **IP주소**
+  - IP (*Internet + Protocol*)
+  - Internet은 이름처럼 inter + network 를 의미
+  - 여러개의 소규모 네트워크들이 연결되어 거대한 네트워크를 이루는 것
+  - 전산실에 있는 컴퓨터들을 ethernet 케이블 등을 이용해서 물리적으로 연결하면 소규모 네트워크가 됨
+  - 이를 LAN (*Local Area Network*)이라고 함
+  - LAN + LAN ==> Internet
+  - 인터넷 상에서 컴퓨터 간의 제어나 연결 혹은 통신과 데이터 전송에 대한 규약
+  - 어떤 한 컴퓨터를 찾아낼 수 있는 주소
+
+- **Gateway**
+  - LAN은 입구역할을 하는 컴퓨터를 통해 외부 네트워크와 연결 -> 그 컴퓨터가 Gateway
+  - Gateway : 다른 네트워크로 들어가는 입구역할을하는 네트워크 point
+
+- **DNS**
+  - 컴퓨터 네트워크에서 장치들이 서로를 인식하기 위해서, 그리고 IP를 다 하나하나 외울 수 없기 때문에 DNS가 등장
+  - DNS : 특정 컴퓨터의 주소를 찾기 위해, 사람이 이해하기 쉬운 도메인이름을 숫자로 된 식별번호로 변환
+
+- **subnet**
+  - subnetwork를 줄인말
+  - 어떤 기관에 소속된 네트워크이지만 따로 분리되어 있는 한 부분으로 인식될 수 있는 네트워크를 의미
+
+- 서브넷을 보면 255와 0으로 구성이 되어 있다. 네트워크 부분은 255로, 호스트 부분은 0으로 지정해서 IP주소의 어디까지가 네트워크 주소이고 어디부터가 호스트 주소인지 알 수 있다.
+
+  - 예를 들어, subnet이 255.255.0.0 이고 IP 주소가 1.2.3.4 라면, 1.2 까지가 네트워크 주소이고 3.4는 호스트 주소가 된다. 다시 예를 들어 subnet이 255.255.255.0 이고 IP 주소가 1.2.3.4라면 1.2.3까지가 네트워크 주소이고 마지막 4가 호스트 주소가 되는 것이다. 
+
+  - 그렇다면 네트워크 부분과 호스트 부분은 정확히 어떠한 것을 정의하는 것일까? 
+    - 네트워크 부분은 통신을 위해서 데이터를 전송하였을 때 라우터를 거치지 않고 전송이 가능한 영역이라는 뜻이다. 호스트 부분은 각각의 PC를 말하는 것이다.
+  - 예시를 보면 조금 이해가 빠를 것이다. 호스트 3개가 있다고 치자. 
+  - 호스트 a의 IP는 210.170.1.1, 호스트 b의 IP는 210.170.1.2, 호스트 c의 IP는 210.170.2.1이라고 하자.
+
+  - 만일 이 호스트들의 써브넷마스크가 255.255.255.0이라고 하면 네트워크 주소 부분이 세번째 부분까지 된다. 따라서 210.170.1.까지 같은 a와 b는 같은 네트워크로 직통연결이 가능하다.
+
+  - 만약 써브넷마스크가 255.255.0.0이라면 a,b,c 모두 같은 네트워크가 되어 직통연결이 가능한 것이다.
+-->
+
+- Elastic Load Balancing 
+  - Application Load Balancers, Network Load Balancers, Gateway Load Balancers 및 Classic Load Balancer 각자 필요에 따라 가장 적합한 로드 밸런서 유형을 선택할 수 있습니다.
+
+
+- **Network Load Balancer – Target Groups**
+  - *EC2 instances*
+  - IP Addresses : *must be private IPs*
+  - If you specify targets using an instance ID, traffic is routed to instances using the primary private IP address specified in the primary network interface for the instance. 
+
+- ( 7 ) 
+- **NAT Gateway**는 Newtwork Address Transition 네트워크 주소변환서비스
+  - NAT 게이트웨이: 프라이빗 서브넷에 있는 리소스가 인터넷에 액세스할 수 있게 해주는 고가용성 관리형 네트워크 주소 변환 (NAT) 서비스입니다.
+  -  Subnet 을 Public 과 Private 으로 구분하여, Public subnet은 Internet Gateway 를 이용하여 외부와 통신이 가능하도록 설정하였다. 하지만, Private Subnet 의 경우는 외부와의 통신이 단절된 환경이다.
+    - Private Subnet에 위치한 instance가 다른 AWS 서비스에 연결해야 하는 경우. 
+    - 인터넷에서 Private instance 에 접근 불가 조건은 유지하면서 반대로 instance 에서 외부 인터넷으로 연결이 필요한 경우. 
+  -  위와 같은 이유로 Private Subnet에 배포된 instance 라도 외부와의 통신이 필요한 경우가 있다. 이런 경우 가장 간단히 해결 할 수 있는 방법은 NAT 서버를 구축하는 것이다.
+  - *NAT Gateway : managed by AWS, provides scalable Internet access to private EC2 instances, IPv4 only*
+
+- **NAT Instance**
+  - *NAT Instances : gives Internet access to EC2 instances in private subnets. Old, must be setup in a public subnet, disable Source / Destination check flag*
+  - *You must manage Security Groups*
+  - *Use as Bastion Host*
+  - *Support port fowarding*
+
+- **Bastion host**
+  - [Bastion host concept](https://bluese05.tistory.com/48)
+  - Bastion Host : public EC2 instance to SSH into, that has SSH connectivity to EC2 instances in private subnets
+  - Private Subnet에 배포된 instance의 경우 외부에서 접근이 차단되어 있기 때문에 SSH 로 접근할 수 있는 방법이 없다. 하지만 운영자는 서버를 관리 하기 위해 SSH 접속이 필요하다. 이러한 경우 Bastion host 라는 방식으로 외부 접근이 가능하도록 구성한다.  
+
+  - Bastion host는 Private 네트워크 환경에 접근하기 위한 일종의 Proxy 역할을 하는 서버라고 보면 된다.  Private subnet에 배포된 모든 instance 들은 bastion을 통해 SSH 접속을 허용하도록 한다. 접근 허용을 한 곳으로 한정 지음으로 좀 더 보안성을 높이고자 하는 목적이 있으며 bastion host의 logging 만 관리하면 private subnet에 접속하는 모든 기록을 관리할 수 있다. 
+  -  단, bastion host 가 공격 당하면 내부 네트워크가 모두 위험해 질 수 있으므로 bastion host에 대한 접근을 최대한 철저히 관리하는게 좋다. 
+
+  - Bastion host는 Public Subnet에 위치하도록 EC2 instance를 생성한다. 외부 사용자는 Bastion host 를 통해 접속한다. 
+  - 외부 사용자의 특정 IP만 허용하여 Bastion host에 접속 가능하도록 ACL 과 Security Group을 설정한다. 
+  - Bastion host 를 통해 Private Subnet에 상주한 instance 로 접속 한다. 
+
+- **Direct Connect(DX)**
+  - Provides a deciated private connection from a remote network to your VPC
+  - Dedicated connection must be setup between your DC and AWS Direct Connect locations
+
+- (8)
+- **Site-to-Site VPN Connection**
+  - Create a Virtual Private Gateway on the AWS side of the VPN and a Customer Gateway on the on-premises side of the VPN
+  - enable Route Propagation for the VGW
+
+- (9)
+- EC2 Instance placement strategy (Cluster, Spread, Partition)
+- **Cluster placement group**
+  - clusters instances into a low-latency group in a single Availability Zone
+
+- (11)
+- **Cloud Hub**
+  - *One VPC connect with multiple On Premise Network*
+  - Use VPN to establish connection
+- **Transit Gateway**
+  - *Connect multiple VPC with multiple On Premise Network*
+  - Use VPN and Direct Connect to establish connection
+  - Supports IP Multi-cast
+- **VPC Peering**
+  - A VPC peering connection is a networking connection between *two VPCs* that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses.
+
+- (12)
+- **migrate from SQS Standard queues to FIFO queues**, the following steps should be the migration checklist
+  - *Delete* the existing standard queue and recreate it as a FIFO queue
+  - Make sure that the name of the FIFO queue ends with the *.fifo* suffix
+  - Make sure that the throughput for the target FIFO queue does not exceed *3,000* messages per second
+    - (Limited throughput: 300 msg/s without batching, 3000 msg/s with)
+
+- (13)
+- **AWS X-Ray**
+  - AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. 
+  - *accross account debugging*
+- **CloudTrail**
+  - : With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure. You can use AWS CloudTrail to answer questions such as - “Who made an API call to modify this resource?”. CloudTrail provides event history of your AWS account activity thereby enabling governance, compliance, operational auditing, and risk auditing *of your AWS account*. You cannot use CloudTrail to debug and trace data across accounts.
+  - *debugging of your account*
+
+
+- (14)
+- **Amazon VPC console wizard configurations**
+- [vpc console wizard](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_wizard.html)
+  - VPC with a single public subnet
+  - VPC with public and private subnets (NAT)
+  - VPC with public and private subnets and AWS Site-to-Site VPN access
+  - VPC with a private subnet only and AWS Site-to-Site VPN access
+  - *VPC with a public subnet only and AWS Site-to-Site VPN access (X)*
+
+- (15)
+- data sources supported by **GuardDuty**
+  - VPC Flow Logs, DNS logs, CloudTrail events 
+  - VPC Flow Logs, DNS logs, CloudTrail events - Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts, workloads, and data stored in Amazon S3. 
+
+
+- (16)
+- **EBS encryption**
+  - [EBS encryption](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html)
+    - Data at rest inside the volume
+    - All data moving between the volume and the instance
+    - All snapshots created from the volume
+    - All volumes created from those snapshots
+  - Amazon Elastic Block Store (Amazon EBS) provides block-level storage volumes for use with EC2 instances. When you create an encrypted EBS volume and attach it to a supported instance type, data stored at rest on the volume, data moving between the volume and the instance, snapshots created from the volume and volumes created from those snapshots are all encrypted.
+
+- (19)
+- **Protection for objects stored in S3**
+  - *Enable MFA delete on the bucket*
+  - *Enable versioning on the bucket*
+
+- (20)
+  - **A permissions boundary** can be used to control the maximum permissions employees can grant to the IAM principals (that is, users and roles) that they create and manage.
+
+- (21)
+- **ASG Lifecycle Hooks** : ASG custom action
+  - Auto Scaling group lifecycle hooks enable you to perform custom actions as the Auto Scaling group launches or terminates instances. Lifecycle hooks enable you to perform custom actions by pausing instances as an Auto Scaling group launches or terminates them. 
+
+- (22)
+  - **ElastiCache for Redis**
+    - Amazon ElastiCache for Redis is a blazing fast in-memory data store that provides sub-millisecond latency to power internet-scale real-time applications. Amazon ElastiCache for Redis is a great choice for *real-time transactional and analytical processing* use cases 
+
+  - **ElastiCache for Memchached**
+    - Amazon ElastiCache for Memcached is a Memcached-compatible in-memory key-value store service that can be used as a cache or a data store. Amazon ElastiCache for Memcached is a great choice for implementing an in-memory cache to decrease access latency, increase throughput, and ease the load off your relational or NoSQL database. Session stores are easy to create with Amazon ElastiCache for Memcached. 
+
+- (23)
+- In the exam: **Chef & Puppet** needed => AWS Opsworks
+- Chef & Puppet help you perform server configuration automatically, or repetitive actions
+
+- (24)
+- DMS Sources and Targets
+  - SOURCES:
+  -  On-Premise and EC2 instances databases: Oracle, MS SQL Server, MySQL, MariaDB, PostgreSQL,MongoDB, SAP, DB2
+    - Azure: Azure SQL Database
+    - Amazon RDS: all including Aurora
+    - Amazon S3
+
+  - TARGETS:
+  - On-Premise and EC2 instances databases: Oracle, MS SQL Server, MySQL, MariaDB, PostgreSQL, SAP
+    - Amazon RDS
+    - Amazon Redshift
+    - Amazon DynamoDB
+    - Amazon S3
+    - ElasticSearch Service
+    - Kinesis Data Streams
+    - DocumentDB
+
+- (25)
+- **AWS Lambda**
+  - Virtual functions – no servers to manage!
+  - Integrated with the whole AWS suite of services
+  - By default, Lambda functions always operate from an AWS-owned VPC and hence have access to any public internet address or public AWS APIs. Once a Lambda function is VPC-enabled, it will need a route through a NAT gateway in a public subnet to access public resources 
+  - Since Lambda functions can scale extremely quickly, its a good idea to deploy a CloudWatch Alarm that notifies your team when function metrics such as ConcurrentExecutions or Invocations exceeds the expected threshold 
+  - If you intend to reuse code in more than one Lambda function, you should consider creating a Lambda Layer for the reusable code 
+
+- **ECS**
+  - You must provision & maintain the infrastructure (the EC2 instances)
+- **Fargate**
+  - You do not provision the infrastructure (no EC2 instances to manage)
+
+- (26)
+- ElastiCache – Cache Security
+  - **Redis auth**
+
+- (27)
+- **AWS Global Accelerator** 
+  - Improves performance for a wide range of applications over TCP or UDP
+  - Proxying packets at the edge to applications running in one or more AWS Regions.
+  - Good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP
+  - Good for HTTP use cases that require static IP addresses
+  - Good for HTTP use cases that required deterministic, fast regional failover
+- **Amazon CloudFront**
+  - Improves performance for both cacheable content (such as images and videos)
+  - Dynamic content (such as API acceleration and dynamic site delivery)
+  - Content is served at the edge
+  - CloudFront is better for improving application resiliency to handle spikes in traffic
+
+- (28)
+- **Neptune**
+  - Fully managed graph database
+  - High relationship data
+
+- (29)
+- **Aurora Replica**
+  - increase availability
+  - scale the read operations (handle many read request)
+
+- (30)
+- S3 is a proprietary storage technology (unlike EFS / NFS)
+  - You can use Amazon S3 to host a static website. 
+- *CloudFront* : Great for static content that must be available everywhere
+- *S3* : Great for dynamic content that needs to be available at low-latency in few regions
+
+- (31)
+- **RDS Read Replicas**
+  - For RDS Read Replicas within the same region, you don’t pay that fee
+  - In AWS there’s a network cost when data goes from one AZ to another
+  
+- (32)
+- **Spread placement group of EC2 instances**
+  - A spread placement group can span multiple Availability Zones in the same Region. You can have a maximum of **seven** running instances per Availability Zone per group.
+
+
+- (33)
+- **User Data**
+  - By default, scripts entered as user data are executed with root user privileges
+  - By default, user data runs only during the boot cycle when you first launch an instance
+
+- (34)
+- **Amazon S3 - Consistency Model**
+  - subsequent read request immediately receives the latest version of the object
+
+- (35)
+- **AWS Shield Standard** is automatically enabled for all AWS customers at no additional cost. AWS Shield Advanced is an optional paid service.
+
+
+- (37)
+- **Snowball Edge (for data transfers)**
+  - Physical data transport solution: move *TBs or PBs of data* in or out of AWS
+  - Transfer the on-premises data into multiple Snowball Edge Storage Optimized devices. Copy the Snowball Edge data into Amazon S3 and create a lifecycle policy to transition the data into AWS Glacier
+  -  The data stored on the Snowball Edge device can be copied into the S3 bucket and later transitioned into AWS Glacier via a lifecycle policy. **You can't directly copy data from Snowball Edge devices into AWS Glacier.**
+
+
+- (38)
+- CloudWatch Alarm Targets
+  - Stop, Terminate, Reboot, or Recover an EC2 Instance
+  - Trigger Auto Scaling Action
+  - Send notification to SNS
+  - *Using CloudWatch event or CloudWatch alarm to trigger a lambda function, directly or indirectly, is wasteful of resources. You should just use the EC2 Reboot CloudWatch Alarm Action to reboot the instance. So all the options that trigger the lambda function are incorrect.*
+
+- (39)
+- **Amazon FSx for Lustre**
+  - Lustre is a type of parallel distributed file system, for large-scale computing
+  - FSx for Lustre provides the ability to both process the 'hot data' in a parallel and distributed fashion as well as easily store the 'cold data' on Amazon S3. 
+  - Seamless integration with S3
+
+- AWS Glue - AWS Glue is a fully managed extract, transform, and load (ETL) service that makes it easy for customers to prepare and load their data for analytics. 
+- Amazon EMR - Amazon EMR is the industry-leading cloud big data platform for processing vast amounts of data 
+
+- (40)
+  - **VPC sharing** (part of Resource Access Manager) allows multiple AWS accounts to create their application resources such as EC2 instances, RDS databases, Redshift clusters, and Lambda functions, into shared and centrally-managed Amazon Virtual Private Clouds (VPCs).
+
+- (41)
+  - **Bucket policies** in Amazon S3 can be used to add or deny permissions across some or all of the objects within a single bucket.
+  - **IAM policies** are attached to the users, enabling centralized control of permissions for users under your AWS Account to access buckets or objects. With IAM policies, you can *only grant users within your own AWS account permission* to access your Amazon S3 resources.
+
+- (42)
+  - You should use enhanced fan-out if you have multiple consumers retrieving data from a stream in parallel. 
+
+- (43)
+  - Use CloudTrail to analyze API calls - AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure. CloudTrail provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command-line tools, and other AWS services.
+
+  - In general, to analyze any API calls made within an AWS account, CloudTrail is used.
+  - **debugging --> CloudTrail**
+
+
+- (46)
+- Instantiating EC2 Instances quickly
+  - Use a Golden AMI: Install your applications, OS dependencies etc.. beforehand and launch your EC2 instance from the Golden AMI
+  - Bootstrap using User Data: For dynamic configuration, use User Data scripts
+  - Hybrid: mix Golden AMI and User Data (Elastic Beanstalk)
+
+- (47)
+- 
+
+- (48)
+- 
+
+
+
+
+
+
+
