@@ -34,7 +34,9 @@ tags:
 > [Section26 Disaster Recovery & Migrations](#section26)  
 > [Section27 More Solution Architectures](#section27)  
 > [Section28 Other Services](#section28)  
-> [Test](#Practice_Exam)
+> [Test0](#Practice_Exam_0)  
+> [Test1](#Practice_Exam_1)  
+
 
 
 
@@ -611,7 +613,7 @@ tags:
 
 
 
-## Practice_Exam 
+## Practice_Exam_0 
 - **Blue/green deployment** is a technique for releasing applications by shifting traffic between two identical environments running different versions of the application: "Blue" is the currently running version and "green" the new version. This type of deployment allows you to test features in the green environment without impacting the currently running version of your application. When you’re satisfied that the green version is working properly, you can gradually reroute the traffic from the old blue environment to the new green environment. Blue/green deployments can mitigate common risks associated with deploying software, such as downtime and rollback capability.
 
 
@@ -967,7 +969,6 @@ tags:
   - In general, to analyze any API calls made within an AWS account, CloudTrail is used.
   - **debugging --> CloudTrail**
 
-
 - (46)
 - Instantiating EC2 Instances quickly
   - Use a Golden AMI: Install your applications, OS dependencies etc.. beforehand and launch your EC2 instance from the Golden AMI
@@ -975,13 +976,90 @@ tags:
   - Hybrid: mix Golden AMI and User Data (Elastic Beanstalk)
 
 - (47)
-- 
+- Launch Configuration (legacy)
+- **Launch Template** (newer):
+  - Provision using both On-Demand and Spot instances (or a mix)
+  - Can use T2 unlimited burst feature
+  - Recommended by AWS going forward
 
-- (48)
-- 
+- (50)
+- Use Network ACLs to control the network traffic to and from your Amazon EC2 instance - **Network ACLs operate at the subnet level and not at the instance level.**
 
 
+- (52)
+- A Gateway Endpoint is a gateway that you specify as a target for a route in your route table for traffic destined to a supported AWS service. The following AWS services are supported: **Amazon S3 and DynamoDB.**
 
+- **You must remember that only these two services use a VPC gateway endpoint. The rest of the AWS services use VPC interface endpoints.**
+
+- (53)
+- **Dedicated Hosts**
+  - compliance requirements
+  - use your existing server-bound software licenses.
+
+- (54)
+- **Redshift Spectrum**: perform queries directly against S3 (no need to load)
+
+- (55)
+- Copy data from the source bucket to the destination bucket using the aws **S3 sync command**
+- The aws S3 sync command uses the CopyObject APIs to copy objects between S3 buckets. 
+
+
+- (56)
+- **If the IAM role that you create for the Lambda function is in the same AWS account as the bucket, then you don't need to grant Amazon S3 permissions on both the IAM role and the bucket policy.** Instead, you can grant the permissions on the IAM role and then verify that the bucket policy doesn't explicitly deny access to the Lambda function role. 
+
+- (57)
+- IAM roles allow you to delegate access to users or services that normally don't have access to your organization's AWS resources. IAM users or AWS services can assume a role to obtain temporary security credentials that can be used to make AWS API calls. 
+- 권한 위임 --> 무조건 IAM Role
+
+- (58)
+- **Optimize S3 Performance**
+  - **sMulti-Part upload**
+  - **S3 Transfer Acceleration**
+
+- (59)
+- An Elastic Load Balancer has marked all the EC2 instances in the target group as unhealthy. Surprisingly, when a developer enters the IP address of the EC2 instances in the web browser, he can access the website.
+  - The security group of the EC2 instance does not allow for traffic from the security group of the Application Load Balancer
+
+  - The route for the health check is misconfigured
+
+- (60)
+- handle request throttling - **Amazon API Gateway, Amazon SQS and Amazon Kinesis**
+
+- (61)
+- **Amazon GuardDuty**
+  - Input data includes : CloudTrail / VPC / DNS Logs
+  - Intelligent Threat discovery to Protect AWS Account
+- **Amazon Macie**
+  - use machine learning and pattern matching to discover and protect your sensitive data in AWS.
+
+- (62)
+- **DynamoDB Accelerator (DAX)** is a fully managed, highly available, **in-memory cache for Amazon DynamoDB** that delivers up to a 10 times performance improvement—from milliseconds to microseconds—even at millions of requests per second.
+
+
+- (63)
+- **Cognito User Pools**
+  - Sign in functionality for app users
+  - Integrate with **API Gateway**
+- **Cognito Identity Pools (Federated Identity):**
+  - Provide AWS credentials to users so they can access AWS resources directly
+  - Integrate with Cognito User Pools as an identity provider
+- **Cognito Sync:**
+  - Synchronize data from device to Cognito.
+  - May be deprecated and replaced by AppSync
+
+- (64)
+- **AWS Cost Explorer** helps you identify under-utilized EC2 instances that may be downsized on an instance by instance basis within the same instance family, and also understand the potential impact on your AWS bill by taking into account your Reserved Instances and Savings Plans.
+
+- **AWS Cost Explorer** – See patterns in AWS spending over time, project future costs, identify areas that need further inquiry, observe Reserved Instance utilization, observe Reserved Instance coverage, and receive Reserved Instance recommendations.
+
+- **AWS Trusted Advisor** – Get real-time identification of potential areas for optimization.
+
+- (65)
+- Network Load Balancer - Network Load Balancer operates at the connection level (Layer 4), routing connections to targets - Amazon EC2 instances, microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data.
+
+- Application Load Balancer
+  - An Application Load Balancer functions at the application layer, the seventh layer of the Open Systems Interconnection (OSI) model. After the load balancer receives a request, it evaluates the listener rules in priority order to determine which rule to apply and then selects a target from the target group for the rule action. You can configure listener rules to route requests to different target groups based on the content of the application traffic. Each target group can be an independent microservice, therefore this option is correct.
+  - **ALB are a great fit for micro services & container-based application**
 
 
 
