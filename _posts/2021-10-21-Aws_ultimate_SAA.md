@@ -595,7 +595,7 @@ tags:
   - AWS CloudFormation은 Amazon Web Services 리소스를 모델링하고 설정하여 리소스 관리 시간을 줄이고 AWS에서 실행되는 애플리케이션에 더 많은 시간을 사용하도록 해 주는 서비스입니다. 필요한 모든 AWS 리소스(예: Amazon EC2 인스턴스 또는 Amazon RDS DB 인스턴스)를 설명하는 템플릿을 생성하면 AWS CloudFormation이 해당 리소스의 프로비저닝과 구성을 담당합니다. AWS 리소스를 개별적으로 생성하고 구성할 필요가 없으며 어떤 것이 무엇에 의존하는지 파악할 필요도 없습니다. AWS CloudFormation에서 모든 것을 처리합니다. 다음 시나리오는 AWS CloudFormation이 얼마나 유용한지를 보여줍니다
 
 - **Where are Docker images stored?**
-  - ECR
+  - ECR : Amazon Elastic Container Registry
 
 - **CloudFormation StackSets** allows you to create, update, or delete CloudFormation stacks across multiple AWS accounts and AWS regions with a single operation.
 
@@ -840,7 +840,7 @@ tags:
     - Amazon ElastiCache for Memcached is a Memcached-compatible in-memory key-value store service that can be used as a cache or a data store. Amazon ElastiCache for Memcached is a great choice for implementing an in-memory cache to decrease access latency, increase throughput, and ease the load off your relational or NoSQL database. Session stores are easy to create with Amazon ElastiCache for Memcached. 
 
 - (23)
-- In the exam: **Chef & Puppet** needed => AWS Opsworks
+- In the exam: **Chef & Puppet** needed => *AWS Opsworks*
 - Chef & Puppet help you perform server configuration automatically, or repetitive actions
 
 - (24)
@@ -916,7 +916,6 @@ tags:
 - **Spread placement group of EC2 instances**
   - A spread placement group can span multiple Availability Zones in the same Region. You can have a maximum of **seven** running instances per Availability Zone per group.
 
-
 - (33)
 - **User Data**
   - By default, scripts entered as user data are executed with root user privileges
@@ -927,7 +926,7 @@ tags:
   - subsequent read request immediately receives the latest version of the object
 
 - (35)
-- **AWS Shield Standard** is automatically enabled for all AWS customers at no additional cost. AWS Shield Advanced is an optional paid service.
+- **AWS Shield Standard** is automatically enabled for all AWS customers at **no additional cost.** AWS Shield Advanced is an optional paid service.
 
 
 - (37)
@@ -1013,7 +1012,7 @@ tags:
 
 - (58)
 - **Optimize S3 Performance**
-  - **sMulti-Part upload**
+  - **Multi-Part upload**
   - **S3 Transfer Acceleration**
 
 - (59)
@@ -1062,5 +1061,152 @@ tags:
   - **ALB are a great fit for micro services & container-based application**
 
 
+## Practice_Exam_1
+- (1)
+  - **AWS Lambda** lets you run code without provisioning or managing servers. You pay only for the compute time you consume. 
+  - **Amazon Simple Queue Service (SQS)** is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications.
+  - Amazon Kinesis Data Streams (KDS) is a massively scalable and durable real-time data streaming service.
+  - **Kinesis : the user is expected to manually provision an appropriate number of shards to process the expected volume of the incoming data stream.**
 
+- (2)
+  - **Amazon Aurora Global Database** is designed for globally distributed applications, allowing a single Amazon Aurora database to span multiple AWS regions.
 
+- (3)
+  - [S3 스토리지 클래스 전환 waterfall 그래프](https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html)  
+
+- (4)
+  - Since the data is accessed only twice in a financial year but **needs rapid access when required,** the most cost-effective storage class for this use-case is **S3 Standard-IA**. 
+
+- (5)
+  - EFS – Elastic File System
+  - Managed NFS (network file system) that can be mounted on many EC2
+  - EFS works with EC2 instances in multi-AZ
+
+- (6)
+  - **S3 Transfer Acceleration (S3TA)**
+  - There are no S3 data transfer charges when data is transferred in from the internet.
+  - Also with S3TA, you pay only for transfers that are accelerated.
+
+- (7)
+  - auto scale group 이거 region 기반이었나..?
+  - Auto Scaling 그룹은 동일한 리전 내에 한 개 이상의 가용 영역에 속하는 EC2 인스턴스를 포함할 수 있습니다. 하지만 Auto Scaling 그룹은 여러 리전을 포괄할 수 없습니다.
+  - **An Auto Scaling group can contain EC2 instances in one or more Availability Zones within the same Region. However, Auto Scaling groups cannot span multiple Regions.**
+
+- (8)
+  - In the event of a *failover*, **Amazon Aurora** will promote the Read Replica that has the highest priority **(the lowest numbered tier)**. If two or more Aurora Replicas share the same priority, then Amazon RDS promotes the replica that is **largest in size**
+
+- (9)
+  - EBS Volume Types
+  - Only gp2/gp3 and io1/io2 can be used as **boot volumes**
+
+- (10)
+  - You can use two AWS services to federate your workforce into AWS accounts and business applications: **AWS Single Sign-On (SSO)** or **AWS Identity and Access Management (IAM)**.
+
+- (11)
+  - Cost of test file storage on **S3 Standard** < Cost of test file storage on **EFS** < Cost of test file storage on **EBS**
+
+- (12)
+  - Aurora is not an in-memory database, so this option is not correct.
+
+- (14)
+  - 1 EC2 instance, 1 AMI and 1 snapshot exist in region B
+
+- (15)
+  - Global Accelerater
+    - AWS Global Accelerator is a service that improves the availability and performance of your applications with local or global users. It provides static IP addresses that act as a fixed entry point to your application endpoints in a single or multiple AWS Regions, such as your Application Load Balancers, Network Load Balancers or Amazon EC2 instances. Global Accelerator is a good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP, as well as for HTTP use cases that specifically require static IP addresses or deterministic, fast regional failover.
+  - Direct Connect
+    - Provides a dedicated private connection from a remote network to your VPC
+    - If you want to setup a Direct Connect to one or more VPC in many different regions (same account), you must use a Direct Connect Gateway
+
+- (16)
+  - Auto Scaling Groups – Dynamic Scaling Policies
+  - **Target Tracking Scaling** : Most simple and easy to set-up
+    - Example: I want the average ASG CPU to stay at around 40%
+  - Simple/Step Scaling : CloudWatch alarm is triggered
+
+- (17)
+- EBS Volume Types Use cases
+  - **General Purpose SSD : gp3, gp2**
+  - **Provisioned IOPS (PIOPS) SSD : io1/io2, io2 Block Express**
+  - Use io2 Block Express volumes on Nitro-based EC2 instances to achieve a maximum Provisioned IOPS of 256,000
+  - Use io1/io2 volumes to enable Multi-Attach on Nitro-based EC2 instances
+
+- (19)
+  - **S3 Encryption for Objects**
+    - SSE-S3
+    - SSE-KMS : audit trail
+    - SSE-C : S3 does not store the encryption key you provide, HTTPS must be used 
+    - Client Side Encryption 
+  
+- (20)
+  - UDP
+  - custom DNS
+  - AWS Global Accelerator - AWS Global Accelerator utilizes the Amazon global network, allowing you to improve the performance of your applications by lowering first-byte latency (the round trip time for a packet to go from a client to your endpoint and back again) and jitter (the variation of latency), and increasing throughput (the amount of time it takes to transfer data) as compared to the public internet.
+  - Global Accelerator improves performance for a wide range of applications over TCP or UDP by proxying packets at the edge to applications running in one or more AWS Regions. **Global Accelerator is a good fit for non-HTTP use cases**, such as gaming (UDP), IoT (MQTT), or Voice over IP, as well as for HTTP use cases that specifically require static IP addresses or deterministic, fast regional failover.
+- (21)
+  - The team is facing a maintenance challenge - every time the team deploys a maintenance patch, the instance health check status shows as out of service for a few minutes. This causes the Auto Scaling group to provision another replacement instance immediately.
+  - Suspend the ReplaceUnhealthy process type for the Auto Scaling group and apply the maintenance patch to the instance. Once the instance is ready, you can manually set the instance's health status back to healthy and activate the ReplaceUnhealthy process type again 
+  - Put the instance into the Standby state and then update the instance by applying the maintenance patch. Once the instance is ready, you can exit the Standby state and then return the instance to service
+
+- (22)
+  - Auto Scaling Groups – Dynamic Scaling Policies
+  - **Target Tracking Scaling** : Most simple and easy to set-up
+    - Example: I want the average ASG CPU to stay at around 40%
+  - Simple/Step Scaling : CloudWatch alarm is triggered
+  - **Scheduled Actions**
+    - Anticipate a scaling based on known usage patterns
+    - Example: increase the min capacity to 10 at 5 pm on Fridays
+
+- (23)
+  - **By default, FIFO queues support up to 300 messages per second (300 send, receive, or delete operations per second). When you batch 10 messages per operation (maximum), FIFO queues can support up to 3,000 messages per second.**
+  - 기본적으로 FIFO 대기열은 초당 최대 300개의 메시지를 지원합니다(초당 300개의 보내기, 받기 또는 삭제 작업). 작업당 10개의 메시지(최대)를 일괄 처리하는 경우 FIFO 대기열은 초당 최대 3,000개의 메시지를 지원할 수 있습니다.
+  - **SQS FIFO : Limited throughput: 300 msg/s without batching, 3000 msg/s with**
+
+- (24)!!!
+- **Optimize S3 Performance**
+  - **Multi-Part upload**
+  - **S3 Transfer Acceleration**
+
+- (25)
+  - **Application Load Balancer - Target Group**
+  - **IP Addresses – must be private IPs**
+
+- (26)
+  - skip the regional edge cache
+    - Dynamic content, as determined at request time (cache-behavior configured to forward all headers)
+    - Proxy methods PUT/POST/PATCH/OPTIONS/DELETE go directly to the origin
+
+- (27)
+  - Which of the following is the fastest way to upload the daily compressed file into S3?
+  - Upload the compressed file using multipart upload with S3 transfer acceleration
+  - FTP : FTP means "File Transfer Protocol" and refers to a group of rules that govern how computers transfer files from one system to another over the internet.
+
+- (28)
+  - notification -> SNS같은데
+    -  SNS is a notification service and *cannot be used for real-time processing of data*.
+  - **우선 real time 하니까 kinesis Data stream**
+  - **Amazon Kinesis Data Streams - Amazon Kinesis Data Streams enables real-time processing of streaming big data.**
+
+- (29)
+  - **minimize the management overhead** --> **Lambda**
+  - These three options use EC2 instances as part of the solution architecture. The use-case seeks to **minimize the management overhead required to maintain the solution.** However, EC2 instances involve several maintenance activities such as managing the guest operating system and software deployed to the guest operating system, including updates and security patches, etc. Hence these options are incorrect.
+
+- (32)
+- 3 types of AWS Storage Gateway:
+  - **File Gateway**
+    - Configured S3 buckets are accessible using the NFS and SMB protocol
+    -  NFS (network file system)
+    - Integrated with Active Directory (AD) for user authentication
+  - **Volume Gateway**
+    - Cached volumes: low latency access to most recent data
+    - Stored volumes: entire dataset is on premise, scheduled backups to S3
+  - **Tape Gateway** : Some companies have backup processes using physical tapes
+
+- (33)
+  - GuardDuty는 개인정보보안
+
+- (39)
+  - glue
+  - spark transformation
+  - **AWS EMR**
+    - Amazon EMR (previously called Amazon Elastic MapReduce) is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data.
