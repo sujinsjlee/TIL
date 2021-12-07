@@ -677,7 +677,7 @@ tags:
 - Low inter-node latency
   - Cluster placement Groups
 
-- Hibernating : 인스턴스를 끄게 되면 컴퓨팅비용은 안들고 elastic IP 와 디스크비용 ebs 비용만 추가됨
+- **Hibernating** : 인스턴스를 끄게 되면 컴퓨팅비용은 안들고 Elastic IP 와 디스크비용 EBS 비용만 추가됨
 
 - AWS 내의 flow log  --> VPC Flow log
 
@@ -1204,9 +1204,105 @@ tags:
 
 - (33)
   - GuardDuty는 개인정보보안
+  - **Network ACLs operate at the subnet level and not at the instance level.**
+
+- (34)
+  - **IAM for S3**
+  - ListBucket permission applies to  `arn:aws:s3:::test`
+    - => bucket level permission
+  - GetObject, PutObject, DeleteObject applies to `arn:awn:s3:::test/*`
+    - => object level permission
+- (35)
+  - **Amazon FSx for Lustre**
+    - Amazon FSx for Lustre makes it easy and cost-effective to launch and run the world’s most popular high-performance file system. It is used for workloads such as machine learning, **high-performance computing (HPC)**, video processing, and financial modeling. The open-source Lustre file system is designed for applications that require fast storage – where you want your storage to keep up with your compute. **FSx for Lustre integrates with Amazon S3**, making it easy to process data sets with the Lustre file system. When linked to an S3 bucket, an FSx for Lustre file system transparently presents S3 objects as files and allows you to write changed data back to S3.
+    - FSx for Lustre provides the ability to both process the **'hot data' in a parallel and distributed fashion as well as easily store the 'cold data' on Amazon S3.** 
+
+    - `Generally, though, hot data requires the fastest and most expensive storage because it's accessed more frequently, and cold (or cooler) data that is accessed less frequently can be stored on slower, and consequently, less expensive media.`
+
+- (37)
+  - As mentioned earlier in the explanation, only when we want to specify a range of instances, then we must use min and max values. As the given use-case requires exactly 10 instances to be available during the peak hour, so we must set the desired capacity to 10. Hence this option is incorrect.
+
+- (38)
+  - Use Amazon **GuardDuty to monitor any malicious activity on data** stored in S3. Use security assessments provided by **Amazon Inspector** to check for vulnerabilities on EC2 instances
 
 - (39)
-  - glue
-  - spark transformation
+- **Amazon Kinesis Data Firehose** is the easiest way to load streaming data into data stores and analytics tools.
+  - The correct choice is to ingest the data in Kinesis Data Firehose and use a Lambda function to filter and transform the incoming data before the output is dumped on S3. This way you only store a sliced version of the data with only the relevant data attributes required for your model.
   - **AWS EMR**
     - Amazon EMR (previously called Amazon Elastic MapReduce) is a managed cluster platform that simplifies running big data frameworks, such as Apache Hadoop and Apache Spark , on AWS to process and analyze vast amounts of data.
+
+- (40)
+  - **ECS with EC2 launch type is charged based on EC2 instances and EBS volumes used. ECS with Fargate launch type is charged based on vCPU and memory resources that the containerized application requests**
+
+- (41)
+  - As Instance Store based volumes provide high random I/O performance at low cost (as the storage is part of the instance's usage cost) and **the resilient architecture can adjust for the loss of any instance**
+
+- (42)
+  - **S3 Standard-IA** is for data that is accessed less frequently, but requires rapid access when needed. But, it costs more than S3 One Zone-IA because of the redundant storage across availability zones. 
+  - **S3 One Zone-IA** is for data that is accessed less frequently, but requires rapid access when needed. Unlike other S3 Storage Classes which store data in a minimum of three Availability Zones (AZs), S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA.
+
+  - **Minimum days for transition from S3 Standar or S3 Standard IA to S3 Standar IA or S3 One Zone IA** ==> **at least 30days**
+
+- (45)
+  - **RDS Read Replicas** : ASYNC replication
+  - **RDS Multi AZ** : SYNC replication
+
+- (46)
+  - Handling Throttling : **Amazon API Gateway, Amazon SQS and Amazon Kinesis**
+
+- (49)
+  - HTTP 503: Service unavailable
+  - The Load Balancer generates the `HTTP 503: Service unavailable` error when the target groups for the load balancer have no registered targets.
+
+- (50)
+  - AWS Onboarding
+  - *Enable MFA for privileged users* - As per the AWS best practices, it is better to enable Multi Factor Authentication (MFA) for privileged users via an MFA-enabled mobile device or hardware MFA token.
+
+  - *Configure AWS CloudTrail* to record all account activity - AWS recommends to turn on CloudTrail to log all IAM actions for monitoring and audit purposes
+
+- (51)
+  - **Disable the service in the general settings** - Disabling the service will delete all remaining data, including your findings and configurations before relinquishing the service permissions and resetting the service. 
+
+- (55)
+  - **S3 retention rule**
+    - When you apply a retention period to an object version explicitly, you specify a Retain Until Date for the object version 
+    - Different versions of a single object can have different retention modes and periods
+
+- (56)
+  - Use Geo Restriction feature of Amazon CloudFront in a VPC - Geo Restriction feature of CloudFront helps in restricting traffic based on the user's geographic location. But, **CloudFront works from edge locations and doesn't belong to a VPC**. Hence, this option itself is incorrect and given only as a distractor.
+  - Configure **AWS WAF on the Application Load Balancer in a VPC** : You can use AWS WAF with your Application Load Balancer to allow or block requests based on the rules in a web access control list (web ACL). Geographic (Geo) Match Conditions in AWS WAF allows you to use AWS WAF to restrict application access based on the geographic location of your viewers.
+
+- (58)
+  - **Site-to-Site VPN Connections**
+    - AWS Site-to-Site VPN enables you to securely connect your on-premises network or branch office site to your Amazon Virtual Private Cloud (Amazon VPC). You can securely extend your data center or branch office network to the cloud with an AWS Site-to-Site VPN connection. A VPC VPN Connection utilizes IPSec to establish encrypted network connectivity between your intranet and Amazon VPC over the Internet. VPN Connections can be configured in minutes and are a good solution if you have an immediate need, have low to modest bandwidth requirements, and can tolerate the inherent variability in Internet-based connectivity.
+
+  - Setup AWS direct connect to establish connectivity between the on-premises data center and AWS Cloud - **Direct Connect** involves significant monetary investment and **takes at least a month to set up**, therefore it's not the correct fit for this use-case.
+
+- (59)
+  - Amazon SNS message deliveries to AWS Lambda have crossed the account concurrency quota for Lambda, so the team needs to contact AWS support to raise the account limit
+
+- (60)
+  - **Amazon FSx for Windows File Server**
+  - Amazon FSx for Windows File Server provides fully managed, highly reliable file storage that is accessible over the industry-standard Service Message Block (SMB) protocol. It is built on Windows Server, delivering a wide range of administrative features such as user quotas, end-user file restore, and Microsoft Active Directory (AD) integration. **Amazon FSx supports the use of Microsoft’s Distributed File System (DFS)** to organize shares into a single folder structure up to hundreds of PB in size.
+
+- (61)
+  - A runtime is a version of a programming language or framework that you can use to write Lambda functions. AWS Lambda supports runtimes for the following languages:
+    - C#/.NET
+    - Go
+    - Java
+    - Node.js
+    - Python
+    - Ruby
+
+- (62)
+  - As the CMK was deleted a day ago, it must be in the 'pending deletion' status and hence you can just cancel the CMK deletion and recover the key
+
+- (63)
+  - Use AWS Direct Connect plus VPN to establish a connection between the data center and AWS Cloud
+
+- (64)
+  - **High Performance Computing (HPC)** == need to achieve low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC applications.
+  - Cluster placement groups
+
+- (65)
+  - Change the application architecture to create customer-specific custom prefixes within the single bucket and then upload the daily files into those prefixed locations
