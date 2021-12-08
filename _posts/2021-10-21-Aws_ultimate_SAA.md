@@ -36,6 +36,7 @@ tags:
 > [Section28 Other Services](#section28)  
 > [Test0](#Practice_Exam_0)  
 > [Test1](#Practice_Exam_1)  
+> [Examtopics](#Examtopics_2021_Dec)  
 
 
 
@@ -1306,3 +1307,65 @@ tags:
 
 - (65)
   - Change the application architecture to create customer-specific custom prefixes within the single bucket and then upload the daily files into those prefixed locations
+
+## Examtopics_2021_Dec
+- Q1
+  - D. Add a resource-based policy to the function with lambda:InvokeFunction as the action and Service:events.amazonaws.com as the principal.
+
+- Q2
+- What precautions and security procedures should a solutions architect include to protect and secure CloudTrail?
+  - A. Create a second S3 bucket in us-east-1. Enable S3 Cross-Region Replication from the existing S3 bucket to the second S3 bucket. 
+  - B. Create a cross-origin resource sharing (CORS) configuration of the existing S3 bucket. Specify us-east-1 in the CORS rule's AllowedOrigin element.
+
+- Q3
+  - A. Create a DynamoDB table in on-demand capacity mode.
+  - DynamoDB On-Demand mode : Great for **unpredictable** workloads
+
+- **Q4**
+  - ALB : Do not support block
+  - CloudFront : **Geo-Restriction**
+
+- Q5
+  - **Multi-value routing policy** : returning all healthy instances
+
+- Q19
+  - **C. Take a Snapshot of the RDS instance. Create an encrypted copy of the snapshot. Restore the RDS instance from the encrypted snapshot.**
+
+- **Q24**
+  - **Amazon S3** : store all application log files for seven years for compliance purposes.
+  
+- Q26
+  - **Dynamic storage scaling Aurora and we need RDS for table join = Aurora**
+
+- Q27
+  - D. Use Reserved Instances for the baseline capacity and use On-Demand Instances to handle additional capacity.
+
+- Q29
+  - Use the ChangeMessageVisibility API call to increase the visibility timeout.
+  - **The visibility timeout** begins when Amazon SQS returns a message. 
+
+- Q30
+  - C . --> S3 is best for "Static Data", API Gateway + Lambda is best for "Microservices", DynamoDB is best for "JSON format".... All the three are less operational/maintenance since serverless.
+
+- Q33
+  - B. Use a transit gateway with equal cost multipath routing and add additional VPN tunnels.
+
+- Q35
+  - A. Encrypt a copy of the latest DB snapshot. Replace existing DB instance by restoring the encrypted snapshot.
+
+- Q36
+  - D. Redesign the application to use an event-driven design with Amazon Simple Queue Service (Amazon SQS) and AWS Lambda.
+
+- Q37
+  - C. Use an Amazon Elastic Container Service (Amazon ECS) Fargate task triggered by an Amazon EventBridge (Amazon CloudWatch Events) scheduled event.
+  - **EventBridge is the next evolution of CloudWatch Events**
+
+- Q39
+  - D. Host the visualization tool in the same AWS Region as the data warehouse and access it over a DirectConnect connection at a location in the same Region.
+
+- Q40
+  - should be AD, "The company cannot manage additional infrastructure", all ec2 items are out.
+  - A. Deploy an Amazon Elastic Container Service (Amazon ECS) cluster.
+  - D. Deploy an Amazon Elastic Container Service (Amazon ECS) service with a Fargate launch type. Specify a desired task number level of greater than or equal to 2.
+
+  
