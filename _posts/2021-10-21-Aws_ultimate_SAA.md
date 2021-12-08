@@ -1197,7 +1197,7 @@ tags:
   - **File Gateway**
     - Configured S3 buckets are accessible using the NFS and SMB protocol
     -  NFS (network file system)
-    - Integrated with Active Directory (AD) for user authentication
+    - Integrated with **Active Directory (AD)** for user authentication
   - **Volume Gateway**
     - Cached volumes: low latency access to most recent data
     - Stored volumes: entire dataset is on premise, scheduled backups to S3
@@ -1368,4 +1368,50 @@ tags:
   - A. Deploy an Amazon Elastic Container Service (Amazon ECS) cluster.
   - D. Deploy an Amazon Elastic Container Service (Amazon ECS) service with a Fargate launch type. Specify a desired task number level of greater than or equal to 2.
 
+- Q41
+  - C. Users can terminate an EC2 instance in the us-east-1 Region when the user source IP is 10.100.100.254.
+
+- Q42
+  - **AWS Direct Link (DX)**
+  - B. Configure DX connections at multiple DX locations. 
+
+- Q44
+  - HTTP flood attacks --> WAF
+
+- Q46
+  - D. Configure Amazon Elastic Block Store (Amazon EBS) encryption and Amazon RDS encryption with AWS Key Management Service (AWS KMS) keys to encrypt instance and database volumes.
+
+- Q47
+  - There is an explicit deny for the source IP block in the second statement. So only IPs outside that block can delete or create Lambda functions as per the Allow rule in the first statement.So option C is the correct answer.
+
+- Q48
+  - A. Create an IAM role with the appropriate policy to allow access to the DynamoDB table. Create an instance profile to assign this IAM role to the EC2 instance.
+  - For B, since both resources are in the same account, trust relationship policy is not required.
+
+- Q49
+  - Downloadable historical performance reports implies static content, therefor S3 and CloudFront is the most reasonable solution.
+
+- Q56
+  - A. Store the password in AWS Secrets Manager. Enable automatic rotation on the secret.
+  - **AWS Secrets Manager**
+    - Capability to force rotation of secrets every X days
+    - Integration with Amazon RDS (MySQL, PostgreSQL, Aurora)
+
+- Q58
+  - A. Create and use a custom endpoint for the workload.
+
+- Q59
+  - B. Deploy AWS Storage Gateway using cached volumes. Use Storage Gateway to store data in Amazon S3 while retaining copies of frequently accessed data subsets locally.
+
+- Q62
+  - **D. AWS Storage Gateway**
+
+- Q63
+  - D. Use Amazon RDS for SQL Server with a Multi-AZ deployment and read replicas, and restore snapshots from RDS for the test database.
+  - Answer is D because RDS support MultiAZ, Read Replicas and Microsoft SQL DB engine.
+  - Aurora only supports MySQL and PostGreSQL. It does not support Microsoft SQL.
+
+- Q65
+  - Implement an AWS Site-to-Site VPN connection.
+  -  This connection does not need a large quantity of bandwidth and is capable of handling a limited amount of traffic. The link should be established immediately.
   
