@@ -7,6 +7,22 @@ tags:
 ---
 
 - 시퀀스 설명할때 **function call**이랑 **메시지 보내는것**은 다르고 듣는사람 헷갈릴 수 있으니까 조심할 것
+  - `2021.10.29`
+  - `2022.01.19`
+    > **What is callback function?**  
+    > [A Callback function](https://stackoverflow.com/questions/824234/what-is-a-callback-function)  
+
+    
+    - **A callback function is a function which is:**
+      - **passed as an argument to another function, and,**
+      - **is invoked after some kind of event.**
+  - In computer programming, a callback, also known as a "call-after"[1] function, is any executable code that is passed as an argument to other code; that other code is expected to call back (execute) the argument at a given time. This execution may be immediate as in a synchronous callback, or it might happen at a later point in time as in an asynchronous callback. 
+  - 호출될 함수를 알려 주어 다른 프로그램 또는 다른 모듈에서 함수를 호출하게 하는 방법. 일반적으로 OS가 호출할 application의 함수를 지정해 특정한 event 또는 message가 발생했을 때 호출되도록 지정할 수 있다. 이런 함수를 callback함수라도 함
+
+
+
+
+
 
 - [why file include is not recommended in header file](https://stackoverflow.com/questions/2596449/including-includes-in-header-file-vs-source-file)
 
