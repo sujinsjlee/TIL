@@ -457,7 +457,7 @@ tags:
 - **CloudTrail Insights**
     - Enable CloudTrail Insights to detect unusual activity in your account
 
-- You can use the **CloudTrail Console** to view the **last 90 days*** of recorded API activity. For events older than 90 days, use Athena to analyze CloudTrail logs stored in S3.
+- You can use the **CloudTrail Console** to view the **last 90 days** of recorded API activity. For events older than 90 days, use Athena to analyze CloudTrail logs stored in S3.
     - Analyze CloudTrail logs in S3 bucket using Amazon Athena
 
 - **AWS Config Rules**
@@ -1414,4 +1414,88 @@ tags:
 - Q65
   - Implement an AWS Site-to-Site VPN connection.
   -  This connection does not need a large quantity of bandwidth and is capable of handling a limited amount of traffic. The link should be established immediately.
-  
+  - **Site to Site VPN** : 인터넷 망 (보안성 낮음), immediate 서비스 도입 가능
+  - **Direct Connect** : 전용망 (보안성 높음), 서비스 도입에 시간이 많이 소요, 비용 저렴
+
+- Q67
+  - AWS Storage Gateway
+  - Bridge between on-premises data and cloud data in S3
+
+- Q68
+  - Multi-AZ is not for speed, but for disaster recovery
+  - D. Deploy an Amazon ElastiCache for Redis cluster in front of the existing DB instance. Modify the game to use Redis.
+
+- Q69
+  - B. Create an Amazon S3 bucket and host the website there.
+  - cost effective --> S3
+
+- **Q70**
+  - Amazon Redshift only supports single AZ deployment
+  - Redshift has no “Multi-AZ” mode
+  - B. Enable cross-Region snapshots.
+
+- Q71
+  - B. Design a REST API using Amazon API Gateway that accepts the item names. API Gateway passes item names to AWS Lambda for tax computations.
+
+- Q73
+  - **SSL or TSL is not network layer protocol**
+
+- Q74
+  - **AWS Storage Gateway file gateway** : Configured S3 buckets are accessible using the NFS and SMB protocol
+  - Amazon FSx for Windows File Server : support SMB, but scenario should contain Windows or AD
+
+
+- Q76
+  - **typical queries execute for extended periods of time** --> ElastiCache
+  - **common queries** --> ElastiCache
+
+- Q78
+  - **Configure a dead-letter queue** --> Useful for debugging!
+  - C. Create a temporary queue, with the Temporary Queue Client to receive each response message.
+
+- Q80
+  - **D. Create a read replica and connect the business reports to it.**
+
+- Q81
+  - **A. Create an Amazon Kinesis Data Firehose delivery stream** to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle configuration to transition data to Amazon S3 Glacier after 14 days.
+  - Glacier : Data is retained for the longer term (10s of years)
+
+- Q82
+  - B. Modify the network ACL for the web tier subnets. Add an inbound deny rule for the IP addresses that are consuming resources.
+
+- Q83
+  - B. Configure a gateway endpoint for traffic destined to Amazon S3.
+  - **Gateway endpoint** : s3, dynamoDB (no cost)
+  - Interface endpoint : AWS Services
+
+- Q86
+  - D. The requests from the API are sent to the models Amazon Simple Queue Service (Amazon SQS) queue. Models are deployed as Amazon Elastic Container Service (Amazon ECS) services reading from the queue AWS Auto Scaling is enabled on Amazon ECS for both the cluster and copies of the service based on the queue size.
+
+- Q88
+  - A. Deploy a NAT gateway inside the public subnet for each Availability Zone and associate it with an Elastic IP address. Update the routing table of the private subnet to use it as the default route.
+
+- Q89
+  - SES is meant for sending high volume e-mail efficiently and securely.
+  - SNS is meant as a channel publisher/subscriber service.
+  - B. Configure the web instance to send email through Amazon Simple Email Service (Amazon SES).
+
+- Q90
+  - B. Store the password in AWS Secrets Manager. Associate the Lambda function with a role that can use the secret ID to retrieve the password from Secrets Manager. Use Secrets Manager to automatically rotate the password.
+- Q92
+  - optimize both real-time and on-demand steaming performance
+  - CloudFront
+- Q94
+  - "Amazon RDS snapshots are automatically encrypted with the same encryption key that was used to encrypt the source Amazon RDS database. Snapshots of unencrypted Amazon RDS databases are also unencrypted."
+- Q95
+  - B. Use Amazon Elastic Block Store (Amazon EBS) for the EC2 instance root volumes. Configure the application to build the document store on Amazon S3.
+- Q96
+  - A. Set an overall password policy for the entire AWS account
+- Q97
+  - D. Use Auto Scaling with a target tracking scaling policy.
+- Q98
+  - B. Create an HTTPS endpoint in Amazon API Gateway. Configure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.
+- Q99
+  - A. AWS DataSync
+  - a solution to manage continuous data transfer between its on-premises shared file system and Amazon S3.
+- Q100
+  - B. Deploy a NAT gateway in a public subnet of each Availability Zone.
