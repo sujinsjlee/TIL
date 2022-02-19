@@ -13,6 +13,9 @@ tags:
 
 ## 책에서 기억하고 싶은 내용
 > **코드가 존재하리라**  
+
+
+
 - p4
     - 앞으로 코드가 사라질 가망은 전혀없다! 왜? 코드는 요구사항을 상세히 표현하는 수단이니까!
     - 어느 수준에 이르면 코드의 도움 없이 요구사항을 상세하게 표현하기란 불가능하다. 추상화도 불가능하다. 정확히 명시하는 수밖에 없다. 기계가 실행할 정도로 상세하게 요구사항을 명시하는 작업, 바로 이것이 프로그래밍이다. 이렇게 명시한 결과가 바로 코드다.
@@ -40,3 +43,7 @@ tags:
 ## 궁금한 점
 - 르블랑의 법칙? (LeBlanc's Law states) 
     - "Later equals never" is used in the context of software development, but may be applied more broadly to other areas. The law is attributed to Dave LeBlanc.
+
+`#노마드코더`  
+`#북클럽`  
+`#노개북` 
