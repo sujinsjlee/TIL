@@ -32,12 +32,12 @@ tags:
     - clean code는 작성자가 아닌 사람도 읽기 쉽고 고치기 쉽다
 
 ## 소감
-- clean code
+- Clean Code
     - **Readability**
     - One purpose
     - Cover whole test scenario
     - No Redundancy
-    - other developer can update the code easily
+    - Other developer can update the code easily
 - 앞으로 코드리뷰할때 위와같은 점에 대해서 검토하도록해야겠다
 
 ## 궁금한 점
