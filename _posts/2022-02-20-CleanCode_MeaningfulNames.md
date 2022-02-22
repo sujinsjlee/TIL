@@ -83,6 +83,8 @@ tags:
 ### 검색하기 쉬운 이름을 사용하라
 - p28    
     - **Use Searchable Names**
+
+    
     ```c
     //---DON't
     for(int i = 0; i <34; i++) {
@@ -119,7 +121,9 @@ tags:
     - 추가적으로 인터페이스선언할때 `interface IShape` 이런식으로 I달지 말라는 코멘트가 있었다. 이런 코드를 거의 본 적이 없어서 몰랐었는데 주의해야겠다.
     - Interfaces and Implementations: If you want to create an Abstract Factory for the creation of shapes, this will be interface implemented by concrete class, so don't use IShapeFactory, because I don’t want the users knowing that I’m handing them by an interface. 
 
-
+- 헝가리식 표기법
+    - 변수 및 함수의 인자 이름 앞에 데이터 타입을 명시하는 코딩 규칙. 하지만 공식 가이드 라인에서는 사용하지 말 것을 권고
+    
 `#노마드코더`  
 `#북클럽`  
 `#노개북` 
