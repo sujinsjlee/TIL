@@ -8,7 +8,7 @@ tags:
   - 노개북 
 ---
 
-# DAY6 : Chapter6 Formmating
+# DAY6 : Chapter6 Objects and Data Structures
 #### 오늘읽은 범위: ~ 6장. 객체와 자료구조
 - 객체는 동작을 공개하고 자료를 숨긴다. 그래서 기존 동작을 변경하지 않으면서 새 객체타입을 추가하기는 쉬운 반면, 기존 객체에 새 동작을 추가하기는 어렵다.
 - 자료구조는 별다른 동작없이 자료를노출한다. 그래서 새 동작을 추가하기는 쉬우나, 기존 함수에 새 자료구조를 추가하기는 어렵다.
@@ -54,7 +54,10 @@ tags:
     Street ownerStreet = ownerId.getLicenseInfo();
     ```
 
-
+- [DTO](https://www.youtube.com/watch?v=EeJnNaiMy3U)
+    - 변수만 가지고 별다른 함수가 없는 형태의 객체를 자료 전달 객체(DTO)라고 한다. 사용자에게 받은 메시지나 레이어 간에 데이터를 전달하기 위해 사용한다.
+    - This is a form of a data structure which is a class with public variables and no functions and sometimes called DTO. DTOs are very useful structures, especially when communicating with databases or parsing messages from sockets and so on.
+    - And there is another more common form called the “bean” form. Beans have private variables manipulated by getters and setters. As the following
 
 ## 소감
 - get__()->get__() 꼬리물기 식의 코드 구현을 앞으로는 주의하도록 해야겠다.
