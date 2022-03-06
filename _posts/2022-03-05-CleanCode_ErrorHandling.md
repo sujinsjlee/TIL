@@ -1,5 +1,5 @@
 ---
-title: "[Clean Code] Chapter 7: Error Hanling"
+title: "[Clean Code] Chapter 7: Error Handling"
 categories:
   - Clean Code
 tags:
@@ -8,13 +8,17 @@ tags:
   - 노개북 
 ---
 
-# DAY7 : Chapter7 Error Hanling
+# DAY7 : Chapter7 Error Handling
+
 #### 오늘읽은 범위: ~ 7장. 오류처리
 - 오류 Log코드보다 예외를 던지는 편이 낫다
 
+
 ## 책에서 기억하고 싶은 내용
 
+
 > **뭔가 잘못되면 바로 잡을 책임은 바로 우리 프로그래머에게 있다**
+
 
 - try-catch-finally 문 부터 먼저 사용하라
 - Provide Context with Exceptions
@@ -28,7 +32,9 @@ tags:
     - NULL 을 반환하거나 전달하지 말자
     - NullException처리를 고려하기 전에 NULL값은 그냥 전달하지도 반환하지도말자 
 
+
 ## 소감
+
 - trace 를 남기고 logging으로 abnormal 처리하는게 익숙했는데 앞으로 코드를 구현할때 Exception 처리하는 것을 우선적으로 고려해야겠다.
 
 
@@ -40,6 +46,7 @@ tags:
     - try{} 구문을 실행 중에 예외가 발생하면 그 지점에서 실행을 중지하고 catch{} 구문이 실행된다. 
     - catch() 메서드 인자로 발생하는 예외 클래스를 인자를 주면 된다. 
     - **finally{}** 는 예외가 발생하든 안하든 반드시 실행되어야하는 작업이 있을 시 사용하는데 생략해도 된다.
+
 
 
     ```java
@@ -66,6 +73,7 @@ tags:
     * 4) 예외가 발생했고 그것이 잡히지 않은 채 퍼져나갈 때 */
     }
     ```
+
 
 
 `#노마드코더`  
