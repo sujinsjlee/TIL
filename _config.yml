@@ -45,7 +45,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "MG"
+  name   : "SujinLee"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Today I Learned"
   links:
