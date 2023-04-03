@@ -16,7 +16,7 @@ tags:
 > AWS storage services are grouped into three different categories: block storage, file storage, and object storage.
 
 
-![storage Types](https://raw.githubusercontent.com/mg729/TIL/master/assets/images/storageTypes.png)
+![storage Types](https://raw.githubusercontent.com/sujinsjlee/TIL/master/assets/images/storageTypes.png)
 
 - **File Storage**
   - You may be familiar with file storage if you’ve interacted with file storage systems like Windows File Explorer or Finder on MacOS. 

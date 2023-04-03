@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io/datastructure/2020/02/20/DataStructure_(8)_Heap/
+link: https://sujinsjlee.github.io/datastructure/2020/02/20/DataStructure_(8)_Heap/
 ---
 
 ## 힙(Heap)  

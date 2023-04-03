@@ -5,7 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
-link: https://mg729.github.io/algorithm/2020/03/23/Algorithm_(8)_search/
+link: https://sujinsjlee.github.io/algorithm/2020/03/23/Algorithm_(8)_search/
 ---
 
 ## 순차탐색 (Sequential Search)

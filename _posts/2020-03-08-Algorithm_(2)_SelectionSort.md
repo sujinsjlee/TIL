@@ -5,7 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
-link: https://mg729.github.io/algorithm/2020/03/08/Algorithm_(2)_SelectionSort/
+link: https://sujinsjlee.github.io/algorithm/2020/03/08/Algorithm_(2)_SelectionSort/
 ---
 
 ## 선택 정렬

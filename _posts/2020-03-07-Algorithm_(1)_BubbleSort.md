@@ -5,7 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
-link: https://mg729.github.io/algorithm/2020/03/01/Algorithm_(1)_BubbleSort/
+link: https://sujinsjlee.github.io/algorithm/2020/03/01/Algorithm_(1)_BubbleSort/
 ---
 
 ## 버블 정렬

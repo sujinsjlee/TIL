@@ -5,7 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
-link: https://mg729.github.io/algorithm/2020/03/26/Algorithm_(9)_bfs/
+link: https://sujinsjlee.github.io/algorithm/2020/03/26/Algorithm_(9)_bfs/
 ---
 
 ## BFS (Breadth-First Search)   

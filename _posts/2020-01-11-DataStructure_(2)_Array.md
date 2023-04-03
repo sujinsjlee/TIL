@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io/datastructure/2020/01/11/DataStructure_(2)_Array/
+link: https://sujinsjlee.github.io/datastructure/2020/01/11/DataStructure_(2)_Array/
 ---
 
 ##  Array  

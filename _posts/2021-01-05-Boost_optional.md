@@ -4,7 +4,7 @@ categories:
   - Boost
 tags:
   - Boost
-links: https://mg729.github.io/boost/2021/01/05/Boost_optional/
+links: https://sujinsjlee.github.io/boost/2021/01/05/Boost_optional/
 ---
 # boost::optional
 - Class template **optional** is a wrapper for representing 'optional' (or 'nullable') objects who may not (yet) contain a valid value. 

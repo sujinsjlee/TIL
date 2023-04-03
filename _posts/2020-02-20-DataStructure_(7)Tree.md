@@ -4,7 +4,7 @@ categories:
   - Data Structure
 tags:
   - Data Structure
-link: https://mg729.github.io/datastructure/2020/02/11/DataStructure_(7)_Tree/
+link: https://sujinsjlee.github.io/datastructure/2020/02/11/DataStructure_(7)_Tree/
 ---
 
 ## 트리 구조  

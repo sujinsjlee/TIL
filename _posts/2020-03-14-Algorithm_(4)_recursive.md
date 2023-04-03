@@ -4,7 +4,7 @@ categories:
   - Algorithm
 tags:
   - Algorithm
-link: https://mg729.github.io/algorithm/2020/03/14/Algorithm_(4)_RecursiveCall/
+link: https://sujinsjlee.github.io/algorithm/2020/03/14/Algorithm_(4)_RecursiveCall/
 ---
 
 ## 재귀 용법 (recursive call, 재귀 호출)  

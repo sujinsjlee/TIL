@@ -4,7 +4,7 @@ categories:
   - Algorithm
 tags:
   - Algorithm
-link: https://mg729.github.io/algorithm/2020/04/04/Algorithm_(12)_greedy2/
+link: https://sujinsjlee.github.io/algorithm/2020/04/04/Algorithm_(12)_greedy2/
 ---
 
 ## 1. 탐욕 알고리즘 이란?

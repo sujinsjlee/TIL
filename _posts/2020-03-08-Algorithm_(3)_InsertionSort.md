@@ -5,7 +5,7 @@ categories:
 tags:
   - Algorithm
 use_math: true
-link: https://mg729.github.io/algorithm/2020/03/08/Algorithm_(3)_InsertionSort/
+link: https://sujinsjlee.github.io/algorithm/2020/03/08/Algorithm_(3)_InsertionSort/
 ---
 
 ## 삽입 정렬  
